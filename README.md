@@ -1,14 +1,12 @@
-NS additions for humans. In a Ruby way.
-
 ### Installation
 
-__Cocoapods__: `pod ObjectiveSugar`
+__Cocoapods__: `pod ObjectiveSugar` <br/>
 __Manual__: Copy the /src folder in your project, and start using it
 
 #### NSArray additions
 
 ``` objc
-NSArray *cars = [@"Testarossa", @"F50", @"F458 Italia"]; // assume it's full of objects
+NSArray *cars = [@"Testarossa", @"F50", @"F458 Italia"]; 
 
 [array each:^(id object) {
     NSLog(@"Car: %@", object); 
