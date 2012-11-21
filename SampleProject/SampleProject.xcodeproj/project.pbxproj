@@ -22,8 +22,8 @@
 		892C1F48165D70C40077F2CB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 892C1F29165D70C40077F2CB /* Foundation.framework */; };
 		892C1F50165D70C40077F2CB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 892C1F4E165D70C40077F2CB /* InfoPlist.strings */; };
 		892C1F69165D715B0077F2CB /* NSArrayCategoriesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 892C1F68165D715B0077F2CB /* NSArrayCategoriesTests.m */; };
-		892C1F70165D71760077F2CB /* NSArray+Accessors.m in Sources */ = {isa = PBXBuildFile; fileRef = 892C1F6D165D71760077F2CB /* NSArray+Accessors.m */; };
-		892C1F71165D71760077F2CB /* NSNumber+Rubyfy.m in Sources */ = {isa = PBXBuildFile; fileRef = 892C1F6F165D71760077F2CB /* NSNumber+Rubyfy.m */; };
+		892C1F79165D723D0077F2CB /* NSArray+Accessors.m in Sources */ = {isa = PBXBuildFile; fileRef = 892C1F76165D723D0077F2CB /* NSArray+Accessors.m */; };
+		892C1F7A165D723D0077F2CB /* NSNumber+Rubyfy.m in Sources */ = {isa = PBXBuildFile; fileRef = 892C1F78165D723D0077F2CB /* NSNumber+Rubyfy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,11 +58,11 @@
 		892C1F4F165D70C40077F2CB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		892C1F67165D715B0077F2CB /* NSArrayCategoriesTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSArrayCategoriesTests.h; sourceTree = "<group>"; };
 		892C1F68165D715B0077F2CB /* NSArrayCategoriesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayCategoriesTests.m; sourceTree = "<group>"; };
-		892C1F6C165D71760077F2CB /* NSArray+Accessors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Accessors.h"; sourceTree = "<group>"; };
-		892C1F6D165D71760077F2CB /* NSArray+Accessors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Accessors.m"; sourceTree = "<group>"; };
-		892C1F6E165D71760077F2CB /* NSNumber+Rubyfy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+Rubyfy.h"; sourceTree = "<group>"; };
-		892C1F6F165D71760077F2CB /* NSNumber+Rubyfy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+Rubyfy.m"; sourceTree = "<group>"; };
-		892C1F72165D718E0077F2CB /* ObjectiveSugar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectiveSugar.h; sourceTree = "<group>"; };
+		892C1F75165D723D0077F2CB /* NSArray+Accessors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Accessors.h"; sourceTree = "<group>"; };
+		892C1F76165D723D0077F2CB /* NSArray+Accessors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Accessors.m"; sourceTree = "<group>"; };
+		892C1F77165D723D0077F2CB /* NSNumber+Rubyfy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+Rubyfy.h"; sourceTree = "<group>"; };
+		892C1F78165D723D0077F2CB /* NSNumber+Rubyfy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+Rubyfy.m"; sourceTree = "<group>"; };
+		892C1F7B165D72440077F2CB /* ObjectiveSugar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjectiveSugar.h; path = ../../ObjectiveSugar.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,7 +125,7 @@
 		892C1F2D165D70C40077F2CB /* SampleProject */ = {
 			isa = PBXGroup;
 			children = (
-				892C1F73165D71920077F2CB /* ObjectiveSugar */,
+				892C1F7C165D72510077F2CB /* ObjectiveSugar */,
 				892C1F36165D70C40077F2CB /* AppDelegate.h */,
 				892C1F37165D70C40077F2CB /* AppDelegate.m */,
 				892C1F2E165D70C40077F2CB /* Supporting Files */,
@@ -166,22 +166,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		892C1F6B165D71760077F2CB /* src */ = {
+		892C1F74165D723D0077F2CB /* src */ = {
 			isa = PBXGroup;
 			children = (
-				892C1F6C165D71760077F2CB /* NSArray+Accessors.h */,
-				892C1F6D165D71760077F2CB /* NSArray+Accessors.m */,
-				892C1F6E165D71760077F2CB /* NSNumber+Rubyfy.h */,
-				892C1F6F165D71760077F2CB /* NSNumber+Rubyfy.m */,
+				892C1F75165D723D0077F2CB /* NSArray+Accessors.h */,
+				892C1F76165D723D0077F2CB /* NSArray+Accessors.m */,
+				892C1F77165D723D0077F2CB /* NSNumber+Rubyfy.h */,
+				892C1F78165D723D0077F2CB /* NSNumber+Rubyfy.m */,
 			);
-			path = src;
+			name = src;
+			path = ../../src;
 			sourceTree = "<group>";
 		};
-		892C1F73165D71920077F2CB /* ObjectiveSugar */ = {
+		892C1F7C165D72510077F2CB /* ObjectiveSugar */ = {
 			isa = PBXGroup;
 			children = (
-				892C1F72165D718E0077F2CB /* ObjectiveSugar.h */,
-				892C1F6B165D71760077F2CB /* src */,
+				892C1F7B165D72440077F2CB /* ObjectiveSugar.h */,
+				892C1F74165D723D0077F2CB /* src */,
 			);
 			name = ObjectiveSugar;
 			sourceTree = "<group>";
@@ -312,8 +313,8 @@
 			files = (
 				892C1F34165D70C40077F2CB /* main.m in Sources */,
 				892C1F38165D70C40077F2CB /* AppDelegate.m in Sources */,
-				892C1F70165D71760077F2CB /* NSArray+Accessors.m in Sources */,
-				892C1F71165D71760077F2CB /* NSNumber+Rubyfy.m in Sources */,
+				892C1F79165D723D0077F2CB /* NSArray+Accessors.m in Sources */,
+				892C1F7A165D723D0077F2CB /* NSNumber+Rubyfy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
