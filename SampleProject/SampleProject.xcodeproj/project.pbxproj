@@ -62,7 +62,7 @@
 		892C1F76165D723D0077F2CB /* NSArray+Accessors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Accessors.m"; sourceTree = "<group>"; };
 		892C1F77165D723D0077F2CB /* NSNumber+Rubyfy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+Rubyfy.h"; sourceTree = "<group>"; };
 		892C1F78165D723D0077F2CB /* NSNumber+Rubyfy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+Rubyfy.m"; sourceTree = "<group>"; };
-		892C1F7B165D72440077F2CB /* ObjectiveSugar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjectiveSugar.h; path = ../../ObjectiveSugar.h; sourceTree = "<group>"; };
+		892C1F7B165D72440077F2CB /* ObjectiveSugar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjectiveSugar.h; path = ../ObjectiveSugar.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +169,7 @@
 		892C1F74165D723D0077F2CB /* src */ = {
 			isa = PBXGroup;
 			children = (
+				892C1F7B165D72440077F2CB /* ObjectiveSugar.h */,
 				892C1F75165D723D0077F2CB /* NSArray+Accessors.h */,
 				892C1F76165D723D0077F2CB /* NSArray+Accessors.m */,
 				892C1F77165D723D0077F2CB /* NSNumber+Rubyfy.h */,
@@ -181,7 +182,6 @@
 		892C1F7C165D72510077F2CB /* ObjectiveSugar */ = {
 			isa = PBXGroup;
 			children = (
-				892C1F7B165D72440077F2CB /* ObjectiveSugar.h */,
 				892C1F74165D723D0077F2CB /* src */,
 			);
 			name = ObjectiveSugar;
