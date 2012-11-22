@@ -18,6 +18,22 @@
 - (BOOL)includes:(id)object;
 - (NSArray *)take:(NSUInteger)numberOfElements;
 - (NSArray *)takeWith:(BOOL (^)(id object))block;
+
+// --------------------------------------------------------------------------------
+// Set operations
+
+// Alias for Ruby's & operator
+- (NSArray *)intersectionWithArray:(NSArray *)array;
+
+// Alias for Ruby's | operator
+- (NSArray *)unionWithArray:(NSArray *)array;
+
+// Alias for Ruby's - operator
+- (NSArray *)relativeComplement:(NSArray *)array;
+
+// Alias for Ruby's ^ operator. Equivalent of a - b | b - a
+- (NSArray *)symmetricDifference:(NSArray *)array;
+
 @end
 
 @interface NSMutableArray (Rubyfy)

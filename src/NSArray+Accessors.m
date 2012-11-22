@@ -62,7 +62,36 @@
     return array;
 }
 
+#pragma mark - Set operations
+
+- (NSArray *)intersectionWithArray:(NSArray *)array
+{
+    NSPredicate *intersectPredicate = [NSPredicate predicateWithFormat:@"SELF IN %@", array];
+    return [self filteredArrayUsingPredicate:intersectPredicate];
+}
+
+- (NSArray *)unionWithArray:(NSArray *)array
+{
+    NSArray *complement = [self relativeComplement:array];
+    return [complement arrayByAddingObjectsFromArray:array];
+}
+
+- (NSArray *)relativeComplement:(NSArray *)array
+{
+    NSPredicate *relativeComplementPredicate = [NSPredicate predicateWithFormat:@"NOT SELF IN %@", array];
+    return [self filteredArrayUsingPredicate:relativeComplementPredicate];
+}
+
+- (NSArray *)symmetricDifference:(NSArray *)array
+{
+    NSArray *a_subtract_b = [self relativeComplement:array];
+    NSArray *b_subtract_a = [array relativeComplement:self];
+    return [a_subtract_b unionWithArray:b_subtract_a];
+}
+
 @end
+
+#pragma mark -
 
 @implementation NSMutableArray (Rubyfy)
 

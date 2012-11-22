@@ -86,6 +86,33 @@ describe(@"NSMutableArray categories", ^{
     
 });
 
+describe(@"Set operations", ^{
+    
+    NSArray *a = @[ @1, @2 ];
+    NSArray *b = @[ @2, @3 ];
+    
+    it(@"return the elements common to both arrays ", ^{
+        [[[a intersectionWithArray:b] should] equal:@[ @2 ]];
+    });
+    
+    it(@"combine the two arrays, removing duplicate elements", ^{
+        [[[a unionWithArray:b] should] equal:@[ @1, @2, @3 ]];
+    });
+    
+    it(@"return the elements in a that are not in b", ^{
+        [[[a relativeComplement:b] should] equal:@[ @1 ]];
+    });
+    
+    it(@"return the elements in b that are not in a", ^{
+        [[[b relativeComplement:a] should] equal:@[ @3 ]];
+    });
+    
+    it(@"return the elements unique to both arrays", ^{
+        [[[a symmetricDifference:b] should] equal:@[ @1, @3 ]];
+    });
+});
+
+
 SPEC_END
 
 
