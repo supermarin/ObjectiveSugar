@@ -31,4 +31,63 @@
     }];
 }
 
+- (BOOL)includes:(id)object
+{
+    return [self containsObject:object];
+}
+
+- (NSArray *)take:(NSUInteger)numberOfElements
+{
+    NSMutableArray *array = [NSMutableArray arrayWithCapacity:numberOfElements];
+    
+    for (NSUInteger i = 0; i < numberOfElements; i++) {
+        [array addObject:self[i]];
+    }
+    
+    return array;
+}
+
+- (NSArray *)takeWith:(BOOL (^)(id object))block
+{
+    NSMutableArray *array = [NSMutableArray array];
+    
+    for (id arrayObject in self) {
+        if (block(arrayObject)) {
+            [array addObject:arrayObject];
+        } else {
+            break;
+        }
+    }
+    
+    return array;
+}
+
+@end
+
+@implementation NSMutableArray (Rubyfy)
+
+- (void)push:(id)object
+{
+    [self addObject:object];
+}
+
+- (id)pop
+{
+    id object = [self lastObject];
+    [self removeLastObject];
+    
+    return object;
+}
+
+- (NSArray *)pop:(NSUInteger)numberOfElements
+{
+    NSMutableArray *array = [NSMutableArray arrayWithCapacity:numberOfElements];
+    
+    for (int i = 0; i < numberOfElements; i++) {
+        [array insertObject:[self pop] atIndex:0];
+    }
+    
+    return array;
+}
+
 @end

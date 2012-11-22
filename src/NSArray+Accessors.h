@@ -15,5 +15,15 @@
 
 - (void)each:(void (^)(id object))block;
 - (void)eachWithIndex:(void (^)(id object, int index))block;
+- (BOOL)includes:(id)object;
+- (NSArray *)take:(NSUInteger)numberOfElements;
+- (NSArray *)takeWith:(BOOL (^)(id object))block;
+@end
+
+@interface NSMutableArray (Rubyfy)
+
+- (void)push:(id)object;
+- (id)pop;
+- (NSArray *)pop:(NSUInteger)numberOfElements;
 
 @end
