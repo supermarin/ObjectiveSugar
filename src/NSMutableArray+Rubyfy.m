@@ -1,0 +1,33 @@
+//
+//  NSMutableArray+Rubyfy.m
+//  SampleProject
+//
+//  Created by Marin Usalj on 11/23/12.
+//  Copyright (c) 2012 @mneorr | mneorr.com. All rights reserved.
+//
+
+#import "NSMutableArray+Rubyfy.h"
+
+@implementation NSMutableArray (Rubyfy)
+
+- (void)push:(id)object {
+    [self addObject:object];
+}
+
+- (id)pop {
+    id object = [self lastObject];
+    [self removeLastObject];
+    
+    return object;
+}
+
+- (NSArray *)pop:(NSUInteger)numberOfElements {
+    NSMutableArray *array = [NSMutableArray arrayWithCapacity:numberOfElements];
+    
+    for (int i = 0; i < numberOfElements; i++)
+        [array insertObject:[self pop] atIndex:0];
+    
+    return array;
+}
+
+@end
