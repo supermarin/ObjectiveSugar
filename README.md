@@ -47,22 +47,22 @@ __Manual__: Copy the __src__ folder in your project<br/>
 NSArray *cars = [@"Testarossa", @"F50", @"F458 Italia"]; 
 // or NSSet *cars = [NSSet setWithObjects:@"Testarossa", @"F50", @"F458 Italia", nil];
 
-[array each:^(id object) {
+[cars each:^(id object) {
     NSLog(@"Car: %@", object); 
 }];
 // Car: Testarossa
 // Car: F50
 // Car: F458 Italia
 
-[array eachWithIndex:^(id object, int index) {    
+[cars eachWithIndex:^(id object, int index) {    
     NSLog(@"Car: %@ index: %i", object, index); 
 }];
 // Car: Testarossa index: 0
 // Car: F50 index: 1
 // Car: F458 Italia index: 2
 
-id object = array.first; // Testarossa
-id object = array.last;  // 458 Italia
+id object = cars.first; // Testarossa
+id object = cars.last;  // 458 Italia
 ```
 
 #### NSDictionary additions
