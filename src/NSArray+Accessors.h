@@ -17,7 +17,7 @@
 - (void)eachWithIndex:(void (^)(id object, int index))block;
 - (BOOL)includes:(id)object;
 - (NSArray *)take:(NSUInteger)numberOfElements;
-- (NSArray *)takeWith:(BOOL (^)(id object))block;
+- (NSArray *)takeWhile:(BOOL (^)(id object))block;
 
 // --------------------------------------------------------------------------------
 // Set operations
