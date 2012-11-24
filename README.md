@@ -66,13 +66,13 @@ id object = cars.last;  // 458 Italia
 
 NSArray *fruits = @[ @"banana", @"mango", @"apple", @"pear" ];
 
-NSLog(@"Is apple in fruits? %@", [fruits includes:@"apple"] ? @"Yes" : @"No"];
-// Is apple in fruits? Yes
+NSLog(@"Is apple a fruit? %@", [fruits includes:@"apple"] ? @"Yes" : @"No"];
+// Is apple a fruit? Yes
 
 NSArray *someFruits = [fruits take:3];
-// someFruits = @[ @"banana", @"mango", @"apple" ];
+// someFruits = banana, mango, apple 
 
-NSArray *tropicalFruits = [someFruits takeWith:^BOOL(id fruit) {
+NSArray *tropicalFruits = [someFruits takeWhile:^BOOL(id fruit) {
 	return ![fruit isEqualToString:@"apple"];
 }];
 // tropicalFruits = @[ @"banana", @"mango" ];
