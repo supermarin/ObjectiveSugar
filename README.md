@@ -41,10 +41,11 @@ __Manual__: Copy the __src__ folder in your project<br/>
 // Current number.. 4
 ```
 
-#### NSArray additions
+#### NSArray / NSSet additions
 
 ``` objc
 NSArray *cars = [@"Testarossa", @"F50", @"F458 Italia"]; 
+// or NSSet *cars = [NSSet setWithObjects:@"Testarossa", @"F50", @"F458 Italia", nil];
 
 [array each:^(id object) {
     NSLog(@"Car: %@", object); 

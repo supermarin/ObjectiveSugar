@@ -38,9 +38,13 @@ describe(@"NSArray categories", ^{
         });
         
         it(@"iterates using -eachWithIndex:^", ^{
+            NSMutableArray *duplicate = [sampleArray mutableCopy];
+            
             [sampleArray eachWithIndex:^(id object, int index) {
                 [[object should] equal:[sampleArray objectAtIndex:index]];
+                [duplicate removeObject:object];
             }];
+            [[duplicate should] beEmpty];
         });
         
     });
