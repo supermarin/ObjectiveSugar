@@ -31,13 +31,11 @@
     }];
 }
 
-- (BOOL)includes:(id)object
-{
+- (BOOL)includes:(id)object {
     return [self containsObject:object];
 }
 
-- (NSArray *)take:(NSUInteger)numberOfElements
-{
+- (NSArray *)take:(NSUInteger)numberOfElements {
     NSMutableArray *array = [NSMutableArray arrayWithCapacity:numberOfElements];
     
     for (NSUInteger i = 0; i < numberOfElements; i++) {
@@ -47,16 +45,14 @@
     return array;
 }
 
-- (NSArray *)takeWith:(BOOL (^)(id object))block
-{
+- (NSArray *)takeWhile:(BOOL (^)(id object))block {
     NSMutableArray *array = [NSMutableArray array];
     
     for (id arrayObject in self) {
-        if (block(arrayObject)) {
+        if (block(arrayObject))
             [array addObject:arrayObject];
-        } else {
-            break;
-        }
+
+        else break;
     }
     
     return array;
@@ -64,59 +60,25 @@
 
 #pragma mark - Set operations
 
-- (NSArray *)intersectionWithArray:(NSArray *)array
-{
+- (NSArray *)intersectionWithArray:(NSArray *)array {
     NSPredicate *intersectPredicate = [NSPredicate predicateWithFormat:@"SELF IN %@", array];
     return [self filteredArrayUsingPredicate:intersectPredicate];
 }
 
-- (NSArray *)unionWithArray:(NSArray *)array
-{
+- (NSArray *)unionWithArray:(NSArray *)array {
     NSArray *complement = [self relativeComplement:array];
     return [complement arrayByAddingObjectsFromArray:array];
 }
 
-- (NSArray *)relativeComplement:(NSArray *)array
-{
+- (NSArray *)relativeComplement:(NSArray *)array {
     NSPredicate *relativeComplementPredicate = [NSPredicate predicateWithFormat:@"NOT SELF IN %@", array];
     return [self filteredArrayUsingPredicate:relativeComplementPredicate];
 }
 
-- (NSArray *)symmetricDifference:(NSArray *)array
-{
+- (NSArray *)symmetricDifference:(NSArray *)array {
     NSArray *a_subtract_b = [self relativeComplement:array];
     NSArray *b_subtract_a = [array relativeComplement:self];
     return [a_subtract_b unionWithArray:b_subtract_a];
-}
-
-@end
-
-#pragma mark -
-
-@implementation NSMutableArray (Rubyfy)
-
-- (void)push:(id)object
-{
-    [self addObject:object];
-}
-
-- (id)pop
-{
-    id object = [self lastObject];
-    [self removeLastObject];
-    
-    return object;
-}
-
-- (NSArray *)pop:(NSUInteger)numberOfElements
-{
-    NSMutableArray *array = [NSMutableArray arrayWithCapacity:numberOfElements];
-    
-    for (int i = 0; i < numberOfElements; i++) {
-        [array insertObject:[self pop] atIndex:0];
-    }
-    
-    return array;
 }
 
 @end

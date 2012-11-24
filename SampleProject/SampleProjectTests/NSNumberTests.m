@@ -14,7 +14,7 @@
 @end
 
 
-SPEC_BEGIN(Numbers)
+SPEC_BEGIN(NumberAdditions)
 
 describe(@"Iterators", ^{
     
