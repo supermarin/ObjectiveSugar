@@ -25,6 +25,8 @@
 		892C1F79165D723D0077F2CB /* NSArray+Accessors.m in Sources */ = {isa = PBXBuildFile; fileRef = 892C1F76165D723D0077F2CB /* NSArray+Accessors.m */; };
 		892C1F7A165D723D0077F2CB /* NSNumber+Rubyfy.m in Sources */ = {isa = PBXBuildFile; fileRef = 892C1F78165D723D0077F2CB /* NSNumber+Rubyfy.m */; };
 		892C1F83165D732B0077F2CB /* NSNumberTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 892C1F82165D732B0077F2CB /* NSNumberTests.m */; };
+		892C200A166060D80077F2CB /* NSDictionary+Rubyfy.m in Sources */ = {isa = PBXBuildFile; fileRef = 892C2009166060D80077F2CB /* NSDictionary+Rubyfy.m */; };
+		892C200E1660612F0077F2CB /* NSDictionaryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 892C200D1660612E0077F2CB /* NSDictionaryTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,10 @@
 		892C1F81165D732B0077F2CB /* NSNumberTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSNumberTests.h; sourceTree = "<group>"; };
 		892C1F82165D732B0077F2CB /* NSNumberTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSNumberTests.m; sourceTree = "<group>"; };
 		892C1F8D165D78950077F2CB /* ObjectiveSugar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectiveSugar.h; sourceTree = "<group>"; };
+		892C2008166060D80077F2CB /* NSDictionary+Rubyfy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Rubyfy.h"; sourceTree = "<group>"; };
+		892C2009166060D80077F2CB /* NSDictionary+Rubyfy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Rubyfy.m"; sourceTree = "<group>"; };
+		892C200C1660612E0077F2CB /* NSDictionaryTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDictionaryTests.h; sourceTree = "<group>"; };
+		892C200D1660612E0077F2CB /* NSDictionaryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDictionaryTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +164,8 @@
 				892C1F68165D715B0077F2CB /* NSArrayCategoriesTests.m */,
 				892C1F81165D732B0077F2CB /* NSNumberTests.h */,
 				892C1F82165D732B0077F2CB /* NSNumberTests.m */,
+				892C200C1660612E0077F2CB /* NSDictionaryTests.h */,
+				892C200D1660612E0077F2CB /* NSDictionaryTests.m */,
 			);
 			path = SampleProjectTests;
 			sourceTree = "<group>";
@@ -179,6 +187,8 @@
 				892C1F76165D723D0077F2CB /* NSArray+Accessors.m */,
 				892C1F77165D723D0077F2CB /* NSNumber+Rubyfy.h */,
 				892C1F78165D723D0077F2CB /* NSNumber+Rubyfy.m */,
+				892C2008166060D80077F2CB /* NSDictionary+Rubyfy.h */,
+				892C2009166060D80077F2CB /* NSDictionary+Rubyfy.m */,
 			);
 			name = src;
 			path = ../../src;
@@ -320,6 +330,7 @@
 				892C1F38165D70C40077F2CB /* AppDelegate.m in Sources */,
 				892C1F79165D723D0077F2CB /* NSArray+Accessors.m in Sources */,
 				892C1F7A165D723D0077F2CB /* NSNumber+Rubyfy.m in Sources */,
+				892C200A166060D80077F2CB /* NSDictionary+Rubyfy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,6 +340,7 @@
 			files = (
 				892C1F69165D715B0077F2CB /* NSArrayCategoriesTests.m in Sources */,
 				892C1F83165D732B0077F2CB /* NSNumberTests.m in Sources */,
+				892C200E1660612F0077F2CB /* NSDictionaryTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
