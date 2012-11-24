@@ -60,8 +60,10 @@ describe(@"NSArray categories", ^{
         });
         
         it(@"creates subset of array using block", ^{
-            [[[sampleArray takeWith:^BOOL(id object) {
+            [[[sampleArray takeWhile:^BOOL(id object) {
+                
                 return ![object isEqualToString:@"third"];
+                
             }] should] equal:@[ @"first", @"second" ]];
         });
         

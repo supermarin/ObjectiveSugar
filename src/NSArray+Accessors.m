@@ -47,7 +47,7 @@
     return array;
 }
 
-- (NSArray *)takeWith:(BOOL (^)(id object))block
+- (NSArray *)takeWhile:(BOOL (^)(id object))block
 {
     NSMutableArray *array = [NSMutableArray array];
     
