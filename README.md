@@ -63,37 +63,42 @@ NSArray *cars = [@"Testarossa", @"F50", @"F458 Italia"];
 
 id object = cars.first; // Testarossa
 id object = cars.last;  // 458 Italia
+```
 
+#### NSArray only
+``` objc
 NSArray *fruits = @[ @"banana", @"mango", @"apple", @"pear" ];
 
 NSLog(@"Is apple a fruit? %@", [fruits includes:@"apple"] ? @"Yes" : @"No"];
 // Is apple a fruit? Yes
 
-NSArray *someFruits = [fruits take:3];
-// someFruits = banana, mango, apple 
+[fruits take:3]; 
+// banana, mango, apple
 
-NSArray *tropicalFruits = [someFruits takeWhile:^BOOL(id fruit) {
+[someFruits takeWhile:^BOOL(id fruit) {
 	return ![fruit isEqualToString:@"apple"];
 }];
-// tropicalFruits = @[ @"banana", @"mango" ];
+// banana, mango
+
 
 NSArray *landLockedCountries = @[ @"Bolivia", @"Paraguay", @"Austria", @"Switzerland", @"Hungary" ];
 NSArray *europeanCountries = @[ @"France", @"Germany", @"Austria", @"Spain", @"Hungary", @"Poland", @"Switzerland" ];
 
-NSArray *landlockedEuropeanCountries = [landlockedCountries intersectionWithArray:europeanCountries];
-// landlockedEuropeanCountries = @[ @"Austria", @"Switzerland", @"Hungary" ];
 
-NSArray *landlockedOrEuropean = [landlockedCountries unionWithArray:europeanCountries];
-// landlockedOrEuropean = @[ @"Bolivia", @"Paraguay", @"Austria", @"Switzerland", @"Hungary", @"France", @"Germany", @"Spain", @"Poland" ];
+[landlockedCountries intersectionWithArray:europeanCountries];
+// landlockedEuropeanCountries = Austria, Switzerland, Hungary
 
-NSArray *nonEuropeanLandlockedCountries = [landlockedCountries relativeComplement:europeanCountries];
-// nonEuropeanLandlockedCountries = @[ @"Bolivia", @"Paraguay" ];
+[landlockedCountries unionWithArray:europeanCountries];
+// landlockedOrEuropean = Bolivia, Paraguay, Austria, Switzerland, Hungary, France, Germany, Spain, Poland
 
-NSArray *notLandlockedEuropeanCountries = [europeanCountries relativeComplement:landlockedCountries];
-// notLandlockedEuropeanCountries = @[ @"France", @"Germany", @"Spain", @"Poland" ];
+[landlockedCountries relativeComplement:europeanCountries];
+// nonEuropeanLandlockedCountries = Bolivia, Paraguay
 
-NSArray *uniqueCountries = [landlockedCountries symmetricDifference:europeanCountries];
-// uniqueCountries = @[ @"Bolivia", @"Paraguay", @"Austria", @"Switzerland", @"Hungary", @"France", @"Germany", @"Spain", @"Poland" ];
+[europeanCountries relativeComplement:landlockedCountries];
+// notLandlockedEuropeanCountries = France, Germany, Spain, Poland
+
+[landlockedCountries symmetricDifference:europeanCountries];
+// uniqueCountries = Bolivia, Paraguay, Austria, Switzerland, Hungary, France, Germany, Spain, Poland
 
 ```
 
@@ -102,13 +107,13 @@ NSArray *uniqueCountries = [landlockedCountries symmetricDifference:europeanCoun
 ``` objc
 NSMutableArray *people = @[ @"Alice", @"Benjamin", @"Christopher" ];
 
-[people push:@"Daniel"]; // @[ @"Alice", @"Benjamin", @"Christopher", @"Daniel" ];
+[people push:@"Daniel"]; // Alice, Benjamin, Christopher, Daniel
 
-NSString *person = [people pop]; // @"Daniel"
-// people = @[ @"Alice", @"Benjamin", @"Christopher" ];
+[people pop]; // Daniel
+// people = Alice, Benjamin, Christopher
 
-NSArray *somePeople = [people pop:2]; // @[ @"Benjamin", @"Christopher" ];
-// people = @[ @"Alice" ];
+[people pop:2]; // Benjamin, Christopher
+// people = Alice
 
 ```
 
