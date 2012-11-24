@@ -85,7 +85,7 @@ NSDictionary *dict = @{ @"one" : @1, @"two" : @2, @"three" : @3 };
 // Key: three
 
 [dict eachValue:^(id value) {
-    NSLog(@"Value:: %@", value);
+    NSLog(@"Value: %@", value);
 }];
 // Value: 1
 // Value: 2
