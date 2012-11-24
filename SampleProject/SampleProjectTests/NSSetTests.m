@@ -13,7 +13,7 @@
 @implementation NSSetTests
 @end
 
-SPEC_BEGIN(Rubyfy)
+SPEC_BEGIN(SetAdditions)
 
 describe(@"Iterators", ^{
    

@@ -16,30 +16,17 @@
 - (void)each:(void (^)(id object))block;
 - (void)eachWithIndex:(void (^)(id object, int index))block;
 - (BOOL)includes:(id)object;
+
 - (NSArray *)take:(NSUInteger)numberOfElements;
 - (NSArray *)takeWhile:(BOOL (^)(id object))block;
 
-// --------------------------------------------------------------------------------
-// Set operations
-
 // Alias for Ruby's & operator
 - (NSArray *)intersectionWithArray:(NSArray *)array;
-
 // Alias for Ruby's | operator
 - (NSArray *)unionWithArray:(NSArray *)array;
-
 // Alias for Ruby's - operator
 - (NSArray *)relativeComplement:(NSArray *)array;
-
 // Alias for Ruby's ^ operator. Equivalent of a - b | b - a
 - (NSArray *)symmetricDifference:(NSArray *)array;
-
-@end
-
-@interface NSMutableArray (Rubyfy)
-
-- (void)push:(id)object;
-- (id)pop;
-- (NSArray *)pop:(NSUInteger)numberOfElements;
 
 @end

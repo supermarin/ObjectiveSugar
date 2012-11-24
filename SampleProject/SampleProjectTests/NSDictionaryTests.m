@@ -13,7 +13,7 @@
 @implementation NSDictionaryTests
 @end
 
-SPEC_BEGIN(Rubify)
+SPEC_BEGIN(DictionaryAdditions)
 
 describe(@"Iterators", ^{
     
