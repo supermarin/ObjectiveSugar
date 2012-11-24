@@ -63,6 +63,53 @@ NSArray *cars = [@"Testarossa", @"F50", @"F458 Italia"];
 
 id object = cars.first; // Testarossa
 id object = cars.last;  // 458 Italia
+
+NSArray *fruits = @[ @"banana", @"mango", @"apple", @"pear" ];
+
+NSLog(@"Is apple in fruits? %@", [fruits includes:@"apple"] ? @"Yes" : @"No"];
+// Is apple in fruits? Yes
+
+NSArray *someFruits = [fruits take:3];
+// someFruits = @[ @"banana", @"mango", @"apple" ];
+
+NSArray *tropicalFruits = [someFruits takeWith:^BOOL(id fruit) {
+	return ![fruit isEqualToString:@"apple"];
+}];
+// tropicalFruits = @[ @"banana", @"mango" ];
+
+NSArray *landLockedCountries = @[ @"Bolivia", @"Paraguay", @"Austria", @"Switzerland", @"Hungary" ];
+NSArray *europeanCountries = @[ @"France", @"Germany", @"Austria", @"Spain", @"Hungary", @"Poland", @"Switzerland" ];
+
+NSArray *landlockedEuropeanCountries = [landlockedCountries intersectionWithArray:europeanCountries];
+// landlockedEuropeanCountries = @[ @"Austria", @"Switzerland", @"Hungary" ];
+
+NSArray *landlockedOrEuropean = [landlockedCountries unionWithArray:europeanCountries];
+// landlockedOrEuropean = @[ @"Bolivia", @"Paraguay", @"Austria", @"Switzerland", @"Hungary", @"France", @"Germany", @"Spain", @"Poland" ];
+
+NSArray *nonEuropeanLandlockedCountries = [landlockedCountries relativeComplement:europeanCountries];
+// nonEuropeanLandlockedCountries = @[ @"Bolivia", @"Paraguay" ];
+
+NSArray *notLandlockedEuropeanCountries = [europeanCountries relativeComplement:landlockedCountries];
+// notLandlockedEuropeanCountries = @[ @"France", @"Germany", @"Spain", @"Poland" ];
+
+NSArray *uniqueCountries = [landlockedCountries symmetricDifference:europeanCountries];
+// uniqueCountries = @[ @"Bolivia", @"Paraguay", @"Austria", @"Switzerland", @"Hungary", @"France", @"Germany", @"Spain", @"Poland" ];
+
+```
+
+#### NSMutableArray additions
+
+``` objc
+NSMutableArray *people = @[ @"Alice", @"Benjamin", @"Christopher" ];
+
+[people push:@"Daniel"]; // @[ @"Alice", @"Benjamin", @"Christopher", @"Daniel" ];
+
+NSString *person = [people pop]; // @"Daniel"
+// people = @[ @"Alice", @"Benjamin", @"Christopher" ];
+
+NSArray *somePeople = [people pop:2]; // @[ @"Benjamin", @"Christopher" ];
+// people = @[ @"Alice" ];
+
 ```
 
 #### NSDictionary additions
