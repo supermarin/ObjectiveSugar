@@ -65,6 +65,58 @@ id object = cars.first; // Testarossa
 id object = cars.last;  // 458 Italia
 ```
 
+#### NSArray only
+``` objc
+NSArray *fruits = @[ @"banana", @"mango", @"apple", @"pear" ];
+
+NSLog(@"Is apple a fruit? %@", [fruits includes:@"apple"] ? @"Yes" : @"No"];
+// Is apple a fruit? Yes
+
+[fruits take:3]; 
+// banana, mango, apple
+
+[someFruits takeWhile:^BOOL(id fruit) {
+	return ![fruit isEqualToString:@"apple"];
+}];
+// banana, mango
+
+
+NSArray *landLockedCountries = @[ @"Bolivia", @"Paraguay", @"Austria", @"Switzerland", @"Hungary" ];
+NSArray *europeanCountries = @[ @"France", @"Germany", @"Austria", @"Spain", @"Hungary", @"Poland", @"Switzerland" ];
+
+
+[landlockedCountries intersectionWithArray:europeanCountries];
+// landlockedEuropeanCountries = Austria, Switzerland, Hungary
+
+[landlockedCountries unionWithArray:europeanCountries];
+// landlockedOrEuropean = Bolivia, Paraguay, Austria, Switzerland, Hungary, France, Germany, Spain, Poland
+
+[landlockedCountries relativeComplement:europeanCountries];
+// nonEuropeanLandlockedCountries = Bolivia, Paraguay
+
+[europeanCountries relativeComplement:landlockedCountries];
+// notLandlockedEuropeanCountries = France, Germany, Spain, Poland
+
+[landlockedCountries symmetricDifference:europeanCountries];
+// uniqueCountries = Bolivia, Paraguay, Austria, Switzerland, Hungary, France, Germany, Spain, Poland
+
+```
+
+#### NSMutableArray additions
+
+``` objc
+NSMutableArray *people = @[ @"Alice", @"Benjamin", @"Christopher" ];
+
+[people push:@"Daniel"]; // Alice, Benjamin, Christopher, Daniel
+
+[people pop]; // Daniel
+// people = Alice, Benjamin, Christopher
+
+[people pop:2]; // Benjamin, Christopher
+// people = Alice
+
+```
+
 #### NSDictionary additions
 
 ``` objc
