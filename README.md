@@ -1,6 +1,12 @@
-### Installation
+Objective Sugar is a Ruby-style set of additions / categories for Objective C.
+You can get the idea in [this post](http://blog.mneorr.com/2012/11/21/adding-some-ruby-sugar-to-objectivec/).
 
-__Cocoapods__: `pod ObjectiveSugar` <br/>
+It's tested with [Kiwi](https://github.com/allending/Kiwi), and if you plan on contributing, please write tests and documentation.
+<br/>
+
+## Installation
+
+__Cocoapods__: `pod 'ObjectiveSugar'` <br/>
 __Manual__: Copy the __src__ folder in your project<br/>
 
 `#import "ObjectiveSugar.h"`
