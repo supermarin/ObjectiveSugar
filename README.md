@@ -1,12 +1,11 @@
 Objective Sugar is a Ruby-style set of additions / categories for Objective C.
 You can get the idea in [this post](http://blog.mneorr.com/2012/11/21/adding-some-ruby-sugar-to-objectivec/).
 
-It's tested with [Kiwi](https://github.com/allending/Kiwi), and if you plan on contributing, please write tests and documentation.
 <br/>
 
 ## Installation
 
-__Cocoapods__: `pod 'ObjectiveSugar'` <br/>
+__Cocoapods__: `pod 'ObjectiveSugar'` (don't forget to `pod install`)<br/>
 __Manual__: Copy the __src__ folder in your project<br/>
 
 `#import "ObjectiveSugar.h"`
@@ -149,3 +148,11 @@ NSDictionary *dict = @{ @"one" : @1, @"two" : @2, @"three" : @3 };
 // Value: 2
 // Value: 3
 ```
+
+### Contributing
+
+ObjectiveSugar is tested with [Kiwi](https://github.com/allending/Kiwi), and tests are located in SampleProject.<br/>
+If you plan on contributing to the project, please:
+
+  * Write tests
+  * Write documentation
