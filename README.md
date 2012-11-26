@@ -1,6 +1,6 @@
 ### Installation
 
-__Cocoapods__: `pod ObjectiveSugar` <br/>
+__Cocoapods__: `pod 'ObjectiveSugar'` <br/>
 __Manual__: Copy the __src__ folder in your project<br/>
 
 `#import "ObjectiveSugar.h"`
