@@ -69,6 +69,14 @@ NSArray *cars = [@"Testarossa", @"F50", @"F458 Italia"];
 
 id object = cars.first; // Testarossa
 id object = cars.last;  // 458 Italia
+
+[cars map:^id(id car){
+	return @([[car substringToIndex:1] isEqualToString:@"F"]);
+}]; 
+// NO (Testarossa)
+// YES (F50)
+// YES (F458 Italia)
+
 ```
 
 #### NSArray only
@@ -120,6 +128,9 @@ NSMutableArray *people = @[ @"Alice", @"Benjamin", @"Christopher" ];
 
 [people pop:2]; // Benjamin, Christopher
 // people = Alice
+
+[people concat:@[ @"Evan", @"Frank", @"Gavin" ]];
+// people = Alice, Evan, Frank, Gavin
 
 ```
 

@@ -53,6 +53,12 @@ describe(@"NSArray categories", ^{
         [[@([sampleArray includes:@"second"]) should] equal:@(YES)];
     });
     
+    it(@"returns an array of objects returned by the block", ^{
+        [[[sampleArray map:^id(id object) {
+            return [NSNumber numberWithBool:[object isEqualToString:@"second"]];
+        }] should] equal:@[ @(NO), @(YES), @(NO) ]];
+    });
+    
     context(@"array subsets", ^{
     
         it(@"creates subset of array", ^{
