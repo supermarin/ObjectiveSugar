@@ -13,5 +13,6 @@
 - (void)push:(id)object;
 - (id)pop;
 - (NSArray *)pop:(NSUInteger)numberOfElements;
+- (void)concat:(NSArray *)array;
 
 @end

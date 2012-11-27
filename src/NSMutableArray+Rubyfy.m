@@ -30,4 +30,8 @@
     return array;
 }
 
+- (void)concat:(NSArray *)array {
+    [self addObjectsFromArray:array];
+}
+
 @end

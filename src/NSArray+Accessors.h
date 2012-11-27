@@ -20,6 +20,8 @@
 - (NSArray *)take:(NSUInteger)numberOfElements;
 - (NSArray *)takeWhile:(BOOL (^)(id object))block;
 
+- (NSArray *)map:(id (^)(id object))block;
+
 // Alias for Ruby's & operator
 - (NSArray *)intersectionWithArray:(NSArray *)array;
 // Alias for Ruby's | operator
