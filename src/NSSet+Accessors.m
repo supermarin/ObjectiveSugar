@@ -36,4 +36,15 @@
     }];
 }
 
+- (NSArray *)map:(id (^)(id object))block {
+    NSMutableArray *array = [NSMutableArray arrayWithCapacity:self.count];
+    
+    for (id object in self) {
+        id newObject = block(object);
+        [array addObject:newObject];
+    }
+    
+    return array;
+}
+
 @end

@@ -68,6 +68,14 @@ NSArray *cars = [@"Testarossa", @"F50", @"F458 Italia"];
 
 id object = cars.first; // Testarossa
 id object = cars.last;  // 458 Italia
+
+[cars map:^id(id car){
+	return @([[car substringToIndex:1] isEqualToString:@"F"]);
+}]; 
+// NO (Testarossa)
+// YES (F50)
+// YES (F458 Italia)
+
 ```
 
 #### NSArray only
@@ -105,6 +113,29 @@ NSArray *europeanCountries = @[ @"France", @"Germany", @"Austria", @"Spain", @"H
 [landlockedCountries symmetricDifference:europeanCountries];
 // uniqueCountries = Bolivia, Paraguay, Austria, Switzerland, Hungary, France, Germany, Spain, Poland
 
+
+NSArray *oneToTen = @[ @1, @2, @3, @4, @5, @6, @7, @8, @9, @10 ];
+[oneToTen select:^BOOL(id object) {
+	return ([object intValue] % 3 == 0);
+}];
+// 3, 6, 9
+
+[oneToTen reject:^BOOL(id object) {
+	return ([object intValue] % 3 == 0);
+}];
+// 1, 2, 4, 5, 7, 8, 10
+
+NSArray *mixedArray = @[ @[ @1, @2, @3 ], @[ @4, @5, @6, @[ @7, @8 ] ], @9, @10 ];
+[mixedArray flatten];
+// 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+
+NSArray *abc = @[ @"a", @"b", @"c" ];
+[abc join];
+// abc
+
+[abc join:@"-"];
+// a-b-c
+
 ```
 
 #### NSMutableArray additions
@@ -119,6 +150,9 @@ NSMutableArray *people = @[ @"Alice", @"Benjamin", @"Christopher" ];
 
 [people pop:2]; // Benjamin, Christopher
 // people = Alice
+
+[people concat:@[ @"Evan", @"Frank", @"Gavin" ]];
+// people = Alice, Evan, Frank, Gavin
 
 ```
 

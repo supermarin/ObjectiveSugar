@@ -35,6 +35,11 @@ describe(@"NSMutableArray categories", ^{
         [[mutableArray should] equal:@[ @1, @2, @3 ]];
     });
     
+    it(@"aliases addObjectsFromArray:", ^{
+        [mutableArray concat:@[ @7, @8, @9 ]];
+        [[mutableArray should] equal:@[ @1, @2, @3, @7, @8, @9 ]];
+    });
+    
 });
 
 SPEC_END

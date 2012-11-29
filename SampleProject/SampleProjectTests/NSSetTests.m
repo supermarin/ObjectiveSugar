@@ -19,7 +19,6 @@ describe(@"Iterators", ^{
    
     NSSet *sampleSet = [NSSet setWithObjects:@"first", @"second", @"third", nil];
     
-    
     context(@"Iterating using block", ^{
         
         it(@"iterates using -each:^", ^{
@@ -60,6 +59,23 @@ describe(@"Iterators", ^{
 
         it(@"-last returns the last object", ^{
             [[sampleSet.last should] equal:sampleSet.allObjects.lastObject];
+        });
+        
+    });
+    
+    context(@"map", ^{
+        
+        NSSet *sampleSet = [NSSet setWithObjects:@"first", @"second", @"third", nil];
+        NSSet *cars = [NSSet setWithObjects:@"Testarossa", @"F50", @"F458 Italia", nil];
+        
+        it(@"returns an array of objects returned by the block", ^{
+            [[[sampleSet map:^id(id object) {
+                return [NSNumber numberWithBool:[object isEqualToString:@"third"]];
+            }] should] equal:@[ @(NO), @(YES), @(NO) ]]; // Order of NSSet is not guaranteed
+            
+            [[[cars map:^id(id car){
+                return @([[car substringToIndex:1] isEqualToString:@"F"]);
+            }] should] equal:@[ @(YES), @(YES), @(NO) ]]; // Order of NSSet is not guaranteed
         });
         
     });

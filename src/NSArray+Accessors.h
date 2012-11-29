@@ -20,6 +20,13 @@
 - (NSArray *)take:(NSUInteger)numberOfElements;
 - (NSArray *)takeWhile:(BOOL (^)(id object))block;
 
+- (NSArray *)map:(id (^)(id object))block;
+- (NSArray *)select:(BOOL (^)(id object))block;
+- (NSArray *)reject:(BOOL (^)(id object))block;
+- (NSArray *)flatten;
+- (NSString *)join;
+- (NSString *)join:(NSString *)separator;
+
 // Alias for Ruby's & operator
 - (NSArray *)intersectionWithArray:(NSArray *)array;
 // Alias for Ruby's | operator
