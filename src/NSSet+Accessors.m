@@ -11,7 +11,11 @@
 @implementation NSSet (Accessors)
 
 - (id)first {
-    return self.allObjects[0];
+    NSArray *allObjects = self.allObjects;
+    if (allObjects.count > 0) {
+        return allObjects[0];
+    }
+    return nil;
 }
 
 - (id)last {
