@@ -15,6 +15,7 @@ SPEC_BEGIN(ArrayAdditions)
 describe(@"NSArray categories", ^{
     
     NSArray *sampleArray = [NSArray arrayWithObjects:@"first", @"second", @"third", nil];
+    NSArray *oneToTen = @[ @1, @2, @3, @4, @5, @6, @7, @8, @9, @10 ];
     
     it(@"aliases -first to -objectAtIndex:0", ^{
         [[sampleArray.first should] equal:[sampleArray objectAtIndex:0]];
@@ -59,6 +60,23 @@ describe(@"NSArray categories", ^{
         }] should] equal:@[ @(NO), @(YES), @(NO) ]];
     });
     
+    it(@"returns an array containing all the elements of NSArray for which block is not false", ^{
+        [[[oneToTen select:^BOOL(id object) {
+            return [object intValue] % 3 == 0;
+        }] should] equal:@[ @3, @6, @9 ]];
+    });
+    
+    it(@"returns an array containing all the elements of NSArray for which block is false", ^{
+        [[[oneToTen reject:^BOOL(id object) {
+            return [object intValue] % 3 == 0;
+        }] should] equal:@[ @1, @2, @4, @5, @7, @8, @10 ]];
+    });
+    
+    it(@"returns a one-dimensional array that is a recursive flattening of the array", ^{
+        NSArray *multiDimensionalArray = @[ @[ @1, @2, @3 ], @[ @4, @5, @6, @[ @7, @8 ] ], @9, @10 ];
+        [[[multiDimensionalArray flatten] should] equal:oneToTen];
+    });
+    
     context(@"array subsets", ^{
     
         it(@"creates subset of array", ^{
@@ -71,6 +89,18 @@ describe(@"NSArray categories", ^{
                 return ![object isEqualToString:@"third"];
                 
             }] should] equal:@[ @"first", @"second" ]];
+        });
+        
+    });
+    
+    context(@"join elements", ^{
+        
+        it(@"join the array with elements ", ^{
+            [[[oneToTen join] should] equal:@"12345678910"];
+        });
+        
+        it(@"join the array with elements separated by a dash", ^{
+            [[[sampleArray join:@"-"] should] equal:@"first-second-third"];
         });
         
     });

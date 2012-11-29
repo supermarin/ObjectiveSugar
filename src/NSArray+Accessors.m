@@ -7,6 +7,7 @@
 //
 
 #import "NSArray+Accessors.h"
+#import "NSMutableArray+Rubyfy.h"
 
 @implementation NSArray (Accessors)
 @dynamic first, last;
@@ -67,6 +68,66 @@
     }
     
     return array;
+}
+
+- (NSArray *)select:(BOOL (^)(id object))block {
+    NSMutableArray *array = [NSMutableArray arrayWithCapacity:self.count];
+    
+    for (id object in self) {
+        if (block(object)) {
+            [array addObject:object];
+        }
+    }
+    
+    return array;
+}
+
+- (NSArray *)reject:(BOOL (^)(id object))block {
+    NSMutableArray *array = [NSMutableArray arrayWithCapacity:self.count];
+    
+    for (id object in self) {
+        if (block(object) == NO) {
+            [array addObject:object];
+        }
+    }
+    
+    return array;
+}
+
+- (NSArray *)flatten {
+    NSMutableArray *array = [NSMutableArray array];
+    
+    for (id object in self) {
+        if ([object isKindOfClass:NSArray.class] || [object isKindOfClass:NSMutableArray.class]) {
+            [array concat:[object flatten]];
+        } else {
+            [array addObject:object];
+        }
+    }
+    
+    return array;
+}
+
+- (NSString *)join {
+    NSMutableString *str = [NSMutableString string];
+    
+    for (id object in self) {
+        [str appendFormat:@"%@", object];
+    }
+    
+    return str;
+}
+
+- (NSString *)join:(NSString *)separator {
+    NSMutableString *str = [NSMutableString string];
+    
+    for (id object in self) {
+        [str appendFormat:@"%@%@", object, separator];
+    }
+    
+    [str replaceCharactersInRange:NSMakeRange(str.length - separator.length, separator.length) withString:@""];
+    
+    return str;
 }
 
 #pragma mark - Set operations
