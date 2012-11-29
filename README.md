@@ -114,19 +114,20 @@ NSArray *europeanCountries = @[ @"France", @"Germany", @"Austria", @"Spain", @"H
 // uniqueCountries = Bolivia, Paraguay, Austria, Switzerland, Hungary, France, Germany, Spain, Poland
 
 
-NSArray *oneToTen = @[ @1, @2, @3, @4, @5, @6, @7, @8, @9, @10 ];
-[oneToTen select:^BOOL(id object) {
-	return ([object intValue] % 3 == 0);
-}];
-// 3, 6, 9
+NSArray *mixedData = @[ @1, @"Objective Sugar!", @"Github", @4, @"5"];
 
-[oneToTen reject:^BOOL(id object) {
-	return ([object intValue] % 3 == 0);
+[mixedData select:^BOOL(id object) {
+	return ([object class] == [NSString class]);
 }];
-// 1, 2, 4, 5, 7, 8, 10
+// Objective Sugar, Github, 5
 
-NSArray *mixedArray = @[ @[ @1, @2, @3 ], @[ @4, @5, @6, @[ @7, @8 ] ], @9, @10 ];
-[mixedArray flatten];
+[mixedData reject:^BOOL(id object) {
+	return ([object class] == [NSString class]);
+}];
+// 1, 4
+
+NSArray *nestedArray = @[ @[ @1, @2, @3 ], @[ @4, @5, @6, @[ @7, @8 ] ], @9, @10 ];
+[nestedArray flatten];
 // 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
 
 NSArray *abc = @[ @"a", @"b", @"c" ];
