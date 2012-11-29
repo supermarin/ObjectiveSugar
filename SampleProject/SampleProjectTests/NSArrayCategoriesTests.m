@@ -20,6 +20,13 @@ describe(@"NSArray categories", ^{
         [[sampleArray.first should] equal:[sampleArray objectAtIndex:0]];
     });
     
+    it(@"-first does not crash if there's no objects in array", ^{
+        KWBlock *block = [[KWBlock alloc] initWithBlock:^{
+            [@[].first description];
+        }];
+        [[block shouldNot] raise];
+    });
+    
     it(@"aliases -last to -lastObject", ^{
         [[sampleArray.last should] equal:[sampleArray lastObject]];        
     });

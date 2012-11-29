@@ -49,6 +49,14 @@ describe(@"Iterators", ^{
         it(@"-first returns object at index 0", ^{
             [[sampleSet.first should] equal:sampleSet.allObjects[0]];
         });
+        
+        it(@"-first does not crash if there's no objects in set", ^{
+            KWBlock *block = [[KWBlock alloc] initWithBlock:^{
+                NSSet *empty = [NSSet set];
+                [empty.first description];
+            }];
+            [[block shouldNot] raise];
+        });
 
         it(@"-last returns the last object", ^{
             [[sampleSet.last should] equal:sampleSet.allObjects.lastObject];

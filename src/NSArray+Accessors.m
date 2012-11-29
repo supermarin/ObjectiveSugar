@@ -12,9 +12,9 @@
 @dynamic first, last;
 
 - (id)first {
-    if (self.count > 0) {
+    if (self.count > 0)
         return self[0];
-    }
+    
     return nil;
 }
 
