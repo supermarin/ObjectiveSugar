@@ -112,25 +112,11 @@
 }
 
 - (NSString *)join {
-    NSMutableString *str = [NSMutableString string];
-    
-    for (id object in self) {
-        [str appendFormat:@"%@", object];
-    }
-    
-    return str;
+    return [self componentsJoinedByString:@""];
 }
 
 - (NSString *)join:(NSString *)separator {
-    NSMutableString *str = [NSMutableString string];
-    
-    for (id object in self) {
-        [str appendFormat:@"%@%@", object, separator];
-    }
-    
-    [str replaceCharactersInRange:NSMakeRange(str.length - separator.length, separator.length) withString:@""];
-    
-    return str;
+    return [self componentsJoinedByString:separator];
 }
 
 #pragma mark - Set operations
