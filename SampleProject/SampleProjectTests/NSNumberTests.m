@@ -6,13 +6,8 @@
 //  Copyright (c) 2012 @mneorr | mneorr.com. All rights reserved.
 //
 
-#import "NSNumberTests.h"
 #import "ObjectiveSugar.h"
 #import "Kiwi.h"
-
-@implementation NSNumberTests
-@end
-
 
 SPEC_BEGIN(NumberAdditions)
 

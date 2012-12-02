@@ -6,12 +6,8 @@
 //  Copyright (c) 2012 @mneorr | mneorr.com. All rights reserved.
 //
 
-#import "NSDictionaryTests.h"
 #import "Kiwi.h"
 #import "NSDictionary+Rubyfy.h"
-
-@implementation NSDictionaryTests
-@end
 
 SPEC_BEGIN(DictionaryAdditions)
 

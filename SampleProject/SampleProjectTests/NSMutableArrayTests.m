@@ -6,13 +6,8 @@
 //  Copyright (c) 2012 @mneorr | mneorr.com. All rights reserved.
 //
 
-#import "NSMutableArrayTests.h"
 #import "NSMutableArray+Rubyfy.h"
 #import "Kiwi.h"
-
-
-@implementation NSMutableArrayTests
-@end
 
 SPEC_BEGIN(MutableArrayAdditions)
 

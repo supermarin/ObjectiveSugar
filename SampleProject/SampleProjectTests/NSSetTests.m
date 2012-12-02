@@ -6,12 +6,8 @@
 //  Copyright (c) 2012 @mneorr | mneorr.com. All rights reserved.
 //
 
-#import "NSSetTests.h"
 #import "Kiwi.h"
 #import "NSSet+Accessors.h"
-
-@implementation NSSetTests
-@end
 
 SPEC_BEGIN(SetAdditions)
 
