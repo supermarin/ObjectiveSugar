@@ -16,4 +16,30 @@
 - (void)upto:(int)number do:(void(^)(int number))block;
 - (void)downto:(int)number do:(void(^)(int number))block;
 
+// Numeric inflections
+- (NSNumber *)seconds;
+- (NSNumber *)minutes;
+- (NSNumber *)hours;
+- (NSNumber *)days;
+- (NSNumber *)weeks;
+- (NSNumber *)fortnights;
+- (NSNumber *)months;
+- (NSNumber *)years;
+
+// There are singular aliases for the above methods
+- (NSNumber *)second;
+- (NSNumber *)minute;
+- (NSNumber *)hour;
+- (NSNumber *)day;
+- (NSNumber *)week;
+- (NSNumber *)fortnight;
+- (NSNumber *)month;
+- (NSNumber *)year;
+
+- (NSDate *)ago;
+- (NSDate *)ago:(NSDate *)time;
+- (NSDate *)since:(NSDate *)time;
+- (NSDate *)until:(NSDate *)time;
+- (NSDate *)from_now;
+
 @end
