@@ -104,7 +104,7 @@ describe(@"Iterators", ^{
         });
     
         it(@"tests from_now inflection", ^{
-            NSDate *testValue = @(30).minutes.from_now;
+            NSDate *testValue = @(30).minutes.fromNow;
             NSDate *compareValue = [NSDate dateWithTimeIntervalSinceNow:(30 * 60)];
             
             [[@([testValue timeIntervalSince1970]) should] equal:@([compareValue timeIntervalSince1970]).doubleValue

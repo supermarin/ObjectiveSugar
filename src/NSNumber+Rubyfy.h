@@ -40,6 +40,6 @@
 - (NSDate *)ago:(NSDate *)time;
 - (NSDate *)since:(NSDate *)time;
 - (NSDate *)until:(NSDate *)time;
-- (NSDate *)from_now;
+- (NSDate *)fromNow;
 
 @end

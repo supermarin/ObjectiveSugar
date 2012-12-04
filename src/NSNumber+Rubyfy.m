@@ -110,7 +110,7 @@
     return [self ago:time];
 }
 
-- (NSDate *)from_now {
+- (NSDate *)fromNow {
     return [self since:[NSDate date]];
 }
 
