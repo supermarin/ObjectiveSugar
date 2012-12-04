@@ -49,7 +49,7 @@ NSDate *newYearsDay = [NSDate newYearsDate]; // let's pretend it's a new year
 NSDate *firstOfDecember = [@(31).days since:newYearsDay];
 // 2012-12-01 00:00:00 +0000
 
-NSDate *future = @(24).days.from_now; // Today is December 1st
+NSDate *future = @(24).days.fromNow; // Today is December 1st
 // 2012-12-25 20:49:05 +0000
 
 NSDate *past = @(1).month.ago; // Today is December 1st
