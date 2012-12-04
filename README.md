@@ -207,3 +207,6 @@ If you plan on contributing to the project, please:
 
   * Write tests
   * Write documentation
+
+<br/>
+Thanks: Neil Cowburn (@neilco)
