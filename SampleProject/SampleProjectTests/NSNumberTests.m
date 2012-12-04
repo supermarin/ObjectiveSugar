@@ -83,7 +83,8 @@ describe(@"Iterators", ^{
             NSDate *testValue = @(30).seconds.ago;
             NSDate *compareValue = [NSDate dateWithTimeIntervalSinceNow:-30];
             
-            [[@([@([testValue timeIntervalSince1970]) intValue]) should] equal:@([@([compareValue timeIntervalSince1970]) intValue])];
+            [[@([testValue timeIntervalSince1970]) should] equal:@([compareValue timeIntervalSince1970]).doubleValue
+                                                       withDelta:0.0001];
         });
         
         it(@"tests since inflection", ^{
@@ -91,7 +92,7 @@ describe(@"Iterators", ^{
             NSDate *testValue = [@(10).minutes since:now];
             NSDate *compareValue = [NSDate dateWithTimeInterval:600 sinceDate:now];
             
-            [[@([@([testValue timeIntervalSince1970]) intValue]) should] equal:@([@([compareValue timeIntervalSince1970]) intValue])];
+            [[@([testValue timeIntervalSince1970]) should] equal:@([compareValue timeIntervalSince1970])];
         });
         
         it(@"tests until inflection", ^{
@@ -99,14 +100,15 @@ describe(@"Iterators", ^{
             NSDate *testValue = [@(10).minutes until:now];
             NSDate *compareValue = [NSDate dateWithTimeInterval:-600 sinceDate:now];
             
-            [[@([@([testValue timeIntervalSince1970]) intValue]) should] equal:@([@([compareValue timeIntervalSince1970]) intValue])];
+            [[@([testValue timeIntervalSince1970]) should] equal:@([compareValue timeIntervalSince1970])];
         });
     
         it(@"tests from_now inflection", ^{
             NSDate *testValue = @(30).minutes.from_now;
             NSDate *compareValue = [NSDate dateWithTimeIntervalSinceNow:(30 * 60)];
             
-            [[@([@([testValue timeIntervalSince1970]) intValue]) should] equal:@([@([compareValue timeIntervalSince1970]) intValue])];
+            [[@([testValue timeIntervalSince1970]) should] equal:@([compareValue timeIntervalSince1970]).doubleValue
+                                                       withDelta:0.0001];
         });
 
 });
