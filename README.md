@@ -45,11 +45,9 @@ __Manual__: Copy the __src__ folder in your project<br/>
 // Current number.. 5
 // Current number.. 4
 
-NSDateFormatter *formatter = [NSDateFormatter new];
-[formatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZ"];            
-NSDate *newYearsDay = [formatter dateFromString:@"2013-01-01T00:00:00Z"];
-NSDate *result = [@(31).days since:newYearsDay];
-// 2013-02-01 00:00:00 +0000
+NSDate *newYearsDay = [NSDate newYearsDate]; // let's pretend it's a new year
+NSDate *firstOfDecember = [@(31).days since:newYearsDay];
+// 2012-12-01 00:00:00 +0000
 
 NSDate *future = @(24).days.from_now; // Today is December 1st
 // 2012-12-25 20:49:05 +0000
