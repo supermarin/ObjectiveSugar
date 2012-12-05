@@ -198,6 +198,14 @@ NSDictionary *dict = @{ @"one" : @1, @"two" : @2, @"three" : @3 };
 // Value: 3
 ```
 
+#### NSString additions
+
+``` objc
+NSNumber *argument = @1234;
+NSString *sentence = _(@"This is a text with argument %@", argument);
+// This is a text with argument 1234
+```
+
 ### Contributing
 
 ObjectiveSugar is tested with [Kiwi](https://github.com/allending/Kiwi), and tests are located in SampleProject.<br/>

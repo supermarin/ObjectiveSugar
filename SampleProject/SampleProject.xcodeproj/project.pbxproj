@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		102DEA622A794158AF3B8CC9 /* libPods-test.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29DCB4BE663F47A1BE6ACED7 /* libPods-test.a */; };
+		2852A794167003DF006BCA48 /* NSString+Sweetner.m in Sources */ = {isa = PBXBuildFile; fileRef = 2852A793167003DF006BCA48 /* NSString+Sweetner.m */; };
+		2852A7981670053B006BCA48 /* NSStringTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2852A7971670053B006BCA48 /* NSStringTests.m */; };
 		892C1F28165D70C40077F2CB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 892C1F27165D70C40077F2CB /* UIKit.framework */; };
 		892C1F2A165D70C40077F2CB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 892C1F29165D70C40077F2CB /* Foundation.framework */; };
 		892C1F2C165D70C40077F2CB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 892C1F2B165D70C40077F2CB /* CoreGraphics.framework */; };
@@ -45,6 +47,9 @@
 
 /* Begin PBXFileReference section */
 		18BF5068E07141CF91A47F1A /* Pods-test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test.xcconfig"; path = "Pods/Pods-test.xcconfig"; sourceTree = SOURCE_ROOT; };
+		2852A792167003DF006BCA48 /* NSString+Sweetner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Sweetner.h"; sourceTree = "<group>"; };
+		2852A793167003DF006BCA48 /* NSString+Sweetner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Sweetner.m"; sourceTree = "<group>"; };
+		2852A7971670053B006BCA48 /* NSStringTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringTests.m; sourceTree = "<group>"; };
 		29DCB4BE663F47A1BE6ACED7 /* libPods-test.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-test.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		892C1F23165D70C40077F2CB /* SampleProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		892C1F27165D70C40077F2CB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -172,6 +177,7 @@
 				892C1F82165D732B0077F2CB /* NSNumberTests.m */,
 				892C200D1660612E0077F2CB /* NSDictionaryTests.m */,
 				892C2013166069AD0077F2CB /* NSSetTests.m */,
+				2852A7971670053B006BCA48 /* NSStringTests.m */,
 			);
 			path = SampleProjectTests;
 			sourceTree = "<group>";
@@ -199,6 +205,8 @@
 				892C20101660699D0077F2CB /* NSSet+Accessors.m */,
 				892C201D166071690077F2CB /* NSMutableArray+Rubyfy.h */,
 				892C201E1660716A0077F2CB /* NSMutableArray+Rubyfy.m */,
+				2852A792167003DF006BCA48 /* NSString+Sweetner.h */,
+				2852A793167003DF006BCA48 /* NSString+Sweetner.m */,
 			);
 			name = src;
 			path = ../../src;
@@ -343,6 +351,7 @@
 				892C200A166060D80077F2CB /* NSDictionary+Rubyfy.m in Sources */,
 				892C20111660699E0077F2CB /* NSSet+Accessors.m in Sources */,
 				892C201F1660716A0077F2CB /* NSMutableArray+Rubyfy.m in Sources */,
+				2852A794167003DF006BCA48 /* NSString+Sweetner.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,6 +364,7 @@
 				892C200E1660612F0077F2CB /* NSDictionaryTests.m in Sources */,
 				892C2014166069AD0077F2CB /* NSSetTests.m in Sources */,
 				892C2023166071760077F2CB /* NSMutableArrayTests.m in Sources */,
+				2852A7981670053B006BCA48 /* NSStringTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
