@@ -201,8 +201,7 @@ NSDictionary *dict = @{ @"one" : @1, @"two" : @2, @"three" : @3 };
 #### NSString additions
 
 ``` objc
-NSNumber *argument = @1234;
-NSString *sentence = _(@"This is a text with argument %@", argument);
+NSString *sentence = NSStringWithFormat(@"This is a text with argument %@", @1234);
 // This is a text with argument 1234
 ```
 
