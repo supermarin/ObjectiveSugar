@@ -8,7 +8,7 @@
 
 #import "NSString+Sweetner.h"
 
-NSString *_(NSString *formatString, ...) {
+NSString *NSStringWithFormat(NSString *formatString, ...) {
     va_list args;
     va_start(args, formatString);
     

@@ -13,8 +13,9 @@ SPEC_BEGIN(StringAdditions)
 
 describe(@"Foundation-style functions", ^{
 
-    it(@"should produced a NSString object with the specified argument", ^{
-        [[_(@"This is %@", @1) should] equal:@"This is 1"];
+    it(@"NSStringWithFormat makes NSString -stringWithFormat", ^{
+        
+        [[NSStringWithFormat(@"This is %@", @1) should] equal:@"This is 1"];
     });
 
 });

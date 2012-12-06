@@ -8,4 +8,4 @@
 
 #import <Foundation/Foundation.h>
 
-NSString *_(NSString *format, ...) NS_FORMAT_FUNCTION(1,2);
+NSString *NSStringWithFormat(NSString *format, ...) NS_FORMAT_FUNCTION(1,2);
