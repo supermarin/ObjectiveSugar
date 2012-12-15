@@ -9,3 +9,9 @@
 #import <Foundation/Foundation.h>
 
 NSString *NSStringWithFormat(NSString *format, ...) NS_FORMAT_FUNCTION(1,2);
+
+@interface NSString(Additions)
+- (NSArray *)split;
+- (NSArray *)split:(NSString *)delimiter;
+@end
+

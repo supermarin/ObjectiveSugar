@@ -182,7 +182,7 @@ NSDictionary *dict = @{ @"one" : @1, @"two" : @2, @"three" : @3 };
 // Key: one, Value: 1
 // Key: two, Value: 2
 // Key: three, Value: 3
-
+ 
 [dict eachKey:^(id key) {
     NSLog(@"Key: %@", key);
 }];
@@ -201,8 +201,14 @@ NSDictionary *dict = @{ @"one" : @1, @"two" : @2, @"three" : @3 };
 #### NSString additions
 
 ``` objc
-NSString *sentence = NSStringWithFormat(@"This is a text with argument %@", @1234);
-// This is a text with argument 1234
+NSString *sentence = NSStringWithFormat(@"This is a text-with-argument %@", @1234);
+// This is a text-with-argument 1234
+
+[sentence split];
+// array = this, is, a, text-with-argument, 1234
+
+[sentence split:@"-"]
+// array = this is a text, with, argument 1234
 ```
 
 ### Contributing

@@ -20,4 +20,16 @@ describe(@"Foundation-style functions", ^{
 
 });
 
+describe(@"Ruby-style additions", ^{
+    NSString *sentence = @"Jane Doe's going    in a shop,and,yeah;";
+
+    it(@"-split splits by whitespace", ^{
+        [[[sentence split] should] equal:@[@"Jane", @"Doe's", @"going", @"in", @"a", @"shop,and,yeah;"]];
+    });
+    
+    it(@"-split: splits with given delimiter", ^{
+        [[[sentence split:@","] should] equal:@[@"Jane Doe's going    in a shop", @"and", @"yeah;"]];
+    });
+});
+
 SPEC_END

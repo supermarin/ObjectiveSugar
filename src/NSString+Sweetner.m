@@ -7,6 +7,7 @@
 //
 
 #import "NSString+Sweetner.h"
+#import "NSArray+Accessors.h"
 
 NSString *NSStringWithFormat(NSString *formatString, ...) {
     va_list args;
@@ -22,3 +23,21 @@ NSString *NSStringWithFormat(NSString *formatString, ...) {
     return [string autorelease];
 #endif
 }
+
+
+@implementation NSString(Additions)
+
+- (NSArray *)split {
+    return [self split:@" "];
+}
+
+- (NSArray *)split:(NSString *)delimiter {
+    NSArray *result = [self componentsSeparatedByCharactersInSet:
+                            [NSCharacterSet characterSetWithCharactersInString:delimiter]];
+
+    return [result select:^BOOL(NSString *string) {
+        return string.length > 0;
+    }];
+}
+
+@end
