@@ -3,3 +3,4 @@
 #import "NSMutableArray+Rubyfy.h"
 #import "NSDictionary+Rubyfy.h"
 #import "NSSet+Accessors.h"
+#import "NSString+Sweetner.h"
