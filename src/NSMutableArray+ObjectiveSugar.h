@@ -1,5 +1,5 @@
 //
-//  NSMutableArray+Rubyfy.h
+//  NSMutableArray+ObjectiveSugar.h
 //  SampleProject
 //
 //  Created by Marin Usalj on 11/23/12.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSMutableArray (Rubyfy)
+@interface NSMutableArray (ObjectiveSugar)
 
 - (void)push:(id)object;
 - (id)pop;

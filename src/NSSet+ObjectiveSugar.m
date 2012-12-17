@@ -1,14 +1,14 @@
 //
-//  NSSet+Accessors.m
+//  NSSet+ObjectiveSugar.m
 //  SampleProject
 //
 //  Created by Marin Usalj on 11/23/12.
 //  Copyright (c) 2012 @mneorr | mneorr.com. All rights reserved.
 //
 
-#import "NSSet+Accessors.h"
+#import "NSSet+ObjectiveSugar.h"
 
-@implementation NSSet (Accessors)
+@implementation NSSet (ObjectiveSugar)
 
 - (id)first {
     NSArray *allObjects = self.allObjects;

@@ -1,15 +1,15 @@
 //
-//  NSArray+Accessors.m
+//  NSArray+ObjectiveSugar.m
 //  WidgetPush
 //
 //  Created by Marin Usalj on 5/7/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "NSArray+Accessors.h"
-#import "NSMutableArray+Rubyfy.h"
+#import "NSArray+ObjectiveSugar.h"
+#import "NSMutableArray+ObjectiveSugar.h"
 
-@implementation NSArray (Accessors)
+@implementation NSArray (ObjectiveSugar)
 @dynamic first, last;
 
 - (id)first {

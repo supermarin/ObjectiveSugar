@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		102DEA622A794158AF3B8CC9 /* libPods-test.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29DCB4BE663F47A1BE6ACED7 /* libPods-test.a */; };
-		2852A794167003DF006BCA48 /* NSString+Sweetner.m in Sources */ = {isa = PBXBuildFile; fileRef = 2852A793167003DF006BCA48 /* NSString+Sweetner.m */; };
+		2852A794167003DF006BCA48 /* NSString+ObjectiveSugar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2852A793167003DF006BCA48 /* NSString+ObjectiveSugar.m */; };
 		2852A7981670053B006BCA48 /* NSStringTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2852A7971670053B006BCA48 /* NSStringTests.m */; };
 		892C1F28165D70C40077F2CB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 892C1F27165D70C40077F2CB /* UIKit.framework */; };
 		892C1F2A165D70C40077F2CB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 892C1F29165D70C40077F2CB /* Foundation.framework */; };
@@ -24,19 +24,19 @@
 		892C1F48165D70C40077F2CB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 892C1F29165D70C40077F2CB /* Foundation.framework */; };
 		892C1F50165D70C40077F2CB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 892C1F4E165D70C40077F2CB /* InfoPlist.strings */; };
 		892C1F69165D715B0077F2CB /* NSArrayCategoriesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 892C1F68165D715B0077F2CB /* NSArrayCategoriesTests.m */; };
-		892C1F79165D723D0077F2CB /* NSArray+Accessors.m in Sources */ = {isa = PBXBuildFile; fileRef = 892C1F76165D723D0077F2CB /* NSArray+Accessors.m */; };
-		892C1F7A165D723D0077F2CB /* NSNumber+Rubyfy.m in Sources */ = {isa = PBXBuildFile; fileRef = 892C1F78165D723D0077F2CB /* NSNumber+Rubyfy.m */; };
+		892C1F79165D723D0077F2CB /* NSArray+ObjectiveSugar.m in Sources */ = {isa = PBXBuildFile; fileRef = 892C1F76165D723D0077F2CB /* NSArray+ObjectiveSugar.m */; };
+		892C1F7A165D723D0077F2CB /* NSNumber+ObjectiveSugar.m in Sources */ = {isa = PBXBuildFile; fileRef = 892C1F78165D723D0077F2CB /* NSNumber+ObjectiveSugar.m */; };
 		892C1F83165D732B0077F2CB /* NSNumberTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 892C1F82165D732B0077F2CB /* NSNumberTests.m */; };
-		892C200A166060D80077F2CB /* NSDictionary+Rubyfy.m in Sources */ = {isa = PBXBuildFile; fileRef = 892C2009166060D80077F2CB /* NSDictionary+Rubyfy.m */; };
+		892C200A166060D80077F2CB /* NSDictionary+ObjectiveSugar.m in Sources */ = {isa = PBXBuildFile; fileRef = 892C2009166060D80077F2CB /* NSDictionary+ObjectiveSugar.m */; };
 		892C200E1660612F0077F2CB /* NSDictionaryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 892C200D1660612E0077F2CB /* NSDictionaryTests.m */; };
-		892C20111660699E0077F2CB /* NSSet+Accessors.m in Sources */ = {isa = PBXBuildFile; fileRef = 892C20101660699D0077F2CB /* NSSet+Accessors.m */; };
+		892C20111660699E0077F2CB /* NSSet+ObjectiveSugar.m in Sources */ = {isa = PBXBuildFile; fileRef = 892C20101660699D0077F2CB /* NSSet+ObjectiveSugar.m */; };
 		892C2014166069AD0077F2CB /* NSSetTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 892C2013166069AD0077F2CB /* NSSetTests.m */; };
-		892C201F1660716A0077F2CB /* NSMutableArray+Rubyfy.m in Sources */ = {isa = PBXBuildFile; fileRef = 892C201E1660716A0077F2CB /* NSMutableArray+Rubyfy.m */; };
+		892C201F1660716A0077F2CB /* NSMutableArray+ObjectiveSugar.m in Sources */ = {isa = PBXBuildFile; fileRef = 892C201E1660716A0077F2CB /* NSMutableArray+ObjectiveSugar.m */; };
 		892C2023166071760077F2CB /* NSMutableArrayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 892C2022166071760077F2CB /* NSMutableArrayTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		892C1F49165D70C40077F2CB /* PBXContainerItemProxy */ = {
+		0A0F7D93167FBA1700485284 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 892C1F1A165D70C40077F2CB /* Project object */;
 			proxyType = 1;
@@ -47,8 +47,8 @@
 
 /* Begin PBXFileReference section */
 		18BF5068E07141CF91A47F1A /* Pods-test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test.xcconfig"; path = "Pods/Pods-test.xcconfig"; sourceTree = SOURCE_ROOT; };
-		2852A792167003DF006BCA48 /* NSString+Sweetner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Sweetner.h"; sourceTree = "<group>"; };
-		2852A793167003DF006BCA48 /* NSString+Sweetner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Sweetner.m"; sourceTree = "<group>"; };
+		2852A792167003DF006BCA48 /* NSString+ObjectiveSugar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ObjectiveSugar.h"; sourceTree = "<group>"; };
+		2852A793167003DF006BCA48 /* NSString+ObjectiveSugar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ObjectiveSugar.m"; sourceTree = "<group>"; };
 		2852A7971670053B006BCA48 /* NSStringTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringTests.m; sourceTree = "<group>"; };
 		29DCB4BE663F47A1BE6ACED7 /* libPods-test.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-test.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		892C1F23165D70C40077F2CB /* SampleProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,20 +69,20 @@
 		892C1F4D165D70C40077F2CB /* SampleProjectTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SampleProjectTests-Info.plist"; sourceTree = "<group>"; };
 		892C1F4F165D70C40077F2CB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		892C1F68165D715B0077F2CB /* NSArrayCategoriesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayCategoriesTests.m; sourceTree = "<group>"; };
-		892C1F75165D723D0077F2CB /* NSArray+Accessors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Accessors.h"; sourceTree = "<group>"; };
-		892C1F76165D723D0077F2CB /* NSArray+Accessors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Accessors.m"; sourceTree = "<group>"; };
-		892C1F77165D723D0077F2CB /* NSNumber+Rubyfy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+Rubyfy.h"; sourceTree = "<group>"; };
-		892C1F78165D723D0077F2CB /* NSNumber+Rubyfy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+Rubyfy.m"; sourceTree = "<group>"; };
+		892C1F75165D723D0077F2CB /* NSArray+ObjectiveSugar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+ObjectiveSugar.h"; sourceTree = "<group>"; };
+		892C1F76165D723D0077F2CB /* NSArray+ObjectiveSugar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+ObjectiveSugar.m"; sourceTree = "<group>"; };
+		892C1F77165D723D0077F2CB /* NSNumber+ObjectiveSugar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+ObjectiveSugar.h"; sourceTree = "<group>"; };
+		892C1F78165D723D0077F2CB /* NSNumber+ObjectiveSugar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+ObjectiveSugar.m"; sourceTree = "<group>"; };
 		892C1F82165D732B0077F2CB /* NSNumberTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSNumberTests.m; sourceTree = "<group>"; };
 		892C1F8D165D78950077F2CB /* ObjectiveSugar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectiveSugar.h; sourceTree = "<group>"; };
-		892C2008166060D80077F2CB /* NSDictionary+Rubyfy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Rubyfy.h"; sourceTree = "<group>"; };
-		892C2009166060D80077F2CB /* NSDictionary+Rubyfy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Rubyfy.m"; sourceTree = "<group>"; };
+		892C2008166060D80077F2CB /* NSDictionary+ObjectiveSugar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+ObjectiveSugar.h"; sourceTree = "<group>"; };
+		892C2009166060D80077F2CB /* NSDictionary+ObjectiveSugar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+ObjectiveSugar.m"; sourceTree = "<group>"; };
 		892C200D1660612E0077F2CB /* NSDictionaryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDictionaryTests.m; sourceTree = "<group>"; };
-		892C200F1660699D0077F2CB /* NSSet+Accessors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSet+Accessors.h"; sourceTree = "<group>"; };
-		892C20101660699D0077F2CB /* NSSet+Accessors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSSet+Accessors.m"; sourceTree = "<group>"; };
+		892C200F1660699D0077F2CB /* NSSet+ObjectiveSugar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSet+ObjectiveSugar.h"; sourceTree = "<group>"; };
+		892C20101660699D0077F2CB /* NSSet+ObjectiveSugar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSSet+ObjectiveSugar.m"; sourceTree = "<group>"; };
 		892C2013166069AD0077F2CB /* NSSetTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSSetTests.m; sourceTree = "<group>"; };
-		892C201D166071690077F2CB /* NSMutableArray+Rubyfy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Rubyfy.h"; sourceTree = "<group>"; };
-		892C201E1660716A0077F2CB /* NSMutableArray+Rubyfy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Rubyfy.m"; sourceTree = "<group>"; };
+		892C201D166071690077F2CB /* NSMutableArray+ObjectiveSugar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+ObjectiveSugar.h"; sourceTree = "<group>"; };
+		892C201E1660716A0077F2CB /* NSMutableArray+ObjectiveSugar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+ObjectiveSugar.m"; sourceTree = "<group>"; };
 		892C2022166071760077F2CB /* NSMutableArrayTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSMutableArrayTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -195,18 +195,18 @@
 			isa = PBXGroup;
 			children = (
 				892C1F8D165D78950077F2CB /* ObjectiveSugar.h */,
-				892C1F75165D723D0077F2CB /* NSArray+Accessors.h */,
-				892C1F76165D723D0077F2CB /* NSArray+Accessors.m */,
-				892C1F77165D723D0077F2CB /* NSNumber+Rubyfy.h */,
-				892C1F78165D723D0077F2CB /* NSNumber+Rubyfy.m */,
-				892C2008166060D80077F2CB /* NSDictionary+Rubyfy.h */,
-				892C2009166060D80077F2CB /* NSDictionary+Rubyfy.m */,
-				892C200F1660699D0077F2CB /* NSSet+Accessors.h */,
-				892C20101660699D0077F2CB /* NSSet+Accessors.m */,
-				892C201D166071690077F2CB /* NSMutableArray+Rubyfy.h */,
-				892C201E1660716A0077F2CB /* NSMutableArray+Rubyfy.m */,
-				2852A792167003DF006BCA48 /* NSString+Sweetner.h */,
-				2852A793167003DF006BCA48 /* NSString+Sweetner.m */,
+				892C1F75165D723D0077F2CB /* NSArray+ObjectiveSugar.h */,
+				892C1F76165D723D0077F2CB /* NSArray+ObjectiveSugar.m */,
+				892C1F77165D723D0077F2CB /* NSNumber+ObjectiveSugar.h */,
+				892C1F78165D723D0077F2CB /* NSNumber+ObjectiveSugar.m */,
+				892C2008166060D80077F2CB /* NSDictionary+ObjectiveSugar.h */,
+				892C2009166060D80077F2CB /* NSDictionary+ObjectiveSugar.m */,
+				892C200F1660699D0077F2CB /* NSSet+ObjectiveSugar.h */,
+				892C20101660699D0077F2CB /* NSSet+ObjectiveSugar.m */,
+				892C201D166071690077F2CB /* NSMutableArray+ObjectiveSugar.h */,
+				892C201E1660716A0077F2CB /* NSMutableArray+ObjectiveSugar.m */,
+				2852A792167003DF006BCA48 /* NSString+ObjectiveSugar.h */,
+				2852A793167003DF006BCA48 /* NSString+ObjectiveSugar.m */,
 			);
 			name = src;
 			path = ../../src;
@@ -253,7 +253,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				892C1F4A165D70C40077F2CB /* PBXTargetDependency */,
+				0A0F7D94167FBA1700485284 /* PBXTargetDependency */,
 			);
 			name = SampleProjectTests;
 			productName = SampleProjectTests;
@@ -346,12 +346,12 @@
 			files = (
 				892C1F34165D70C40077F2CB /* main.m in Sources */,
 				892C1F38165D70C40077F2CB /* AppDelegate.m in Sources */,
-				892C1F79165D723D0077F2CB /* NSArray+Accessors.m in Sources */,
-				892C1F7A165D723D0077F2CB /* NSNumber+Rubyfy.m in Sources */,
-				892C200A166060D80077F2CB /* NSDictionary+Rubyfy.m in Sources */,
-				892C20111660699E0077F2CB /* NSSet+Accessors.m in Sources */,
-				892C201F1660716A0077F2CB /* NSMutableArray+Rubyfy.m in Sources */,
-				2852A794167003DF006BCA48 /* NSString+Sweetner.m in Sources */,
+				892C1F79165D723D0077F2CB /* NSArray+ObjectiveSugar.m in Sources */,
+				892C1F7A165D723D0077F2CB /* NSNumber+ObjectiveSugar.m in Sources */,
+				892C200A166060D80077F2CB /* NSDictionary+ObjectiveSugar.m in Sources */,
+				892C20111660699E0077F2CB /* NSSet+ObjectiveSugar.m in Sources */,
+				892C201F1660716A0077F2CB /* NSMutableArray+ObjectiveSugar.m in Sources */,
+				2852A794167003DF006BCA48 /* NSString+ObjectiveSugar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,10 +371,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		892C1F4A165D70C40077F2CB /* PBXTargetDependency */ = {
+		0A0F7D94167FBA1700485284 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 892C1F22165D70C40077F2CB /* SampleProject */;
-			targetProxy = 892C1F49165D70C40077F2CB /* PBXContainerItemProxy */;
+			targetProxy = 0A0F7D93167FBA1700485284 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSNumber (Rubyfy)
+@interface NSNumber (ObjectiveSugar)
 
 - (void)times:(void(^)(void))block;
 - (void)timesWithIndex:(void(^)(int index))block;

@@ -1,13 +1,13 @@
 //
-//  NSString+Sweetner.m
+//  NSString+ObjectiveSugar.m
 //  SampleProject
 //
 //  Created by Neil on 05/12/2012.
 //  Copyright (c) 2012 @mneorr | mneorr.com. All rights reserved.
 //
 
-#import "NSString+Sweetner.h"
-#import "NSArray+Accessors.h"
+#import "NSString+ObjectiveSugar.h"
+#import "NSArray+ObjectiveSugar.h"
 
 NSString *NSStringWithFormat(NSString *formatString, ...) {
     va_list args;

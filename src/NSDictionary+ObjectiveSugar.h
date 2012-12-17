@@ -1,5 +1,5 @@
 //
-//  NSDictionary+Rubyfy.h
+//  NSDictionary+ObjectiveSugar.h
 //  SampleProject
 //
 //  Created by Marin Usalj on 11/23/12.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSDictionary (Rubyfy)
+@interface NSDictionary (ObjectiveSugar)
 
 - (void)each:(void (^)(id key, id value))block;
 - (void)eachKey:(void (^)(id key))block;

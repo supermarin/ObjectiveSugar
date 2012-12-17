@@ -6,9 +6,9 @@
 //  Copyright (c) 2012 mneorr.com | @mneorr | mneorr@gmail.com. All rights reserved.
 //
 
-#import "NSNumber+Rubyfy.h"
+#import "NSNumber+ObjectiveSugar.h"
 
-@implementation NSNumber (Rubyfy)
+@implementation NSNumber (ObjectiveSugar)
 
 - (void)times:(void (^)(void))block {
     for (int i = 0; i < self.intValue; i++)

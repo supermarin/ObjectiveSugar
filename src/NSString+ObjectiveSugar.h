@@ -1,5 +1,5 @@
 //
-//  NSString+Sweetner.h
+//  NSString+ObjectiveSugar.h
 //  SampleProject
 //
 //  Created by Neil on 05/12/2012.
@@ -10,7 +10,7 @@
 
 NSString *NSStringWithFormat(NSString *format, ...) NS_FORMAT_FUNCTION(1,2);
 
-@interface NSString(Additions)
+@interface NSString(ObjectiveSugar)
 - (NSArray *)split;
 - (NSArray *)split:(NSString *)delimiter;
 @end

@@ -1,5 +1,5 @@
 //
-//  NSArray+Accessors.h
+//  NSArray+ObjectiveSugar.h
 //  WidgetPush
 //
 //  Created by Marin Usalj on 5/7/12.
@@ -8,7 +8,7 @@
 
 
 
-@interface NSArray (Accessors)
+@interface NSArray (ObjectiveSugar)
 
 @property(readonly) id first;
 @property(readonly) id last;

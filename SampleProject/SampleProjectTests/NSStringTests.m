@@ -7,7 +7,7 @@
 //
 
 #import "Kiwi.h"
-#import "NSString+Sweetner.h"
+#import "NSString+ObjectiveSugar.h"
 
 SPEC_BEGIN(StringAdditions)
 
