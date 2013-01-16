@@ -33,6 +33,7 @@
 		892C2014166069AD0077F2CB /* NSSetTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 892C2013166069AD0077F2CB /* NSSetTests.m */; };
 		892C201F1660716A0077F2CB /* NSMutableArray+ObjectiveSugar.m in Sources */ = {isa = PBXBuildFile; fileRef = 892C201E1660716A0077F2CB /* NSMutableArray+ObjectiveSugar.m */; };
 		892C2023166071760077F2CB /* NSMutableArrayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 892C2022166071760077F2CB /* NSMutableArrayTests.m */; };
+		89E50C0316A60A1700B791CF /* CAdditionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 89E50C0216A60A1700B791CF /* CAdditionsTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		892C201D166071690077F2CB /* NSMutableArray+ObjectiveSugar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+ObjectiveSugar.h"; sourceTree = "<group>"; };
 		892C201E1660716A0077F2CB /* NSMutableArray+ObjectiveSugar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+ObjectiveSugar.m"; sourceTree = "<group>"; };
 		892C2022166071760077F2CB /* NSMutableArrayTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSMutableArrayTests.m; sourceTree = "<group>"; };
+		89E50C0216A60A1700B791CF /* CAdditionsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAdditionsTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +180,7 @@
 				892C200D1660612E0077F2CB /* NSDictionaryTests.m */,
 				892C2013166069AD0077F2CB /* NSSetTests.m */,
 				2852A7971670053B006BCA48 /* NSStringTests.m */,
+				89E50C0216A60A1700B791CF /* CAdditionsTests.m */,
 			);
 			path = SampleProjectTests;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				892C2014166069AD0077F2CB /* NSSetTests.m in Sources */,
 				892C2023166071760077F2CB /* NSMutableArrayTests.m in Sources */,
 				2852A7981670053B006BCA48 /* NSStringTests.m in Sources */,
+				89E50C0316A60A1700B791CF /* CAdditionsTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

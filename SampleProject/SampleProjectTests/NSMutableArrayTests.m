@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 @mneorr | mneorr.com. All rights reserved.
 //
 
-#import "NSMutableArray+ObjectiveSugar.h"
+#import "ObjectiveSugar.h"
 #import "Kiwi.h"
 
 SPEC_BEGIN(MutableArrayAdditions)

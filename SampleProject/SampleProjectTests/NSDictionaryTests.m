@@ -7,7 +7,7 @@
 //
 
 #import "Kiwi.h"
-#import "NSDictionary+ObjectiveSugar.h"
+#import "ObjectiveSugar.h"
 
 SPEC_BEGIN(DictionaryAdditions)
 

@@ -1,3 +1,7 @@
+// C SUGAR
+#define unless(condition) if(!(condition))
+
+// OBJC SUGAR
 #import "NSNumber+ObjectiveSugar.h"
 #import "NSArray+ObjectiveSugar.h"
 #import "NSMutableArray+ObjectiveSugar.h"
