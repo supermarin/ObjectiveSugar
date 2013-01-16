@@ -211,6 +211,14 @@ NSString *sentence = NSStringWithFormat(@"This is a text-with-argument %@", @123
 // array = this is a text, with, argument 1234
 ```
 
+#### C additions
+
+``` objc
+unless([girl isTaken]) {
+  // the code runs only if condition is false
+  [girl giveMeYourNumber];
+}
+```
 ### Contributing
 
 ObjectiveSugar is tested with [Kiwi](https://github.com/allending/Kiwi), and tests are located in SampleProject.<br/>
