@@ -196,6 +196,19 @@ NSDictionary *dict = @{ @"one" : @1, @"two" : @2, @"three" : @3 };
 // Value: 1
 // Value: 2
 // Value: 3
+
+NSDictionary *errors = @{
+    @"username" : @[ @"already taken" ],
+    @"password" : @[ @"is too short (minimum is 8 characters)", @"not complex enough" ],
+    @"email" : @[ @"can't be blank" ];
+};
+
+[errors map:^(id attribute, id reasons) {
+    return NSStringWithFormat(@"%@ %@", attribute, [reasons join:@", "]);
+}];
+// username already taken
+// password is too short (minimum is 8 characters), not complex enough
+// email can't be blank
 ```
 
 #### NSString additions
