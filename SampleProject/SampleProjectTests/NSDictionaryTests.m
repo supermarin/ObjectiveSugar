@@ -51,6 +51,23 @@ describe(@"Iterators", ^{
         }];  
     });
     
+    it(@"iterates all keys when mapping", ^{
+        NSArray *mapped = [sampleDict map:^id(id key, id value) {
+            counter ++;
+            return key;
+        }];
+        
+        [[mapped should] equal:sampleDict.allKeys];
+    });
+
+    it(@"iterates all values when mapping", ^{
+        NSArray *mapped = [sampleDict map:^id(id key, id value) {
+            counter ++;
+            return value;
+        }];
+        
+        [[mapped should] equal:sampleDict.allValues];
+    });
 });
 
 SPEC_END
