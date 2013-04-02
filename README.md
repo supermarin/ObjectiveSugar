@@ -90,6 +90,18 @@ id object = cars.last;  // 458 Italia
 // YES (F50)
 // YES (F458 Italia)
 
+NSArray *mixedData = @[ @1, @"Objective Sugar!", @"Github", @4, @"5"];
+
+[mixedData select:^BOOL(id object) {
+  return ([object class] == [NSString class]);
+}];
+// Objective Sugar, Github, 5
+
+[mixedData reject:^BOOL(id object) {
+  return ([object class] == [NSString class]);
+}];
+// 1, 4
+
 ```
 
 #### NSArray only
@@ -127,18 +139,6 @@ NSArray *europeanCountries = @[ @"France", @"Germany", @"Austria", @"Spain", @"H
 [landlockedCountries symmetricDifference:europeanCountries];
 // uniqueCountries = Bolivia, Paraguay, Austria, Switzerland, Hungary, France, Germany, Spain, Poland
 
-
-NSArray *mixedData = @[ @1, @"Objective Sugar!", @"Github", @4, @"5"];
-
-[mixedData select:^BOOL(id object) {
-	return ([object class] == [NSString class]);
-}];
-// Objective Sugar, Github, 5
-
-[mixedData reject:^BOOL(id object) {
-	return ([object class] == [NSString class]);
-}];
-// 1, 4
 
 NSArray *nestedArray = @[ @[ @1, @2, @3 ], @[ @4, @5, @6, @[ @7, @8 ] ], @9, @10 ];
 [nestedArray flatten];
