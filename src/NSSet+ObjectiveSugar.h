@@ -16,6 +16,7 @@
 - (void)each:(void (^)(id object))block;
 - (void)eachWithIndex:(void (^)(id object, int index))block;
 
+- (NSArray *)select:(BOOL (^)(id object))block;
 - (NSArray *)map:(id (^)(id object))block;
 
 @end
