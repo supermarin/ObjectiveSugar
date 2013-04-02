@@ -47,4 +47,16 @@
     return array;
 }
 
+- (NSArray *)select:(BOOL (^)(id object))block {
+    NSMutableArray *array = [NSMutableArray arrayWithCapacity:self.count];
+    
+    for (id object in self) {
+        if (block(object)) {
+            [array addObject:object];
+        }
+    }
+    
+    return array;
+}
+
 @end
