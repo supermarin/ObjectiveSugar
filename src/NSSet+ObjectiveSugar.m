@@ -71,4 +71,9 @@
     return array;
 }
 
+- (NSArray *)sort {
+    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:nil ascending:YES];
+    return [self sortedArrayUsingDescriptors:@[sortDescriptor]];
+}
+
 @end

@@ -111,6 +111,14 @@ describe(@"NSArray categories", ^{
         
     });
     
+    context(@"sorting", ^{
+       
+        it(@"-sort aliases -sortUsingComparator:", ^{
+            [[[@[ @4, @1, @3, @2 ] sort] should] equal:@[ @1, @2, @3, @4 ]];
+        });
+        
+    });
+    
 });
 
 

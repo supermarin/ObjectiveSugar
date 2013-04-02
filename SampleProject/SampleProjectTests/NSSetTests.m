@@ -64,7 +64,7 @@ describe(@"Iterators", ^{
         NSSet *sampleSet = [NSSet setWithObjects:@"first", @"second", @"third", nil];
         NSSet *cars = [NSSet setWithObjects:@"Testarossa", @"F50", @"F458 Italia", nil];
         
-        it(@"returns an array of objects returned by the block", ^{
+        it(@"-map returns an array of objects returned by the block", ^{
             [[[sampleSet map:^id(id object) {
                 return [NSNumber numberWithBool:[object isEqualToString:@"third"]];
             }] should] equal:@[ @(NO), @(YES), @(NO) ]]; // Order of NSSet is not guaranteed
@@ -74,16 +74,25 @@ describe(@"Iterators", ^{
             }] should] equal:@[ @(YES), @(YES), @(NO) ]]; // Order of NSSet is not guaranteed
         });
         
-        it(@"returns an array containing all the elements of NSArray for which block is not false", ^{
+        it(@"-select returns an array containing all the elements of NSArray for which block is not false", ^{
             [[[cars select:^BOOL(NSString *car) {
                 return [car isEqualToString:@"F50"];
             }] should] equal:@[ @"F50" ]];
         });
         
-        it(@"returns an array containing all the elements of NSArray for which block is false", ^{
+        it(@"-reject returns an array containing all the elements of NSArray for which block is false", ^{
             [[[cars reject:^BOOL(NSString* car) {
                 return [car isEqualToString:@"F50"];
             }] should] equal:@[ @"F458 Italia", @"Testarossa" ]];
+        });
+        
+    });
+
+    context(@"sorting", ^{
+        
+        it(@"-sort aliases -sortUsingComparator:", ^{
+            NSSet *numbers = [NSSet setWithArray:@[ @4, @1, @3, @2 ]];
+            [[[numbers sort] should] equal:@[ @1, @2, @3, @4 ]];
         });
         
     });

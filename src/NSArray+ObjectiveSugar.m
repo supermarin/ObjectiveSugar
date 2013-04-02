@@ -119,6 +119,10 @@
     return [self componentsJoinedByString:separator];
 }
 
+- (NSArray *)sort {
+    return [self sortedArrayUsingSelector:@selector(compare:)];
+}
+
 #pragma mark - Set operations
 
 - (NSArray *)intersectionWithArray:(NSArray *)array {

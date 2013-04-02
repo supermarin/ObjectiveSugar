@@ -27,6 +27,8 @@
 - (NSString *)join;
 - (NSString *)join:(NSString *)separator;
 
+- (NSArray *)sort;
+
 // Alias for Ruby's & operator
 - (NSArray *)intersectionWithArray:(NSArray *)array;
 // Alias for Ruby's | operator

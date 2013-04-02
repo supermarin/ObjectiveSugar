@@ -20,4 +20,6 @@
 - (NSArray *)reject:(BOOL (^)(id object))block;
 - (NSArray *)map:(id (^)(id object))block;
 
+- (NSArray *)sort;
+
 @end

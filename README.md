@@ -61,10 +61,11 @@ NSDate *result = [@(7).days until:newYearsDay];
 ```
 
 #### NSArray / NSSet additions
+// All of these methods return a modified copy of the array.
+// They're not modifying the source array.
 
 ``` objc
-NSArray *cars = [@"Testarossa", @"F50", @"F458 Italia"]; 
-// or NSSet *cars = [NSSet setWithObjects:@"Testarossa", @"F50", @"F458 Italia", nil];
+NSArray *cars = [@"Testarossa", @"F50", @"F458 Italia"]; // or NSSet
 
 [cars each:^(id object) {
     NSLog(@"Car: %@", object); 
@@ -80,15 +81,15 @@ NSArray *cars = [@"Testarossa", @"F50", @"F458 Italia"];
 // Car: F50 index: 1
 // Car: F458 Italia index: 2
 
-id object = cars.first; // Testarossa
-id object = cars.last;  // 458 Italia
+cars.first;
+// Testarossa
+cars.last
+// 458 Italia
 
 [cars map:^id(id car){
 	return @([[car substringToIndex:1] isEqualToString:@"F"]);
 }]; 
-// NO (Testarossa)
-// YES (F50)
-// YES (F458 Italia)
+// NO, YES, YES
 
 NSArray *mixedData = @[ @1, @"Objective Sugar!", @"Github", @4, @"5"];
 
@@ -101,6 +102,11 @@ NSArray *mixedData = @[ @1, @"Objective Sugar!", @"Github", @4, @"5"];
   return ([object class] == [NSString class]);
 }];
 // 1, 4
+
+NSArray *numbers = @[ @5, @2, @7, @1 ];
+[numbers sort];
+// 1, 2, 5, 7
+
 
 ```
 
