@@ -59,7 +59,7 @@ describe(@"Iterators", ^{
         
     });
     
-    context(@"map", ^{
+    context(@"modifications", ^{
         
         NSSet *sampleSet = [NSSet setWithObjects:@"first", @"second", @"third", nil];
         NSSet *cars = [NSSet setWithObjects:@"Testarossa", @"F50", @"F458 Italia", nil];
@@ -72,6 +72,18 @@ describe(@"Iterators", ^{
             [[[cars map:^id(id car){
                 return @([[car substringToIndex:1] isEqualToString:@"F"]);
             }] should] equal:@[ @(YES), @(YES), @(NO) ]]; // Order of NSSet is not guaranteed
+        });
+        
+        it(@"returns an array containing all the elements of NSArray for which block is not false", ^{
+            [[[cars select:^BOOL(NSString *car) {
+                return [car isEqualToString:@"F50"];
+            }] should] equal:@[ @"F50" ]];
+        });
+        
+        it(@"returns an array containing all the elements of NSArray for which block is false", ^{
+            [[[cars reject:^BOOL(NSString* car) {
+                return [car isEqualToString:@"F50"];
+            }] should] equal:@[ @"F458 Italia", @"Testarossa" ]];
         });
         
     });

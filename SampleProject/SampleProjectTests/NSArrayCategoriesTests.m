@@ -56,29 +56,29 @@ describe(@"NSArray categories", ^{
         
     });
     
-    it(@"alias -containsObject to -includes", ^{
+    it(@"aliases -containsObject to -includes", ^{
         [[@([sampleArray includes:@"second"]) should] equal:@(YES)];
     });
     
-    it(@"returns an array of objects returned by the block", ^{
+    it(@"-map returns an array of objects returned by the block", ^{
         [[[sampleArray map:^id(id object) {
             return [NSNumber numberWithBool:[object isEqualToString:@"second"]];
         }] should] equal:@[ @(NO), @(YES), @(NO) ]];
     });
     
-    it(@"returns an array containing all the elements of NSArray for which block is not false", ^{
+    it(@"-select returns an array containing all the elements of NSArray for which block is not false", ^{
         [[[oneToTen select:^BOOL(id object) {
             return [object intValue] % 3 == 0;
         }] should] equal:@[ @3, @6, @9 ]];
     });
     
-    it(@"returns an array containing all the elements of NSArray for which block is false", ^{
+    it(@"-reject returns an array containing all the elements of NSArray for which block is false", ^{
         [[[oneToTen reject:^BOOL(id object) {
             return [object intValue] % 3 == 0;
         }] should] equal:@[ @1, @2, @4, @5, @7, @8, @10 ]];
     });
     
-    it(@"returns a one-dimensional array that is a recursive flattening of the array", ^{
+    it(@"-flatten returns a one-dimensional array that is a recursive flattening of the array", ^{
         NSArray *multiDimensionalArray = @[ @[ @1, @2, @3 ], @[ @4, @5, @6, @[ @7, @8 ] ], @9, @10 ];
         [[[multiDimensionalArray flatten] should] equal:oneToTen];
     });
