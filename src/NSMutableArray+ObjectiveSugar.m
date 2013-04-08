@@ -24,7 +24,7 @@
 - (NSArray *)pop:(NSUInteger)numberOfElements {
     NSMutableArray *array = [NSMutableArray arrayWithCapacity:numberOfElements];
     
-    for (int i = 0; i < numberOfElements; i++)
+    for (NSUInteger i = 0; i < numberOfElements; i++)
         [array insertObject:[self pop] atIndex:0];
     
     return array;
