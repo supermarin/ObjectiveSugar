@@ -122,9 +122,9 @@
 				892C1F24165D70C40077F2CB /* Products */,
 				18BF5068E07141CF91A47F1A /* Pods-test.xcconfig */,
 			);
-			indentWidth = 2;
+			indentWidth = 4;
 			sourceTree = "<group>";
-			tabWidth = 2;
+			tabWidth = 4;
 			usesTabs = 0;
 		};
 		892C1F24165D70C40077F2CB /* Products */ = {
