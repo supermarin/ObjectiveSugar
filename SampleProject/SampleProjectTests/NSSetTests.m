@@ -61,7 +61,6 @@ describe(@"Iterators", ^{
     
     context(@"modifications", ^{
         
-        NSSet *sampleSet = [NSSet setWithObjects:@"first", @"second", @"third", nil];
         NSSet *cars = [NSSet setWithObjects:@"Testarossa", @"F50", @"F458 Italia", nil];
         
         it(@"-map returns an array of objects returned by the block", ^{
