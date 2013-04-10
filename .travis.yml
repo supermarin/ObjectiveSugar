@@ -1,0 +1,3 @@
+language: objective-c
+before_script:
+  - 'cd SampleProject'
