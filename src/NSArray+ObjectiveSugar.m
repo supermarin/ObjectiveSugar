@@ -42,7 +42,7 @@
 - (NSArray *)take:(NSUInteger)numberOfElements {
     NSMutableArray *array = [NSMutableArray arrayWithCapacity:numberOfElements];
     
-    for (NSUInteger i = 0; i < numberOfElements; i++) {
+    for (NSUInteger i = 0; i < numberOfElements && i < [self count]; i++) {
         [array addObject:self[i]];
     }
     
