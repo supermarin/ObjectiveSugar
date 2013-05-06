@@ -1,1 +1,1 @@
-../../Kiwi/Kiwi/KWExampleNode.h
+../../Kiwi/Classes/KWExampleNode.h

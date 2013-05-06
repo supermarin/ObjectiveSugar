@@ -1,1 +1,1 @@
-../../Kiwi/Kiwi/KWCaptureSpy.h
+../../Kiwi/Classes/KWCaptureSpy.h

@@ -1,1 +1,1 @@
-../../Kiwi/Kiwi/NSObject+KiwiVerifierAdditions.h
+../../Kiwi/Classes/NSObject+KiwiVerifierAdditions.h

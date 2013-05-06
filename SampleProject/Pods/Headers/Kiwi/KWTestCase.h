@@ -1,1 +1,1 @@
-../../Kiwi/Kiwi/KWTestCase.h
+../../Kiwi/Classes/KWTestCase.h

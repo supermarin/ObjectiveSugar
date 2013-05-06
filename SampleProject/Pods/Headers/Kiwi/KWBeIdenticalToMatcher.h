@@ -1,1 +1,1 @@
-../../Kiwi/Kiwi/KWBeIdenticalToMatcher.h
+../../Kiwi/Classes/KWBeIdenticalToMatcher.h

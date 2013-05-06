@@ -1,1 +1,1 @@
-../../Kiwi/Kiwi/KWMock.h
+../../Kiwi/Classes/KWMock.h

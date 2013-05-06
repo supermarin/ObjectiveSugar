@@ -1,1 +1,1 @@
-../../Kiwi/Kiwi/KWStub.h
+../../Kiwi/Classes/KWStub.h

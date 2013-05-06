@@ -1,1 +1,1 @@
-../../Kiwi/Kiwi/KWExampleSuite.h
+../../Kiwi/Classes/KWExampleSuite.h

@@ -1,1 +1,1 @@
-../../Kiwi/Kiwi/KWExampleGroupDelegate.h
+../../Kiwi/Classes/KWExampleGroupDelegate.h

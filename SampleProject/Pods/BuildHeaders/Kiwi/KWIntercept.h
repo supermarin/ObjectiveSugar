@@ -1,1 +1,1 @@
-../../Kiwi/Kiwi/KWIntercept.h
+../../Kiwi/Classes/KWIntercept.h

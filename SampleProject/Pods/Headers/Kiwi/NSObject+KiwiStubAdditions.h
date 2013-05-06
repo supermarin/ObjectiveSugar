@@ -1,1 +1,1 @@
-../../Kiwi/Kiwi/NSObject+KiwiStubAdditions.h
+../../Kiwi/Classes/NSObject+KiwiStubAdditions.h
