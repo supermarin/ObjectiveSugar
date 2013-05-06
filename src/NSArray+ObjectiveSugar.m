@@ -40,9 +40,10 @@
 }
 
 - (NSArray *)take:(NSUInteger)numberOfElements {
+    numberOfElements = MIN(numberOfElements, [self count]);
     NSMutableArray *array = [NSMutableArray arrayWithCapacity:numberOfElements];
     
-    for (NSUInteger i = 0; i < numberOfElements && i < [self count]; i++) {
+    for (NSUInteger i = 0; i < numberOfElements; i++) {
         [array addObject:self[i]];
     }
     
