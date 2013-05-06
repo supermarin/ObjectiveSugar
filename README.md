@@ -1,4 +1,4 @@
-Objective Sugar is a Ruby-style set of additions / categories for Objective C.
+Write Objective C _like a boss_.<br/>
 You can get the idea in [this post](http://blog.mneorr.com/2012/11/21/adding-some-ruby-sugar-to-objectivec/).
 
 <br/>
