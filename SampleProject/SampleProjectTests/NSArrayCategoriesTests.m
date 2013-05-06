@@ -89,6 +89,11 @@ describe(@"NSArray categories", ^{
             [[[sampleArray take:2] should] equal:@[ @"first", @"second" ]];
         });
         
+        
+        it(@"creates subset of array and shouldn't raise exeption", ^{
+            [[[sampleArray take:[sampleArray count]+1] should] equal:sampleArray];
+        });
+        
         it(@"creates subset of array using block", ^{
             [[[sampleArray takeWhile:^BOOL(id object) {
                 
