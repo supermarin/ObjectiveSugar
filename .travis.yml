@@ -1,3 +1,5 @@
 language: objective-c
 before_script:
-  - 'cd SampleProject'
+  - brew update
+  - brew install xctool
+script: xctool test -workspace SampleProject/SampleProject.xcworkspace -scheme SampleProject
