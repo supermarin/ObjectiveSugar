@@ -65,7 +65,7 @@ NSDate *result = [@(7).days until:newYearsDay];
 // All of these methods return a modified copy of the array.
 // They're not modifying the source array.
 
-NSArray *cars = [@"Testarossa", @"F50", @"F458 Italia"]; // or NSSet
+NSArray *cars = @[@"Testarossa", @"F50", @"F458 Italia"]; // or NSSet
 
 [cars each:^(id object) {
     NSLog(@"Car: %@", object); 
