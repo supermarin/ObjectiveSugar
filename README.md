@@ -2,7 +2,7 @@ Write Objective C _like a boss_.<br/>
 You can get the idea in [this post](http://blog.mneorr.com/2012/11/21/adding-some-ruby-sugar-to-objectivec/).
 
 <br/>
-
+[![Build Status](https://travis-ci.org/mneorr/ObjectiveSugar.png?branch=master)](https://travis-ci.org/mneorr/ObjectiveSugar)
 ## Installation
 
 __Cocoapods__: `pod 'ObjectiveSugar'` (don't forget to `pod install`)<br/>
