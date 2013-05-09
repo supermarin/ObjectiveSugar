@@ -1,5 +1,8 @@
 language: objective-c
-before_script:
+before_install:
+  - cd Example
+  - gem update cocoapods
+  - pod install
   - brew update
   - brew install xctool
-script: xctool test -workspace SampleProject/SampleProject.xcworkspace -scheme SampleProject
+script: xctool clean test -workspace ObjectiveSugar.xcworkspace -scheme ObjectiveSugar

@@ -1,0 +1,7 @@
+platform :ios, :deployment_target => "5.0"
+
+pod 'ObjectiveSugar', :path => '../ObjectiveSugar.podspec'
+
+target :ObjectiveSugarTests, :exclusive => true do
+  pod 'Kiwi', :inhibit_warnings => true
+end

@@ -1,6 +1,0 @@
-platform :ios, :deployment_target => "5.0"
-
-target :test, :exclusive => true do
-  link_with 'SampleProjectTests'
-  pod 'Kiwi', :inhibit_warnings => true
-end
