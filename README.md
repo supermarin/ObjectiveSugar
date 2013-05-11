@@ -6,7 +6,7 @@ You can get the idea in [this post](http://blog.mneorr.com/2012/11/21/adding-som
 ## Installation
 
 __Cocoapods__: `pod 'ObjectiveSugar'` (don't forget to `pod install`)<br/>
-__Manual__: Copy the __src__ folder in your project<br/>
+__Manual__: Copy the __Classes__ folder in your project<br/>
 
 `#import "ObjectiveSugar.h"`
 
