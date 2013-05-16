@@ -1,41 +1,167 @@
 //
 //  NSArray+ObjectiveSugar.h
-//  WidgetPush
+//  Objective Sugar
 //
 //  Created by Marin Usalj on 5/7/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-
+// For an overview see http://cocoadocs.org/docsets/ObjectiveSugar/
 
 @interface NSArray (ObjectiveSugar)
 
-@property(readonly) id first;
-@property(readonly) id last;
+/**
+ The first item in the array, or nil.
+
+ @return  The first item in the array, or nil.
+ */
+
+- (id) first;
+
+/**
+ The last item in the array, or nil.
+
+ @return  The last item in the array, or nil.
+ */
+
+- (id) last;
+
+/**
+ A simpler alias for `enumerateObjectsUsingBlock`
+
+ @param A block with the object in its arguments.
+ */
 
 - (void)each:(void (^)(id object))block;
+
+/**
+ A simpler alias for `enumerateObjectsUsingBlock` which also passes in an index
+
+ @param A block with the object in its arguments.
+ */
+
 - (void)eachWithIndex:(void (^)(id object, int index))block;
+
+/**
+ An alias for `containsObject`
+
+ @param An object that the array may or may not contain.
+ */
+
 - (BOOL)includes:(id)object;
 
+/**
+ Take the first `numberOfElements` out of the array, or the maximum amount of
+ elements if it is less.
+
+ @param Number of elements to take from array
+ @return An array of elements
+ */
+
 - (NSArray *)take:(NSUInteger)numberOfElements;
+
+/**
+ Passes elements to the `block` until the block returns NO, 
+ then stops iterating and returns an array of all prior elements.
+
+ @param A block that returns YES/NO
+ @return An array of elements
+ */
 - (NSArray *)takeWhile:(BOOL (^)(id object))block;
 
+/**
+ Iterate through the current array running the block on each object and
+ returning an array of the changed objects.
+
+ @param A block that passes in each object and returns a modified object
+ @return An array of modified elements
+ */
+
 - (NSArray *)map:(id (^)(id object))block;
+
+/**
+ Iterate through current array asking whether to keep each element.
+
+ @param A block that returns YES/NO for whether the object should stay
+ @return An array of elements selected
+ */
+
 - (NSArray *)select:(BOOL (^)(id object))block;
+
+/**
+ Iterate through current array asking whether to remove each element.
+
+ @param A block that returns YES/NO for whether the object should be removed
+ @return An array of elements not rejected
+ */
+
 - (NSArray *)reject:(BOOL (^)(id object))block;
+
+/**
+ Recurse through self checking for NSArrays and extract all elements into one single array
+
+ @return An array of all held arrays merged
+ */
+
 - (NSArray *)flatten;
+
+/**
+ Alias for `componentsJoinedByString` with a default of no seperator
+
+ @return A string of all objects joined with an empty string 
+ */
+
 - (NSString *)join;
+
+/**
+ Alias for `componentsJoinedByString`
+
+ @return A string of all objects joined with the `seperator` string
+ */
+
 - (NSString *)join:(NSString *)separator;
 
+/**
+ Run the default comparator on each object in the array
+ 
+ @return A sorted copy of the array
+ */
 - (NSArray *)sort;
 
-// Alias for Ruby's & operator
+/**
+ Return all the objects that are in both self and `array`.
+ Alias for Ruby's & operator
+
+ @return An array of objects common to both arrays
+ */
+
 - (NSArray *)intersectionWithArray:(NSArray *)array;
-// Alias for Ruby's | operator
+
+/**
+ Return all the objects that in both self and `array` combined.
+ Alias for Ruby's | operator
+
+ @return An array of the two arrays combined
+ */
+
 - (NSArray *)unionWithArray:(NSArray *)array;
-// Alias for Ruby's - operator
+
+/**
+ Return all the objects in self that are not in `array`.
+ Alias for Ruby's - operator
+
+ @return An array of the self without objects in `array`
+ */
+
 - (NSArray *)relativeComplement:(NSArray *)array;
-// Alias for Ruby's ^ operator. Equivalent of a - b | b - a
+
+/**
+ Return all the objects that are unique to each array individually
+ Alias for Ruby's ^ operator. Equivalent of a - b | b - a
+
+ @return An array of elements which are in either of the arrays and not in their intersection.
+ */
+
 - (NSArray *)symmetricDifference:(NSArray *)array;
 
 @end
