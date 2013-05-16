@@ -10,7 +10,6 @@
 #import "NSMutableArray+ObjectiveSugar.h"
 
 @implementation NSArray (ObjectiveSugar)
-@dynamic first, last;
 
 - (id)first {
     if (self.count > 0)
@@ -102,13 +101,13 @@
     NSMutableArray *array = [NSMutableArray array];
     
     for (id object in self) {
-        if ([object isKindOfClass:NSArray.class] || [object isKindOfClass:NSMutableArray.class]) {
+        if ([object isKindOfClass:NSArray.class]) {
             [array concat:[object flatten]];
         } else {
             [array addObject:object];
         }
     }
-    
+
     return array;
 }
 
@@ -142,9 +141,9 @@
 }
 
 - (NSArray *)symmetricDifference:(NSArray *)array {
-    NSArray *a_subtract_b = [self relativeComplement:array];
-    NSArray *b_subtract_a = [array relativeComplement:self];
-    return [a_subtract_b unionWithArray:b_subtract_a];
+    NSArray *aSubtractB = [self relativeComplement:array];
+    NSArray *bSubtractA = [array relativeComplement:self];
+    return [aSubtractB unionWithArray:bSubtractA];
 }
 
 @end
