@@ -28,7 +28,7 @@
     }];
 }
 
-- (void)eachWithIndex:(void (^)(id object, int index))block {
+- (void)eachWithIndex:(void (^)(id object, NSUInteger  index))block {
     [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         block(obj, idx); 
     }];

@@ -15,17 +15,17 @@
         block();
 }
 
-- (void)timesWithIndex:(void (^)(int))block {
+- (void)timesWithIndex:(void (^)(NSInteger))block {
     for (int i = 0; i < self.intValue; i++)
         block(i);
 }
 
-- (void)upto:(int)number do:(void (^)(int))block {
+- (void)upto:(int)number do:(void (^)(NSInteger))block {
     for (int i = self.intValue; i <= number; i++)
         block(i);
 }
 
-- (void)downto:(int)number do:(void (^)(int))block {
+- (void)downto:(int)number do:(void (^)(NSInteger))block {
     for (int i = self.intValue; i >= number; i--)
         block(i);
 }
@@ -51,7 +51,7 @@
 }
 
 - (NSNumber *)hours {
-    return @(self.floatValue * [@60 minutes].intValue);
+    return @(self.floatValue * [@60 minutes].integerValue);
 }
 
 - (NSNumber *)day {
@@ -59,7 +59,7 @@
 }
 
 - (NSNumber *)days {
-    return @(self.floatValue * [@24 hours].intValue);
+    return @(self.floatValue * [@24 hours].integerValue);
 }
 
 - (NSNumber *)week {
@@ -67,7 +67,7 @@
 }
 
 - (NSNumber *)weeks {
-    return @(self.floatValue * [@7 days].intValue);
+    return @(self.floatValue * [@7 days].integerValue);
 }
 
 - (NSNumber *)fortnight {
@@ -75,7 +75,7 @@
 }
 
 - (NSNumber *)fortnights {
-    return @(self.floatValue * [@2 weeks].intValue);
+    return @(self.floatValue * [@2 weeks].integerValue);
 }
 
 - (NSNumber *)month {
@@ -83,7 +83,7 @@
 }
 
 - (NSNumber *)months {
-    return @(self.floatValue * [@30 days].intValue);
+    return @(self.floatValue * [@30 days].integerValue);
 }
 
 - (NSNumber *)year {
@@ -91,7 +91,7 @@
 }
 
 - (NSNumber *)years {
-    return @(self.floatValue * [@(365.25) days].intValue);
+    return @(self.floatValue * [@(365.25) days].integerValue);
 }
 
 - (NSDate *)ago {

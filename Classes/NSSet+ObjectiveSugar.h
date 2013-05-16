@@ -14,7 +14,7 @@
 @property(readonly) id last;
 
 - (void)each:(void (^)(id object))block;
-- (void)eachWithIndex:(void (^)(id object, int index))block;
+- (void)eachWithIndex:(void (^)(id object, NSUInteger index))block;
 
 - (NSArray *)select:(BOOL (^)(id object))block;
 - (NSArray *)reject:(BOOL (^)(id object))block;

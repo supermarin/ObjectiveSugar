@@ -30,7 +30,7 @@ describe(@"Iterators", ^{
         it(@"iterates using -eachWithIndex:^", ^{
             NSMutableArray *duplicate = [sampleSet.allObjects mutableCopy];
             
-            [sampleSet eachWithIndex:^(id object, int index) {
+            [sampleSet eachWithIndex:^(id object, NSUInteger index) {
                 [[object should] equal:sampleSet.allObjects[index]];
                 [duplicate removeObject:object];
             }];
