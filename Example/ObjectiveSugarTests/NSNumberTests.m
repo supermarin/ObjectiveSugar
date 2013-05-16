@@ -50,7 +50,7 @@ describe(@"Iterators", ^{
         });
     
         it(@"timesWithIndex: iterates with the right index", ^{
-            [@5 timesWithIndex:^(NSInteger index) {
+            [@5 timesWithIndex:^(NSUInteger index) {
                 [[@(index) should] equal:@(counter)];
                 counter ++;
             }];

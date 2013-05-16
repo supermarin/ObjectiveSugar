@@ -11,7 +11,7 @@
 @interface NSNumber (ObjectiveSugar)
 
 - (void)times:(void(^)(void))block;
-- (void)timesWithIndex:(void(^)(NSInteger index))block;
+- (void)timesWithIndex:(void(^)(NSUInteger index))block;
 
 - (void)upto:(int)number do:(void(^)(NSInteger number))block;
 - (void)downto:(int)number do:(void(^)(NSInteger number))block;
