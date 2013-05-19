@@ -39,4 +39,9 @@
     return array;
 }
 
+- (BOOL)hasKey:(id)key
+{
+    return [self.allKeys containsObject:key];
+}
+
 @end
