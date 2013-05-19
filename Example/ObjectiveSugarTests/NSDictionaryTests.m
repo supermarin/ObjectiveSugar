@@ -70,4 +70,23 @@ describe(@"Iterators", ^{
     });
 });
 
+describe(@"Keys", ^{
+    
+    NSDictionary *sampleDict = @{
+                                 @"one" : @1,
+                                 @"two" : @2,
+                                 @"three" : @3
+                                 };
+    
+    it(@"checks that dictionary contains the specified key", ^{
+        BOOL hasKey = [sampleDict hasKey:@"one"];
+        [[@(hasKey) should] beYes];
+    });
+    
+    it(@"checks that dictionary does not contain the specified key", ^{
+        BOOL hasKey = [sampleDict hasKey:@"imaginaryKey"];
+        [[@(hasKey) should] beNo];
+    });
+});
+
 SPEC_END
