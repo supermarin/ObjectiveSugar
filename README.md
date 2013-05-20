@@ -215,6 +215,11 @@ NSDictionary *errors = @{
 // username already taken
 // password is too short (minimum is 8 characters), not complex enough
 // email can't be blank
+
+[errors hasKey:@"email"]
+// true
+[errors hasKey:@"Alcatraz"]
+// false
 ```
 
 #### NSString additions
