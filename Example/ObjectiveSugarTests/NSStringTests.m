@@ -21,6 +21,7 @@ describe(@"Foundation-style functions", ^{
 });
 
 describe(@"Ruby-style additions", ^{
+    
     NSString *sentence = @"Jane Doe's going    in a shop,and,yeah;";
 
     it(@"-split splits by whitespace", ^{
@@ -30,6 +31,22 @@ describe(@"Ruby-style additions", ^{
     it(@"-split: splits with given delimiter", ^{
         [[[sentence split:@","] should] equal:@[@"Jane Doe's going    in a shop", @"and", @"yeah;"]];
     });
+    
+    context(@"CamelCase and snake_case", ^{
+        
+        it(@"converts snake_cased to CamelCased", ^{
+            [[[@"snake_case" camelCase] should] equal:@"SnakeCase"];
+        });
+        
+        it(@"handles correctly snake case on beginning and at the end", ^{
+            [[[@"_snake_case" camelCase] should] equal:@"SnakeCase"];
+            [[[@"snake_case_" camelCase] should] equal:@"SnakeCase"];
+        });
+        
+    });
+
 });
+
+
 
 SPEC_END

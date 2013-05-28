@@ -11,7 +11,11 @@
 NSString *NSStringWithFormat(NSString *format, ...) NS_FORMAT_FUNCTION(1,2);
 
 @interface NSString(ObjectiveSugar)
+
 - (NSArray *)split;
 - (NSArray *)split:(NSString *)delimiter;
+
+- (NSString *)camelCase;
+
 @end
 
