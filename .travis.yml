@@ -2,9 +2,6 @@ language: objective-c
 
 before_install:
   - cd Example
-  - gem update cocoapods
-  - pod install
-  - brew update
-  - brew install xctool
 
-script: xctool clean test -workspace ObjectiveSugar.xcworkspace -scheme ObjectiveSugar
+script: make ci
+

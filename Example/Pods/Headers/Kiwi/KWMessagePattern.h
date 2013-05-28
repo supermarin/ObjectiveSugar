@@ -1,1 +1,0 @@
-../../Kiwi/Classes/KWMessagePattern.h
