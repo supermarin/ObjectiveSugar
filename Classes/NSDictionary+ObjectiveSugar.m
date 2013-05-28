@@ -39,9 +39,8 @@
     return array;
 }
 
-- (BOOL)hasKey:(id)key
-{
-    return [self.allKeys containsObject:key];
+- (BOOL)hasKey:(id)key {
+    return !!self[key];
 }
 
 @end
