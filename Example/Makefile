@@ -14,8 +14,6 @@ install_pods:
 
 install_tools:
 	gem update cocoapods
-	brew update
-	brew upgrade xctool
 
 ci: install_tools remove_pods install_pods test
 
