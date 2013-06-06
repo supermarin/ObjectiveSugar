@@ -55,7 +55,7 @@ NSDate *future = @(24).days.fromNow; // Today is December 1st
 NSDate *past = @(1).month.ago; // Today is December 1st
 // 2012-11-01 20:50:28 +00:00
 
-NSDate *result = [@(7).days until:newYearsDay];
+NSDate *christmas = [@(7).days until:newYearsDay];
 // 2012-12-25 00:00:00 +0000
 
 ```
@@ -233,6 +233,9 @@ NSString *sentence = NSStringWithFormat(@"This is a text-with-argument %@", @123
 
 [sentence split:@"-"]
 // array = this is a text, with, argument 1234
+
+[sentence containsString:@"this is a"];
+// YES
 ```
 
 #### C additions
