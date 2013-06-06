@@ -71,7 +71,13 @@ describe(@"NSArray categories", ^{
             return [object intValue] % 3 == 0;
         }] should] equal:@[ @3, @6, @9 ]];
     });
-    
+
+    it(@"-detect returns the first element in NSArray for which block is not false", ^{
+        [[[oneToTen detect:^BOOL(id object) {
+            return [object intValue] % 3 == 0;
+        }] should] equal:@3];
+    });
+
     it(@"-reject returns an array containing all the elements of NSArray for which block is false", ^{
         [[[oneToTen reject:^BOOL(id object) {
             return [object intValue] % 3 == 0;

@@ -157,6 +157,13 @@ NSArray *abc = @[ @"a", @"b", @"c" ];
 [abc join:@"-"];
 // a-b-c
 
+NSArray *mixedData = @[ @1, @"Objective Sugar!", @"Github", @4, @"5"];
+
+[mixedData detect:^BOOL(id object) {
+  return ([object class] == [NSString class]);
+}];
+// Objective Sugar
+
 ```
 
 #### NSMutableArray additions

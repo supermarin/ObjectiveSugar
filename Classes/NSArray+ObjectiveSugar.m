@@ -85,6 +85,19 @@
     return array;
 }
 
+- (id)detect:(BOOL (^)(id))block {
+    id matchingObject;
+
+    for (id object in self) {
+        if (block(object)) {
+            matchingObject = object;
+            break;
+        }
+    }
+
+    return matchingObject;
+}
+
 - (NSArray *)reject:(BOOL (^)(id object))block {
     NSMutableArray *array = [NSMutableArray arrayWithCapacity:self.count];
     
