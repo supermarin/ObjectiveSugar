@@ -20,7 +20,7 @@ describe(@"Foundation-style functions", ^{
 
 });
 
-describe(@"Ruby-style additions", ^{
+describe(@"Additions", ^{
     
     NSString *sentence = @"Jane Doe's going    in a shop,and,yeah;";
 
@@ -30,6 +30,10 @@ describe(@"Ruby-style additions", ^{
     
     it(@"-split: splits with given delimiter", ^{
         [[[sentence split:@","] should] equal:@[@"Jane Doe's going    in a shop", @"and", @"yeah;"]];
+    });
+    
+    it(@"contains string", ^{
+        [[@([sentence containsString:@"jane doe"]) should] beTrue];
     });
     
     context(@"CamelCase and snake_case", ^{

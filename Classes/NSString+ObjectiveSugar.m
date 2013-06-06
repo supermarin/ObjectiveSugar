@@ -51,4 +51,9 @@ NSString *NSStringWithFormat(NSString *formatString, ...) {
     return [capitalized stringByReplacingOccurrencesOfString:SPACE withString:EMPTY_STRING];
 }
 
+- (BOOL)containsString:(NSString *) string {
+    NSRange range = [self rangeOfString:string options:NSCaseInsensitiveSearch];
+    return range.location != NSNotFound;
+}
+
 @end

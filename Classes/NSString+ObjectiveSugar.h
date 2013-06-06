@@ -16,6 +16,7 @@ NSString *NSStringWithFormat(NSString *format, ...) NS_FORMAT_FUNCTION(1,2);
 - (NSArray *)split:(NSString *)delimiter;
 
 - (NSString *)camelCase;
+- (BOOL)containsString:(NSString *)string;
 
 @end
 
