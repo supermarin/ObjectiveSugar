@@ -89,6 +89,15 @@
 - (NSArray *)select:(BOOL (^)(id object))block;
 
 /**
+ Iterate through current array returning the first element meeting a criteria.
+
+ @param A block that returns YES/NO
+ @return The first matching element
+ */
+
+- (id)detect:(BOOL (^)(id object))block;
+
+/**
  Iterate through current array asking whether to remove each element.
 
  @param A block that returns YES/NO for whether the object should be removed
