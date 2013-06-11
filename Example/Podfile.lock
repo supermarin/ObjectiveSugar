@@ -1,6 +1,6 @@
 PODS:
   - Kiwi (2.1)
-  - ObjectiveSugar (0.7)
+  - ObjectiveSugar (0.8)
 
 DEPENDENCIES:
   - Kiwi
@@ -12,6 +12,6 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Kiwi: 054ef97d0e50c279b21113a0880a906fa153a7fd
-  ObjectiveSugar: 2c2835034d5ec0d27f66905f63465490e3b8e1e7
+  ObjectiveSugar: b4f6fc32c4ec3d6c4257d8fb6e1addab744c8789
 
 COCOAPODS: 0.20.2

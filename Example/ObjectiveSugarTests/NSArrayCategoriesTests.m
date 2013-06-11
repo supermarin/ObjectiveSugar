@@ -77,6 +77,12 @@ describe(@"NSArray categories", ^{
             return [object intValue] % 3 == 0;
         }] should] equal:@3];
     });
+    
+    it(@"-detect is safe", ^{
+       [[oneToTen detect:^BOOL(id object) {
+           return [object intValue] == 123213214;
+       }] shouldBeNil];
+    });
 
     it(@"-reject returns an array containing all the elements of NSArray for which block is false", ^{
         [[[oneToTen reject:^BOOL(id object) {
