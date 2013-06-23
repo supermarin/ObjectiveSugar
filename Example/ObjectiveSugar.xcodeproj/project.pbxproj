@@ -458,6 +458,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3F587282001D443A984A6180 /* Pods.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ObjectiveSugar/ObjectiveSugar-Prefix.pch";
 				INFOPLIST_FILE = "ObjectiveSugar/ObjectiveSugar-Info.plist";
@@ -470,6 +471,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3F587282001D443A984A6180 /* Pods.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ObjectiveSugar/ObjectiveSugar-Prefix.pch";
 				INFOPLIST_FILE = "ObjectiveSugar/ObjectiveSugar-Info.plist";

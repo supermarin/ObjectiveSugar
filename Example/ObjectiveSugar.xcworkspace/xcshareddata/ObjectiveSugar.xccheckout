@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>8169416C-92E9-4900-B40F-49DF7139AFFA</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ObjectiveSugar</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>1CCB35C2-B159-4BE1-B839-A02C29A05B1A</key>
+		<string>ssh://github.com/mneorr/ObjectiveSugar.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Example/ObjectiveSugar.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>1CCB35C2-B159-4BE1-B839-A02C29A05B1A</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/mneorr/ObjectiveSugar.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>1CCB35C2-B159-4BE1-B839-A02C29A05B1A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>1CCB35C2-B159-4BE1-B839-A02C29A05B1A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ObjectiveSugar</string>
+		</dict>
+	</array>
+</dict>
+</plist>

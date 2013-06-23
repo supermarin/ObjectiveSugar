@@ -28,6 +28,10 @@
     }];
 }
 
+- (void)method {
+    
+}
+
 - (void)eachWithIndex:(void (^)(id object, int index))block {
     [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         block(obj, idx); 
@@ -85,17 +89,14 @@
     return array;
 }
 
-- (id)detect:(BOOL (^)(id))block {
-    id matchingObject;
-
+- (id)detect:(BOOL (^)(id object))block {
+    
     for (id object in self) {
-        if (block(object)) {
-            matchingObject = object;
-            break;
-        }
+        if (block(object))
+            return object;
     }
 
-    return matchingObject;
+    return nil;
 }
 
 - (NSArray *)reject:(BOOL (^)(id object))block {

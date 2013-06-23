@@ -80,7 +80,7 @@ describe(@"NSArray categories", ^{
     
     it(@"-detect is safe", ^{
        [[oneToTen detect:^BOOL(id object) {
-           return [object intValue] == 123213214;
+           return [object intValue] == 1232132143;
        }] shouldBeNil];
     });
 
