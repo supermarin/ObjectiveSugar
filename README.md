@@ -30,7 +30,7 @@ __Manual__: Copy the __Classes__ folder in your project<br/>
 
 
 [@1 upto:4 do:^(int numbah) {
-  NSLog(@"Current number.. %d", numbah);        
+  NSLog(@"Current number.. %d", numbah);
 }];
 // Current number.. 1
 // Current number.. 2
@@ -38,7 +38,7 @@ __Manual__: Copy the __Classes__ folder in your project<br/>
 // Current number.. 4
 
 [@7 downto:4 do:^(int numbah) {
-  NSLog(@"Current number.. %d", numbah);        
+  NSLog(@"Current number.. %d", numbah);
 }];
 // Current number.. 7
 // Current number.. 6
@@ -68,14 +68,14 @@ NSDate *christmas = [@(7).days until:newYearsDay];
 NSArray *cars = @[@"Testarossa", @"F50", @"F458 Italia"]; // or NSSet
 
 [cars each:^(id object) {
-    NSLog(@"Car: %@", object); 
+    NSLog(@"Car: %@", object);
 }];
 // Car: Testarossa
 // Car: F50
 // Car: F458 Italia
 
-[cars eachWithIndex:^(id object, int index) {    
-    NSLog(@"Car: %@ index: %i", object, index); 
+[cars eachWithIndex:^(id object, int index) {
+    NSLog(@"Car: %@ index: %i", object, index);
 }];
 // Car: Testarossa index: 0
 // Car: F50 index: 1
@@ -88,7 +88,7 @@ cars.last
 
 [cars map:^id(id car){
 	return @([[car substringToIndex:1] isEqualToString:@"F"]);
-}]; 
+}];
 // NO, YES, YES
 
 NSArray *mixedData = @[ @1, @"Objective Sugar!", @"Github", @4, @"5"];
@@ -112,12 +112,21 @@ NSArray *numbers = @[ @5, @2, @7, @1 ];
 
 #### NSArray only
 ``` objc
+
+NSArray *indices = @[@1, @2, @3, @4, @5];
+indices[@"1..3"];
+// [@2, @3, @4]
+
+NSValue *range = [NSValue valueWithRange:NSMakeRange(1, 3)];
+indices[range];
+// [@2, @3, @4]
+
 NSArray *fruits = @[ @"banana", @"mango", @"apple", @"pear" ];
 
 NSLog(@"Is apple a fruit? %@", [fruits includes:@"apple"] ? @"Yes" : @"No"];
 // Is apple a fruit? Yes
 
-[fruits take:3]; 
+[fruits take:3];
 // banana, mango, apple
 
 [someFruits takeWhile:^BOOL(id fruit) {
@@ -195,7 +204,7 @@ NSDictionary *dict = @{ @"one" : @1, @"two" : @2, @"three" : @3 };
 // Key: one, Value: 1
 // Key: two, Value: 2
 // Key: three, Value: 3
- 
+
 [dict eachKey:^(id key) {
     NSLog(@"Key: %@", key);
 }];

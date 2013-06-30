@@ -27,6 +27,17 @@
 - (id) last;
 
 /**
+ Allow subscripting to fetch elements within the specified range
+ 
+ @param An NSValue wrapping an NSRange struct or an NSString with valid 
+ range components, ie: @"1..3" specifying the range of elements to return
+ 
+ @return An array with all the elements within the specified range
+ */
+- (id)objectForKeyedSubscript:(id <NSCopying>)key;
+
+
+/**
  A simpler alias for `enumerateObjectsUsingBlock`
 
  @param A block with the object in its arguments.

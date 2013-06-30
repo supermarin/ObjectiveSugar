@@ -116,6 +116,32 @@ describe(@"NSArray categories", ^{
         
     });
     
+    context(@"array range subscripting", ^{
+        
+        it(@"returns an array containing the elements at the specified range when passing an NSValue containing an NSRange", ^{
+            NSValue *range = [NSValue valueWithRange: NSMakeRange(2, 5)];
+            [[oneToTen[range] should] equal:@[@3, @4, @5, @6, @7]];
+        });
+        
+        it(@"returns an array containing the elements at the specified range when passing a string that contains a parsable range", ^{
+            [[oneToTen[@"2..5"] should] equal:@[@3, @4, @5, @6, @7]];
+        });
+        
+        it(@"returns an empty array when passing an invalid or empty range", ^{
+            [[oneToTen[@"notarange"] should] equal:@[]];
+        });
+        
+        it(@"throws an invalid argument exception when passing anything other than an NSString or NSValue", ^{
+            [[theBlock(^{
+                [oneToTen[[[NSSet alloc] initWithArray:@[@1, @2]]] description];
+            }) should] raiseWithName:NSInvalidArgumentException reason:@"expected NSString or NSValue argument, got __NSSetI instead"];
+        });
+        
+        it(@"shouldn't break existing indexed subscripting", ^{
+            [[oneToTen[1] should] equal:@2];
+        });
+    });
+    
     context(@"join elements", ^{
         
         it(@"join the array with elements ", ^{

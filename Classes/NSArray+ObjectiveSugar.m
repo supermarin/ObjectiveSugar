@@ -22,6 +22,20 @@
     return [self lastObject];
 }
 
+- (id)objectForKeyedSubscript:(id <NSCopying>)key {
+    NSRange range;
+    if ([(id)key isKindOfClass:[NSString class]]) {
+        range = NSRangeFromString((NSString *)key);
+    } else if ([(id)key isKindOfClass:[NSValue class]]) {
+        range = [((NSValue *)key) rangeValue];
+    } else {
+        [NSException raise:NSInvalidArgumentException format:@"expected NSString or NSValue argument, got %@ instead", [(id)key class]];
+    }
+
+    return [self subarrayWithRange:range];
+}
+
+
 - (void)each:(void (^)(id object))block {
     [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         block(obj); 
