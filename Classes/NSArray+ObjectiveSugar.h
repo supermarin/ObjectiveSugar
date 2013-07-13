@@ -149,6 +149,13 @@
 - (NSArray *)sort;
 
 /**
+ Alias for reverseObjectEnumerator.allObjects
+ 
+ Returns a reversed array
+ */
+- (NSArray *)reverse;
+
+/**
  Return all the objects that are in both self and `array`.
  Alias for Ruby's & operator
 

@@ -154,6 +154,12 @@ describe(@"NSArray categories", ^{
         
     });
     
+    context(@"reverse elements", ^{
+        it(@"reverses the elements in the array", ^{
+            [[[oneToTen reverse] should] equal:@[@10, @9, @8, @7, @6, @5, @4, @3, @2, @1]];
+        });
+    });
+    
     context(@"sorting", ^{
        
         it(@"-sort aliases -sortUsingComparator:", ^{

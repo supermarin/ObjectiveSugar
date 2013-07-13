@@ -166,6 +166,10 @@ NSArray *abc = @[ @"a", @"b", @"c" ];
 [abc join:@"-"];
 // a-b-c
 
+NSArray *obverseArray = @[@1, @2, @3, @4, @5];
+[obverseArray reverse];
+// [@5, @4, @3, @2, @1]
+
 NSArray *mixedData = @[ @1, @"Objective Sugar!", @"Github", @4, @"5"];
 
 [mixedData detect:^BOOL(id object) {
