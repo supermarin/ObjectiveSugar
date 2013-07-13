@@ -151,6 +151,10 @@
     return [self sortedArrayUsingSelector:@selector(compare:)];
 }
 
+- (NSArray *)reverse {
+    return self.reverseObjectEnumerator.allObjects;
+}
+
 #pragma mark - Set operations
 
 - (NSArray *)intersectionWithArray:(NSArray *)array {
