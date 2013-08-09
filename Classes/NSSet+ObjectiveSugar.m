@@ -22,6 +22,11 @@
     return self.allObjects.lastObject;
 }
 
+- (id)sample {
+    NSUInteger index = arc4random() % self.count;
+    return self.allObjects[index];
+}
+
 - (void)each:(void (^)(id))block {
     [self enumerateObjectsUsingBlock:^(id obj, BOOL *stop) {
         block(obj);

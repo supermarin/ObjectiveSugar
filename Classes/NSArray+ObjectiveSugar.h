@@ -26,6 +26,16 @@
 
 - (id) last;
 
+
+/**
+ A random element in the array, or nil.
+
+ @return  A random element in the array, or nil.
+ */
+
+- (id) sample;
+
+
 /**
  Allow subscripting to fetch elements within the specified range
  

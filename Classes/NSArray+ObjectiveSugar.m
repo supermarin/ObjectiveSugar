@@ -22,6 +22,11 @@
     return [self lastObject];
 }
 
+- (id) sample {
+    NSUInteger index = arc4random() % self.count;
+    return self[index];
+}
+
 - (id)objectForKeyedSubscript:(id <NSCopying>)key {
     NSRange range;
     if ([(id)key isKindOfClass:[NSString class]]) {

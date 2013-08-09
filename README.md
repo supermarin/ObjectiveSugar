@@ -85,6 +85,10 @@ cars.first;
 // Testarossa
 cars.last
 // 458 Italia
+cars.sample
+// 458 Italia
+cars.sample
+// F50
 
 [cars map:^id(id car){
 	return @([[car substringToIndex:1] isEqualToString:@"F"]);
@@ -130,7 +134,7 @@ NSLog(@"Is apple a fruit? %@", [fruits includes:@"apple"] ? @"Yes" : @"No"];
 // banana, mango, apple
 
 [someFruits takeWhile:^BOOL(id fruit) {
-	return ![fruit isEqualToString:@"apple"];
+  return ![fruit isEqualToString:@"apple"];
 }];
 // banana, mango
 
