@@ -3,7 +3,8 @@ WORKSPACE=$(PROJECT_NAME).xcworkspace
 DEFAULT_SCHEME=$(PROJECT_NAME)
 
 test:
-	xctool -workspace $(WORKSPACE) -scheme $(DEFAULT_SCHEME) clean test
+	xctool -workspace $(WORKSPACE) -scheme $(DEFAULT_SCHEME) \
+		-sdk iphonesimulator clean test
 
 remove_pods:
 	rm -rf Pods
