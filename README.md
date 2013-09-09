@@ -1,5 +1,5 @@
 Write Objective C _like a boss_.<br/>
-You can get the idea in [this post](http://blog.mneorr.com/2012/11/21/adding-some-ruby-sugar-to-objectivec/).
+You can get the idea in [this post](http://mneorr.com/adding-some-ruby-sugar-to-objectivec/).
 
 <br/>
 [![Build Status](https://travis-ci.org/mneorr/ObjectiveSugar.png?branch=master)](https://travis-ci.org/mneorr/ObjectiveSugar)
