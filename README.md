@@ -135,7 +135,7 @@ NSLog(@"Is apple a fruit? %@", [fruits includes:@"apple"] ? @"Yes" : @"No"];
 // banana, mango
 
 
-NSArray *landLockedCountries = @[ @"Bolivia", @"Paraguay", @"Austria", @"Switzerland", @"Hungary" ];
+NSArray *landlockedCountries = @[ @"Bolivia", @"Paraguay", @"Austria", @"Switzerland", @"Hungary" ];
 NSArray *europeanCountries = @[ @"France", @"Germany", @"Austria", @"Spain", @"Hungary", @"Poland", @"Switzerland" ];
 
 
@@ -152,7 +152,7 @@ NSArray *europeanCountries = @[ @"France", @"Germany", @"Austria", @"Spain", @"H
 // notLandlockedEuropeanCountries = France, Germany, Spain, Poland
 
 [landlockedCountries symmetricDifference:europeanCountries];
-// uniqueCountries = Bolivia, Paraguay, Austria, Switzerland, Hungary, France, Germany, Spain, Poland
+// uniqueCountries = Bolivia, Paraguay, France, Germany, Spain, Poland
 
 
 NSArray *nestedArray = @[ @[ @1, @2, @3 ], @[ @4, @5, @6, @[ @7, @8 ] ], @9, @10 ];
