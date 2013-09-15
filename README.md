@@ -113,13 +113,22 @@ NSArray *numbers = @[ @5, @2, @7, @1 ];
 #### NSArray only
 ``` objc
 
-NSArray *indices = @[@1, @2, @3, @4, @5];
-indices[@"1..3"];
-// [@2, @3, @4]
+NSArray *indices = @[@1, @2, @3, @4, @5, @6];
+indices[@"2..4"];
+// index from 2 to 4
+// [@3, @4, @5]
 
-NSValue *range = [NSValue valueWithRange:NSMakeRange(1, 3)];
+indices[@"2…4"];
+// index from 2 to 4 (excluded)
+// [@3, @4]
+
+indices[@"2,4"];
+// range location: 2, length: 4
+// [@3, @4, @5, @6]
+
+NSValue *range = [NSValue valueWithRange:NSMakeRange(2, 4)];
 indices[range];
-// [@2, @3, @4]
+// [@3, @4, @5, @6]
 
 NSArray *fruits = @[ @"banana", @"mango", @"apple", @"pear" ];
 

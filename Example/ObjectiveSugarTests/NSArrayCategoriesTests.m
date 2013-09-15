@@ -124,7 +124,15 @@ describe(@"NSArray categories", ^{
         });
         
         it(@"returns an array containing the elements at the specified range when passing a string that contains a parsable range", ^{
-            [[oneToTen[@"2..5"] should] equal:@[@3, @4, @5, @6, @7]];
+            [[oneToTen[@"2,5"] should] equal:@[@3, @4, @5, @6, @7]];
+        });
+        
+        it(@"returns an array containing the elements at the specified range when passing a string that indicates an inclusive range", ^{
+            [[oneToTen[@"2..5"] should] equal:@[@3, @4, @5, @6]];
+        });
+        
+        it(@"returns an array containing the elements at the specified range when passing a string that indicates an inclusive range but excludes the end value", ^{
+            [[oneToTen[@"2...5"] should] equal:@[@3, @4, @5]];
         });
         
         it(@"returns an empty array when passing an invalid or empty range", ^{
