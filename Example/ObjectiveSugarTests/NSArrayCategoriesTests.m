@@ -30,8 +30,11 @@ describe(@"NSArray categories", ^{
     it(@"aliases -last to -lastObject", ^{
         [[sampleArray.last should] equal:[sampleArray lastObject]];        
     });
-    
-   
+
+    it(@"-sample returns a random object", ^{
+        [[theValue([sampleArray indexOfObject:sampleArray.sample]) shouldNot] equal:theValue(NSNotFound)];
+    });
+
     context(@"Iterating using block", ^{
        
         it(@"iterates using -each:^", ^{

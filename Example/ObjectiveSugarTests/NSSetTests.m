@@ -39,7 +39,7 @@ describe(@"Iterators", ^{
         
     });
     
-    context(@"first, last", ^{
+    context(@"first, last, sample", ^{
        
         it(@"-first returns object at index 0", ^{
             [[sampleSet.first should] equal:sampleSet.allObjects[0]];
@@ -56,7 +56,11 @@ describe(@"Iterators", ^{
         it(@"-last returns the last object", ^{
             [[sampleSet.last should] equal:sampleSet.allObjects.lastObject];
         });
-        
+
+        it(@"-sample returns a random object", ^{
+            [[sampleSet member:sampleSet.sample] shouldNotBeNil];
+        });
+
     });
     
     context(@"modifications", ^{
