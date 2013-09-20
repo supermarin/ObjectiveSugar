@@ -7,6 +7,7 @@
 //
 
 #import "NSMutableArray+ObjectiveSugar.h"
+#import "NSArray+ObjectiveSugar.h"
 
 @implementation NSMutableArray (ObjectiveSugar)
 
@@ -36,7 +37,7 @@
 
 - (id)shift {
     NSArray *result = [self shift:1];
-    return [result firstObject];
+    return [result first];
 }
 
 - (NSArray *)shift:(NSUInteger)numberOfElements {
