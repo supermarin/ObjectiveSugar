@@ -8,6 +8,7 @@
 
 #import "NSArray+ObjectiveSugar.h"
 #import "NSMutableArray+ObjectiveSugar.h"
+#import "NSString+ObjectiveSugar.h"
 
 @implementation NSArray (ObjectiveSugar)
 
@@ -30,7 +31,13 @@
 - (id)objectForKeyedSubscript:(id <NSCopying>)key {
     NSRange range;
     if ([(id)key isKindOfClass:[NSString class]]) {
-        range = NSRangeFromString((NSString *)key);
+        NSString *keyString = (NSString *)key;
+        range = NSRangeFromString(keyString);
+        if ([keyString containsString:@"..."]) {
+            range = NSMakeRange(range.location, range.length - range.location);
+        } else if ([keyString containsString:@".."]) {
+            range = NSMakeRange(range.location, range.length - range.location + 1);
+        }
     } else if ([(id)key isKindOfClass:[NSValue class]]) {
         range = [((NSValue *)key) rangeValue];
     } else {

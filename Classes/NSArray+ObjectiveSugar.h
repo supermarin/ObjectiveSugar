@@ -39,8 +39,7 @@
 /**
  Allow subscripting to fetch elements within the specified range
  
- @param An NSValue wrapping an NSRange struct or an NSString with valid 
- range components, ie: @"1..3" specifying the range of elements to return
+ @param An NSValue wrapping an NSRange struct or an NSString with valid range components. If it is an NSString, it will be parsed to an NSRange. eg. @"1..3" specifying the range from 1 to 3. @"1...3" specifying the range from 1 to 2 (exclude the end value 3). Other strinig which contains two int values (@"1,3") will be parsed as range's location and length.
  
  @return An array with all the elements within the specified range
  */
