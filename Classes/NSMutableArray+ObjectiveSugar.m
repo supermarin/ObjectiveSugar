@@ -34,4 +34,23 @@
     [self addObjectsFromArray:array];
 }
 
+- (id)shift {
+    NSArray *result = [self shift:1];
+    return [result count] > 0? [result firstObject]: nil;
+}
+
+- (NSArray *)shift:(NSUInteger)numberOfElements {
+    if (!numberOfElements) {
+        return [NSArray array];
+    } else {
+        NSUInteger shiftLength = MIN(numberOfElements, [self count]);
+        
+        NSRange range = NSMakeRange(0, shiftLength);
+        NSArray *result = [self subarrayWithRange:range];
+        [self removeObjectsInRange:range];
+        
+        return result;
+    }
+}
+
 @end
