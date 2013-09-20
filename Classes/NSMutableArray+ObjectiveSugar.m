@@ -36,7 +36,7 @@
 
 - (id)shift {
     NSArray *result = [self shift:1];
-    return [result count] > 0? [result firstObject]: nil;
+    return [result firstObject];
 }
 
 - (NSArray *)shift:(NSUInteger)numberOfElements {
