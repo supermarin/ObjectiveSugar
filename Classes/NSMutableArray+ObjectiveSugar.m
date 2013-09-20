@@ -41,17 +41,13 @@
 }
 
 - (NSArray *)shift:(NSUInteger)numberOfElements {
-    if (!numberOfElements) {
-        return [NSArray array];
-    } else {
-        NSUInteger shiftLength = MIN(numberOfElements, [self count]);
-        
-        NSRange range = NSMakeRange(0, shiftLength);
-        NSArray *result = [self subarrayWithRange:range];
-        [self removeObjectsInRange:range];
-        
-        return result;
-    }
+    NSUInteger shiftLength = MIN(numberOfElements, [self count]);
+    
+    NSRange range = NSMakeRange(0, shiftLength);
+    NSArray *result = [self subarrayWithRange:range];
+    [self removeObjectsInRange:range];
+    
+    return result;
 }
 
 @end
