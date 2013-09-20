@@ -7,6 +7,7 @@
 //
 
 #import "NSMutableArray+ObjectiveSugar.h"
+#import "NSArray+ObjectiveSugar.h"
 
 @implementation NSMutableArray (ObjectiveSugar)
 
@@ -32,6 +33,21 @@
 
 - (void)concat:(NSArray *)array {
     [self addObjectsFromArray:array];
+}
+
+- (id)shift {
+    NSArray *result = [self shift:1];
+    return [result first];
+}
+
+- (NSArray *)shift:(NSUInteger)numberOfElements {
+    NSUInteger shiftLength = MIN(numberOfElements, [self count]);
+    
+    NSRange range = NSMakeRange(0, shiftLength);
+    NSArray *result = [self subarrayWithRange:range];
+    [self removeObjectsInRange:range];
+    
+    return result;
 }
 
 @end

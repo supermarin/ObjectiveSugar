@@ -34,6 +34,21 @@ describe(@"NSMutableArray categories", ^{
         [mutableArray concat:@[ @7, @8, @9 ]];
         [[mutableArray should] equal:@[ @1, @2, @3, @7, @8, @9 ]];
     });
+
+    it(@"removes and returns the first element of the array", ^{
+        [[[mutableArray shift] should] equal:@1];
+        [[mutableArray should] equal:@[ @2, @3, @7, @8, @9 ]];
+    });
+
+    it(@"removes and returns first two elements of the array", ^{
+        [[[mutableArray shift:2] should] equal:@[ @2, @3 ]];
+        [[mutableArray should] equal:@[ @7, @8, @9 ]];
+    });
+
+    it(@"returns empty array and don't change original mutable array", ^{
+        [[[mutableArray shift:0] should] equal:@[]];
+        [[mutableArray should] equal:@[ @7, @8, @9 ]];
+    });
     
 });
 
