@@ -99,16 +99,6 @@
 
 - (NSArray *)map:(id (^)(id object))block;
 
-
-/**
- Returns the first object passing the test specified in the given block.
-
- @param A block that returns YES/NO
- @return An element of the array
- */
-
-- (id)find:(BOOL (^)(id object))block;
-
 /**
  Iterate through current array asking whether to keep each element.
 
@@ -126,6 +116,17 @@
  */
 
 - (id)detect:(BOOL (^)(id object))block;
+
+
+/**
+ Alias for `detect`. Iterate through current array returning the first element
+ meeting a criteria.
+
+ @param A block that returns YES/NO
+ @return The first matching element
+ */
+
+- (id)find:(BOOL (^)(id object))block;
 
 /**
  Iterate through current array asking whether to remove each element.

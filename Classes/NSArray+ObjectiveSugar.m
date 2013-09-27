@@ -92,15 +92,6 @@
     return array;
 }
 
-- (id)find:(BOOL (^)(id object))block {
-    for (id object in self) {
-        if (block(object)) {
-            return object;
-        }
-    }
-    return nil;
-}
-
 - (NSArray *)map:(id (^)(id object))block {
     NSMutableArray *array = [NSMutableArray arrayWithCapacity:self.count];
     
@@ -132,6 +123,10 @@
     }
 
     return nil;
+}
+
+- (id)find:(BOOL (^)(id object))block {
+    return [self detect:block];
 }
 
 - (NSArray *)reject:(BOOL (^)(id object))block {

@@ -69,12 +69,6 @@ describe(@"NSArray categories", ^{
         }] should] equal:@[ @(NO), @(YES), @(NO) ]];
     });
 
-    it(@"-find returns the first object passing the given block ", ^{
-        [[[sampleArray find:^BOOL(id object) {
-            return [object isEqualToString:@"second"];
-        }] should] equal:@"second"];
-    });
-
     it(@"-select returns an array containing all the elements of NSArray for which block is not false", ^{
         [[[oneToTen select:^BOOL(id object) {
             return [object intValue] % 3 == 0;
@@ -92,7 +86,13 @@ describe(@"NSArray categories", ^{
            return [object intValue] == 1232132143;
        }] should] beNil];
     });
-    
+
+    it(@"-find aliases detect", ^{
+        [[[oneToTen find:^BOOL(id object) {
+            return [object intValue] % 3 == 0;
+        }] should] equal:@3];
+    });
+
     it(@"-reject returns an array containing all the elements of NSArray for which block is false", ^{
         [[[oneToTen reject:^BOOL(id object) {
             return [object intValue] % 3 == 0;
