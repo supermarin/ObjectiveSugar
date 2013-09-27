@@ -125,6 +125,10 @@
     return nil;
 }
 
+- (id)find:(BOOL (^)(id object))block {
+    return [self detect:block];
+}
+
 - (NSArray *)reject:(BOOL (^)(id object))block {
     NSMutableArray *array = [NSMutableArray arrayWithCapacity:self.count];
     
@@ -161,6 +165,11 @@
 
 - (NSArray *)sort {
     return [self sortedArrayUsingSelector:@selector(compare:)];
+}
+
+- (NSArray *)sortBy:(NSString*)key; {
+    NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:key ascending:YES];
+    return [self sortedArrayUsingDescriptors:@[descriptor]];
 }
 
 - (NSArray *)reverse {

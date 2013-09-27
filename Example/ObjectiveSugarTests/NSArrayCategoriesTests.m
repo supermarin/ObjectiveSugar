@@ -68,7 +68,7 @@ describe(@"NSArray categories", ^{
             return [NSNumber numberWithBool:[object isEqualToString:@"second"]];
         }] should] equal:@[ @(NO), @(YES), @(NO) ]];
     });
-    
+
     it(@"-select returns an array containing all the elements of NSArray for which block is not false", ^{
         [[[oneToTen select:^BOOL(id object) {
             return [object intValue] % 3 == 0;
@@ -86,7 +86,13 @@ describe(@"NSArray categories", ^{
            return [object intValue] == 1232132143;
        }] should] beNil];
     });
-    
+
+    it(@"-find aliases detect", ^{
+        [[[oneToTen find:^BOOL(id object) {
+            return [object intValue] % 3 == 0;
+        }] should] equal:@3];
+    });
+
     it(@"-reject returns an array containing all the elements of NSArray for which block is false", ^{
         [[[oneToTen reject:^BOOL(id object) {
             return [object intValue] % 3 == 0;
@@ -176,7 +182,15 @@ describe(@"NSArray categories", ^{
         it(@"-sort aliases -sortUsingComparator:", ^{
             [[[@[ @4, @1, @3, @2 ] sort] should] equal:@[ @1, @2, @3, @4 ]];
         });
-        
+
+        it(@"-sortsortBy sorts using the default comparator on the given key:", ^{
+            NSDictionary *dict_1 = @{@"name": @"1"};
+            NSDictionary *dict_2 = @{@"name": @"2"};
+            NSDictionary *dict_3 = @{@"name": @"3"};
+            NSDictionary *dict_4 = @{@"name": @"3"};
+            [[[@[ dict_4, dict_1, dict_3, dict_2 ] sortBy:@"name"] should] equal:@[ dict_1, dict_2, dict_3, dict_4 ]];
+        });
+
     });
     
 });

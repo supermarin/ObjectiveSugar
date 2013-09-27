@@ -117,6 +117,17 @@
 
 - (id)detect:(BOOL (^)(id object))block;
 
+
+/**
+ Alias for `detect`. Iterate through current array returning the first element
+ meeting a criteria.
+
+ @param A block that returns YES/NO
+ @return The first matching element
+ */
+
+- (id)find:(BOOL (^)(id object))block;
+
 /**
  Iterate through current array asking whether to remove each element.
 
@@ -156,6 +167,13 @@
  @return A sorted copy of the array
  */
 - (NSArray *)sort;
+
+/**
+ Sorts the array using the the default comparator on the given key
+
+ @return A sorted copy of the array
+ */
+- (NSArray *)sortBy:(NSString*)key;
 
 /**
  Alias for reverseObjectEnumerator.allObjects
