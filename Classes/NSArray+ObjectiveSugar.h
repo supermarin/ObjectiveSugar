@@ -99,6 +99,16 @@
 
 - (NSArray *)map:(id (^)(id object))block;
 
+
+/**
+ Returns the first object passing the test specified in the given block.
+
+ @param A block that returns YES/NO
+ @return An element of the array
+ */
+
+- (id)find:(BOOL (^)(id object))block;
+
 /**
  Iterate through current array asking whether to keep each element.
 
@@ -156,6 +166,13 @@
  @return A sorted copy of the array
  */
 - (NSArray *)sort;
+
+/**
+ Sorts the array using the the default comparator on the given key
+
+ @return A sorted copy of the array
+ */
+- (NSArray *)sortBy:(NSString*)key;
 
 /**
  Alias for reverseObjectEnumerator.allObjects
