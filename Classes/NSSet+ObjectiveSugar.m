@@ -23,7 +23,7 @@
 }
 
 - (id)sample {
-    NSUInteger index = arc4random() % self.count;
+    NSUInteger index = arc4random_uniform(self.count);
     return self.allObjects[index];
 }
 
