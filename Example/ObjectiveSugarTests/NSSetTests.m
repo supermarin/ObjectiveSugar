@@ -61,6 +61,10 @@ describe(@"Iterators", ^{
             [[sampleSet member:sampleSet.sample] shouldNotBeNil];
         });
 
+        it(@"-sample of empty set returns nil", ^{
+            NSSet *emptySet = [NSSet set];
+            [emptySet.sample shouldBeNil];
+        });
     });
     
     context(@"modifications", ^{

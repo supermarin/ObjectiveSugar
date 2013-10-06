@@ -24,6 +24,8 @@
 }
 
 - (id) sample {
+    if (self.count == 0) return nil;
+
     NSUInteger index = arc4random_uniform(self.count);
     return self[index];
 }
