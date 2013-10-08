@@ -35,6 +35,11 @@ describe(@"NSArray categories", ^{
         [[theValue([sampleArray indexOfObject:sampleArray.sample]) shouldNot] equal:theValue(NSNotFound)];
     });
 
+    it(@"-sample of empty array returns nil", ^{
+        NSArray *emptyArray = @[];
+        [emptyArray.sample shouldBeNil];
+    });
+
     context(@"Iterating using block", ^{
        
         it(@"iterates using -each:^", ^{
