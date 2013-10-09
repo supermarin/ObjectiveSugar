@@ -56,4 +56,8 @@ NSString *NSStringWithFormat(NSString *formatString, ...) {
     return range.location != NSNotFound;
 }
 
+- (NSString *)strip {
+    return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+}
+
 @end
