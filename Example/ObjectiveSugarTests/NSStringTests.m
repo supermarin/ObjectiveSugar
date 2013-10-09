@@ -48,6 +48,10 @@ describe(@"Additions", ^{
         });
         
     });
+    
+    it(@"-strip strips whitespaces and newlines from both ends", ^{
+        [[[@"\n  Look mo, no empties!\n \n\n  " strip] should] equal:@"Look mo, no empties!"];
+    });
 
 });
 

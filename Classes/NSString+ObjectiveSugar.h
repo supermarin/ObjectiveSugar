@@ -18,5 +18,11 @@ NSString *NSStringWithFormat(NSString *format, ...) NS_FORMAT_FUNCTION(1,2);
 - (NSString *)camelCase;
 - (BOOL)containsString:(NSString *)string;
 
+/**
+ Returns a new string made by removing whitespaces and newlines from both ends of the receiver
+ @return A string without trailing or leading whitespaces and newlines
+ */
+- (NSString *)strip;
+
 @end
 
