@@ -274,9 +274,9 @@ NSString *sentence = NSStringWithFormat(@"This is a text-with-argument %@", @123
 #### C additions
 
 ``` objc
-unless([perp hasHandsRaised]) {
+unless(_messages) { 
   // the code runs only if condition is false
-  [detective says:@"Stick 'em up!"];
+  _messages = [self initializeMessages];
 }
 ```
 ### Contributing
