@@ -33,7 +33,9 @@
     
     [self enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
         id object = block(key, obj);
-        [array addObject:object];
+        if (object) {
+          [array addObject:object];
+        }
     }];
     
     return array;
