@@ -99,7 +99,9 @@
     
     for (id object in self) {
         id newObject = block(object);
-        [array addObject:newObject];
+        if (newObject) {
+          [array addObject:newObject];
+        }
     }
     
     return array;
