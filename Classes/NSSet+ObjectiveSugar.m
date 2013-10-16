@@ -7,6 +7,7 @@
 //
 
 #import "NSSet+ObjectiveSugar.h"
+#import "NSArray+ObjectiveSugar.h"
 
 @implementation NSSet (ObjectiveSugar)
 
