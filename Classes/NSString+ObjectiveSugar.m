@@ -32,16 +32,14 @@ NSString *NSStringWithFormat(NSString *formatString, ...) {
 @implementation NSString(Additions)
 
 - (NSArray *)split {
-    return [self split:@" "];
-}
-
-- (NSArray *)split:(NSString *)delimiter {
-    NSArray *result = [self componentsSeparatedByCharactersInSet:
-                            [NSCharacterSet characterSetWithCharactersInString:delimiter]];
-
+    NSArray *result = [self componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     return [result select:^BOOL(NSString *string) {
         return string.length > 0;
     }];
+}
+
+- (NSArray *)split:(NSString *)delimiter {
+    return [self componentsSeparatedByString:delimiter];
 }
 
 - (NSString *)camelCase {

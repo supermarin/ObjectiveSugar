@@ -25,13 +25,17 @@ describe(@"Additions", ^{
     NSString *sentence = @"Jane Doe's going    in a shop,and,yeah;";
 
     it(@"-split splits by whitespace", ^{
-        [[[sentence split] should] equal:@[@"Jane", @"Doe's", @"going", @"in", @"a", @"shop,and,yeah;"]];
+        [[[@" the\r\nquick brown\t \tfox\n" split] should] equal:@[@"the", @"quick", @"brown", @"fox"]];
     });
     
     it(@"-split: splits with given delimiter", ^{
         [[[sentence split:@","] should] equal:@[@"Jane Doe's going    in a shop", @"and", @"yeah;"]];
     });
-    
+
+    it(@"-split: splits with delimiter string, not just a char", ^{
+        [[[@"one / two / three" split:@" / "] should] equal:@[@"one", @"two", @"three"]];
+    });
+
     it(@"contains string", ^{
         [[@([sentence containsString:@"jane doe"]) should] beTrue];
     });
