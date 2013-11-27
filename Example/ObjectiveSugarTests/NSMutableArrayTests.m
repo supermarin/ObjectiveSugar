@@ -50,6 +50,18 @@ describe(@"NSMutableArray categories", ^{
         [[mutableArray should] equal:@[ @7, @8, @9 ]];
     });
     
+    it(@"creates subset of array by removing the last object", ^{
+        [[[mutableArray keepIf:^BOOL(id object) {
+            return (![object isEqual: @9]);
+        }] should] equal:@[ @7, @8 ]];
+    });
+    
+    it(@"creates subset of array removing the first object", ^{
+        [[[mutableArray keepIf:^BOOL(id object) {
+            return (![object isEqual: @7]);
+        }] should] equal:@[ @8 ]];
+    });
+    
 });
 
 SPEC_END

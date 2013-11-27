@@ -32,4 +32,13 @@
  */
 - (NSArray *)shift:(NSUInteger)numberOfElements;
 
+/**
+ Deletes every element of the array for which the given block evaluates to NO.
+ 
+ @param A block that returns YES/NO
+ @return An array of elements
+ */
+
+- (NSArray *)keepIf:(BOOL (^)(id object))block;
+
 @end
