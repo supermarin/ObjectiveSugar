@@ -2,8 +2,12 @@ PROJECT_NAME=ObjectiveSugar
 WORKSPACE=$(PROJECT_NAME).xcworkspace
 DEFAULT_SCHEME=$(PROJECT_NAME)
 
-test:
+test_xctool:
 	xctool -workspace $(WORKSPACE) -scheme $(DEFAULT_SCHEME) \
+		-sdk iphonesimulator ONLY_ACTIVE_ARCH=NO clean test
+
+test:
+	xcodebuild -workspace $(WORKSPACE) -scheme $(DEFAULT_SCHEME) \
 		-sdk iphonesimulator ONLY_ACTIVE_ARCH=NO clean test
 
 remove_pods:

@@ -1,17 +1,17 @@
 PODS:
   - Kiwi (2.2)
-  - ObjectiveSugar (0.8)
+  - ObjectiveSugar (0.9)
 
 DEPENDENCIES:
   - Kiwi
-  - ObjectiveSugar (from `../ObjectiveSugar.podspec`)
+  - ObjectiveSugar (from `../`)
 
 EXTERNAL SOURCES:
   ObjectiveSugar:
-    :path: ../ObjectiveSugar.podspec
+    :path: ../
 
 SPEC CHECKSUMS:
   Kiwi: db174bba4ee8068b15d7122f1b22fb64b7c1d378
-  ObjectiveSugar: b4f6fc32c4ec3d6c4257d8fb6e1addab744c8789
+  ObjectiveSugar: 81337e36790b5a157ee6ccdcf65c91393ca5d900
 
-COCOAPODS: 0.20.2
+COCOAPODS: 0.28.0
