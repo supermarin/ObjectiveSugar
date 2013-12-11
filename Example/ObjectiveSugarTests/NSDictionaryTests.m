@@ -18,7 +18,7 @@ describe(@"Iterators", ^{
         @"two" : @2,
         @"three" : @3
     };
-    __block int counter;
+    __block NSInteger counter;
     
     beforeEach(^{
         counter = 0;

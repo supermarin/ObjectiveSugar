@@ -13,16 +13,16 @@ SPEC_BEGIN(NumberAdditions)
 
 describe(@"Iterators", ^{
     
-        __block int counter;
+        __block NSInteger counter;
 
         beforeEach(^{
             counter = 0;
         });
        
         it(@"-upto iterates inclusively", ^{
-            __block int startingPoint = 5;
+            __block NSInteger startingPoint = 5;
             
-            [@(startingPoint) upto:8 do:^(int number) {
+            [@(startingPoint) upto:8 do:^(NSInteger number) {
                 [[@(number) should] equal:@(startingPoint + counter)];
                 counter ++;
             }];
@@ -31,9 +31,9 @@ describe(@"Iterators", ^{
         });
 
         it(@"-downto iterates inclusively", ^{
-            __block int startingPoint = 8;
+            __block NSInteger startingPoint = 8;
             
-            [@(startingPoint) downto:4 do:^(int number) {
+            [@(startingPoint) downto:4 do:^(NSInteger number) {
                 [[@(number) should] equal:@(startingPoint - counter)];
                 counter ++;
             }];
@@ -50,7 +50,7 @@ describe(@"Iterators", ^{
         });
     
         it(@"timesWithIndex: iterates with the right index", ^{
-            [@5 timesWithIndex:^(int index) {
+            [@5 timesWithIndex:^(NSUInteger index) {
                 [[@(index) should] equal:@(counter)];
                 counter ++;
             }];

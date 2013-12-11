@@ -11,10 +11,10 @@
 @interface NSNumber (ObjectiveSugar)
 
 - (void)times:(void(^)(void))block;
-- (void)timesWithIndex:(void(^)(int index))block;
+- (void)timesWithIndex:(void(^)(NSUInteger index))block;
 
-- (void)upto:(int)number do:(void(^)(int number))block;
-- (void)downto:(int)number do:(void(^)(int number))block;
+- (void)upto:(int)number do:(void(^)(NSInteger number))block;
+- (void)downto:(int)number do:(void(^)(NSInteger number))block;
 
 // Numeric inflections
 - (NSNumber *)seconds;

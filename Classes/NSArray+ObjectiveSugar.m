@@ -15,7 +15,7 @@
 - (id)first {
     if (self.count > 0)
         return self[0];
-    
+
     return nil;
 }
 
@@ -56,11 +56,7 @@
     }];
 }
 
-- (void)method {
-    
-}
-
-- (void)eachWithIndex:(void (^)(id object, int index))block {
+- (void)eachWithIndex:(void (^)(id object, NSUInteger  index))block {
     [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         block(obj, idx); 
     }];
@@ -73,54 +69,54 @@
 - (NSArray *)take:(NSUInteger)numberOfElements {
     numberOfElements = MIN(numberOfElements, [self count]);
     NSMutableArray *array = [NSMutableArray arrayWithCapacity:numberOfElements];
-    
+
     for (NSUInteger i = 0; i < numberOfElements; i++) {
         [array addObject:self[i]];
     }
-    
+
     return array;
 }
 
 - (NSArray *)takeWhile:(BOOL (^)(id object))block {
     NSMutableArray *array = [NSMutableArray array];
-    
+
     for (id arrayObject in self) {
         if (block(arrayObject))
             [array addObject:arrayObject];
 
         else break;
     }
-    
+
     return array;
 }
 
 - (NSArray *)map:(id (^)(id object))block {
     NSMutableArray *array = [NSMutableArray arrayWithCapacity:self.count];
-    
+
     for (id object in self) {
         id newObject = block(object);
         if (newObject) {
           [array addObject:newObject];
         }
     }
-    
+
     return array;
 }
 
 - (NSArray *)select:(BOOL (^)(id object))block {
     NSMutableArray *array = [NSMutableArray arrayWithCapacity:self.count];
-    
+
     for (id object in self) {
         if (block(object)) {
             [array addObject:object];
         }
     }
-    
+
     return array;
 }
 
 - (id)detect:(BOOL (^)(id object))block {
-    
+
     for (id object in self) {
         if (block(object))
             return object;
@@ -135,19 +131,19 @@
 
 - (NSArray *)reject:(BOOL (^)(id object))block {
     NSMutableArray *array = [NSMutableArray arrayWithCapacity:self.count];
-    
+
     for (id object in self) {
         if (block(object) == NO) {
             [array addObject:object];
         }
     }
-    
+
     return array;
 }
 
 - (NSArray *)flatten {
     NSMutableArray *array = [NSMutableArray array];
-    
+
     for (id object in self) {
         if ([object isKindOfClass:NSArray.class]) {
             [array concat:[object flatten]];
@@ -204,3 +200,4 @@
 }
 
 @end
+

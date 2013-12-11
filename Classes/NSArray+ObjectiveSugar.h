@@ -60,7 +60,7 @@
  @param A block with the object in its arguments.
  */
 
-- (void)eachWithIndex:(void (^)(id object, int index))block;
+- (void)eachWithIndex:(void (^)(id object, NSUInteger index))block;
 
 /**
  An alias for `containsObject`

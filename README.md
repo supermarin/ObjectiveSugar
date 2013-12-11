@@ -21,7 +21,7 @@ __Manual__: Copy the __Classes__ folder in your project<br/>
 // Hello!
 // Hello!
 
-[@3 timesWithIndex:^(int index) {
+[@3 timesWithIndex:^(NSUInteger index) {
   NSLog(@"Another version with number: %d", index);
 }];
 // Another version with number: 0
@@ -29,7 +29,7 @@ __Manual__: Copy the __Classes__ folder in your project<br/>
 // Another version with number: 2
 
 
-[@1 upto:4 do:^(int numbah) {
+[@1 upto:4 do:^(NSInteger numbah) {
   NSLog(@"Current number.. %d", numbah);
 }];
 // Current number.. 1
@@ -37,7 +37,7 @@ __Manual__: Copy the __Classes__ folder in your project<br/>
 // Current number.. 3
 // Current number.. 4
 
-[@7 downto:4 do:^(int numbah) {
+[@7 downto:4 do:^(NSInteger numbah) {
   NSLog(@"Current number.. %d", numbah);
 }];
 // Current number.. 7
@@ -74,7 +74,7 @@ NSArray *cars = @[@"Testarossa", @"F50", @"F458 Italia"]; // or NSSet
 // Car: F50
 // Car: F458 Italia
 
-[cars eachWithIndex:^(id object, int index) {
+[cars eachWithIndex:^(id object, NSUInteger index) {
     NSLog(@"Car: %@ index: %i", object, index);
 }];
 // Car: Testarossa index: 0
@@ -279,7 +279,7 @@ unless(_messages) {
   _messages = [self initializeMessages];
 }
 ```
-### Contributing
+#### Contributing
 
 ObjectiveSugar is tested with [Kiwi](https://github.com/allending/Kiwi), and tests are located in SampleProject.<br/>
 If you plan on contributing to the project, please:
@@ -288,4 +288,9 @@ If you plan on contributing to the project, please:
   * Write documentation
 
 <br/>
-Thanks: Neil Cowburn (@neilco)
+
+#### Team
+
+- Marin Usalj [@mneorr](https://github.com/mneorr)
+- Neil Cowburn [@neilco](https://github.com/neilco)
+
