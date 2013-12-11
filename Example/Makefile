@@ -17,5 +17,6 @@ install:
 	gem install xcpretty  --no-ri --no-rdoc
 	pod install
 
-ci: update_tools install_pods test
+ci:
 	$(DEFAULT_TASK) test | xcpretty -c
+
