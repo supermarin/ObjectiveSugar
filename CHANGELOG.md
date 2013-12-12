@@ -7,5 +7,5 @@
   it's time to release 1.0.
 
 * Documentation could be better, and we encourage you to write some.
-  Thanks @orta for initiating that.
+  Thanks [@orta](https://github.com/orta) for initiating that.
 
