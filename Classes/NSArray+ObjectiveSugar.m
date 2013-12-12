@@ -23,10 +23,10 @@
     return [self lastObject];
 }
 
-- (id) sample {
+- (id)sample {
     if (self.count == 0) return nil;
 
-    NSUInteger index = arc4random_uniform(self.count);
+    NSUInteger index = arc4random_uniform((u_int32_t)self.count);
     return self[index];
 }
 

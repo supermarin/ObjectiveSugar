@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "ObjectiveSugar"
-  s.version      = "0.9"
+  s.version      = "1.0"
   s.summary      = "Objective C additions for humans. Write ObjC _like a boss_."
   s.description  = "-map, -each, -select, unless(true){}, -includes, -upto, -downto, and many more!"
   s.homepage     = "https://github.com/mneorr/ObjectiveSugar"

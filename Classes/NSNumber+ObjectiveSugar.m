@@ -21,12 +21,12 @@
 }
 
 - (void)upto:(int)number do:(void (^)(NSInteger))block {
-    for (int i = self.integerValue; i <= number; i++)
+    for (NSInteger i = self.integerValue; i <= number; i++)
         block(i);
 }
 
 - (void)downto:(int)number do:(void (^)(NSInteger))block {
-    for (int i = self.integerValue; i >= number; i--)
+    for (NSInteger i = self.integerValue; i >= number; i--)
         block(i);
 }
 
