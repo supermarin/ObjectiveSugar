@@ -5,8 +5,8 @@ You can get the idea in [this post](http://mneorr.com/adding-some-ruby-sugar-to-
 [![Build Status](https://travis-ci.org/mneorr/ObjectiveSugar.png?branch=master)](https://travis-ci.org/mneorr/ObjectiveSugar)
 ## Installation
 
-__Cocoapods__: `pod 'ObjectiveSugar'` (don't forget to `pod install`)<br/>
-__Manual__: Copy the __Classes__ folder in your project<br/>
+__Cocoapods__: `pod 'ObjectiveSugar'`<br>
+__Manual__: Copy the __Classes__ folder in your project<br>
 
 `#import <ObjectiveSugar/ObjectiveSugar.h>`
 
@@ -49,10 +49,10 @@ NSDate *newYearsDay = [NSDate newYearsDate]; // let's pretend it's a new year
 NSDate *firstOfDecember = [@(31).days since:newYearsDay];
 // 2012-12-01 00:00:00 +0000
 
-NSDate *future = @(24).days.fromNow; // Today is December 1st
+NSDate *future = @(24).days.fromNow;
 // 2012-12-25 20:49:05 +0000
 
-NSDate *past = @(1).month.ago; // Today is December 1st
+NSDate *past = @(1).month.ago;
 // 2012-11-01 20:50:28 +00:00
 
 NSDate *christmas = [@(7).days until:newYearsDay];
@@ -61,6 +61,7 @@ NSDate *christmas = [@(7).days until:newYearsDay];
 ```
 
 #### NSArray / NSSet additions
+
 ``` objc
 // All of these methods return a modified copy of the array.
 // They're not modifying the source array.
@@ -91,7 +92,7 @@ cars.sample
 // F50
 
 [cars map:^id(id car){
-	return @([[car substringToIndex:1] isEqualToString:@"F"]);
+    return @([[car substringToIndex:1] isEqualToString:@"F"]);
 }];
 // NO, YES, YES
 
@@ -110,28 +111,28 @@ NSArray *mixedData = @[ @1, @"Objective Sugar!", @"Github", @4, @"5"];
 NSArray *numbers = @[ @5, @2, @7, @1 ];
 [numbers sort];
 // 1, 2, 5, 7
-
-
 ```
 
 #### NSArray only
+
 ``` objc
 
-NSArray *indices = @[@1, @2, @3, @4, @5, @6];
-indices[@"2..4"];
+NSArray *numbers = @[@1, @2, @3, @4, @5, @6];
+
 // index from 2 to 4
+numbers[@"2..4"];
 // [@3, @4, @5]
 
-indices[@"2…4"];
 // index from 2 to 4 (excluded)
+numbers[@"2...4"];
 // [@3, @4]
 
-indices[@"2,4"];
-// range location: 2, length: 4
+// With NSRange location: 2, length: 4
+numbers[@"2,4"];
 // [@3, @4, @5, @6]
 
 NSValue *range = [NSValue valueWithRange:NSMakeRange(2, 4)];
-indices[range];
+numbers[range];
 // [@3, @4, @5, @6]
 
 NSArray *fruits = @[ @"banana", @"mango", @"apple", @"pear" ];
@@ -146,27 +147,6 @@ NSLog(@"Is apple a fruit? %@", [fruits includes:@"apple"] ? @"Yes" : @"No"];
   return ![fruit isEqualToString:@"apple"];
 }];
 // banana, mango
-
-
-NSArray *landlockedCountries = @[ @"Bolivia", @"Paraguay", @"Austria", @"Switzerland", @"Hungary" ];
-NSArray *europeanCountries = @[ @"France", @"Germany", @"Austria", @"Spain", @"Hungary", @"Poland", @"Switzerland" ];
-
-
-[landlockedCountries intersectionWithArray:europeanCountries];
-// landlockedEuropeanCountries = Austria, Switzerland, Hungary
-
-[landlockedCountries unionWithArray:europeanCountries];
-// landlockedOrEuropean = Bolivia, Paraguay, Austria, Switzerland, Hungary, France, Germany, Spain, Poland
-
-[landlockedCountries relativeComplement:europeanCountries];
-// nonEuropeanLandlockedCountries = Bolivia, Paraguay
-
-[europeanCountries relativeComplement:landlockedCountries];
-// notLandlockedEuropeanCountries = France, Germany, Spain, Poland
-
-[landlockedCountries symmetricDifference:europeanCountries];
-// uniqueCountries = Bolivia, Paraguay, France, Germany, Spain, Poland
-
 
 NSArray *nestedArray = @[ @[ @1, @2, @3 ], @[ @4, @5, @6, @[ @7, @8 ] ], @9, @10 ];
 [nestedArray flatten];
@@ -190,6 +170,27 @@ NSArray *mixedData = @[ @1, @"Objective Sugar!", @"Github", @4, @"5"];
 }];
 // Objective Sugar
 
+
+
+// TODO: Make a better / simpler example of this
+NSArray *landlockedCountries = @[ @"Bolivia", @"Paraguay", @"Austria", @"Switzerland", @"Hungary" ];
+NSArray *europeanCountries = @[ @"France", @"Germany", @"Austria", @"Spain", @"Hungary", @"Poland", @"Switzerland" ];
+
+
+[landlockedCountries intersectionWithArray:europeanCountries];
+// landlockedEuropeanCountries = Austria, Switzerland, Hungary
+
+[landlockedCountries unionWithArray:europeanCountries];
+// landlockedOrEuropean = Bolivia, Paraguay, Austria, Switzerland, Hungary, France, Germany, Spain, Poland
+
+[landlockedCountries relativeComplement:europeanCountries];
+// nonEuropeanLandlockedCountries = Bolivia, Paraguay
+
+[europeanCountries relativeComplement:landlockedCountries];
+// notLandlockedEuropeanCountries = France, Germany, Spain, Poland
+
+[landlockedCountries symmetricDifference:europeanCountries];
+// uniqueCountries = Bolivia, Paraguay, France, Germany, Spain, Poland
 ```
 
 #### NSMutableArray additions
