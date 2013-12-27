@@ -1,5 +1,6 @@
 // C SUGAR
-#define unless(condition) if(!(condition))
+#define unless(condition...) if(!(condition))
+#define until(condition...) while(!(condition))
 
 // OBJC SUGAR
 #import "NSNumber+ObjectiveSugar.h"

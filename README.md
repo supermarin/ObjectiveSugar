@@ -275,11 +275,28 @@ NSString *sentence = NSStringWithFormat(@"This is a text-with-argument %@", @123
 #### C additions
 
 ``` objc
-unless(_messages) { 
-  // the code runs only if condition is false
-  _messages = [self initializeMessages];
+unless(_messages) {
+    // The body is only executed if the condition is false
+    _messages = [self initializeMessages];
 }
+
+int iterations = 10;
+until(iterations == 0) {
+    // The body is executed until the condition is false
+    // 10 9 8 7 6 5 4 3 2 1
+    printf("%d ", iterations);
+    iterations--;
+}
+printf("\n");
+
+iterations = 10;
+do {
+    // The body is executed at least once until the condition is false
+    // Will print: Executed!
+    printf("Executed!\n");
+} until(true);
 ```
+
 #### Contributing
 
 ObjectiveSugar is tested with [Kiwi](https://github.com/allending/Kiwi), and tests are located in SampleProject.<br/>
