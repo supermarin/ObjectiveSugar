@@ -1,3 +1,12 @@
+# 1.0.1
+
+##### Enhancements
+
+- `until` keyword, and improved `unless` (it allows you to pass args) |
+  [C0deH4cker #61](https://github.com/mneorr/ObjectiveSugar/pull/61)
+- Force the library to load under ARC |
+  [mickeyreiss #62](https://github.com/mneorr/ObjectiveSugar/pull/62)
+
 # 1.0.0
 
 * The library is stable, warning-less and production-ready
