@@ -1,6 +1,8 @@
 Write Objective C _like a boss_.<br/>
 You can get the idea in [this post](http://mneorr.com/adding-some-ruby-sugar-to-objectivec/).
 
+It brings some missing Foundation functions to arrays like `-map`, range accessors (`array[@"1..4"]`), smart iterators to `NSNumber` and some low-level C keywords like `unless` and `until`.
+
 <br/>
 [![Build Status](https://travis-ci.org/mneorr/ObjectiveSugar.png?branch=master)](https://travis-ci.org/mneorr/ObjectiveSugar)
 ## Installation
@@ -45,19 +47,19 @@ __Manual__: Copy the __Classes__ folder in your project<br>
 // Current number.. 5
 // Current number.. 4
 
-NSDate *newYearsDay = [NSDate newYearsDate]; // let's pretend it's a new year
-NSDate *firstOfDecember = [@(31).days since:newYearsDay];
-// 2012-12-01 00:00:00 +0000
+NSDate *firstOfDecember = [NSDate date]; // let's pretend it's 1st of December
 
-NSDate *future = @(24).days.fromNow;
-// 2012-12-25 20:49:05 +0000
+NSDate *firstOfNovember = [@30.days since:firstOfDecember];
+// 2012-11-01 00:00:00 +0000
 
-NSDate *past = @(1).month.ago;
-// 2012-11-01 20:50:28 +00:00
-
-NSDate *christmas = [@(7).days until:newYearsDay];
+NSDate *christmas = [@7.days until:newYearsDay];
 // 2012-12-25 00:00:00 +0000
 
+NSDate *future = @24.days.fromNow;
+// 2012-12-25 20:49:05 +0000
+
+NSDate *past = @1.month.ago;
+// 2012-11-01 20:50:28 +00:00
 ```
 
 #### NSArray / NSSet additions
@@ -82,19 +84,16 @@ NSArray *cars = @[@"Testarossa", @"F50", @"F458 Italia"]; // or NSSet
 // Car: F50 index: 1
 // Car: F458 Italia index: 2
 
-cars.first;
-// Testarossa
-cars.last
-// 458 Italia
-cars.sample
-// 458 Italia
-cars.sample
-// F50
-
-[cars map:^id(id car){
-    return @([[car substringToIndex:1] isEqualToString:@"F"]);
+[cars map:^(NSString* car) {
+    return car.lowercaseString;
 }];
-// NO, YES, YES
+// testarossa, f50, f458 italia
+
+// Or, a more common example:
+[cars map:^(NSString* carName) {
+    return [[Car alloc] initWithName:carName];
+}];
+// array of Car objects
 
 NSArray *mixedData = @[ @1, @"Objective Sugar!", @"Github", @4, @"5"];
 
@@ -111,6 +110,16 @@ NSArray *mixedData = @[ @1, @"Objective Sugar!", @"Github", @4, @"5"];
 NSArray *numbers = @[ @5, @2, @7, @1 ];
 [numbers sort];
 // 1, 2, 5, 7
+
+cars.first;
+// Testarossa
+cars.last
+// 458 Italia
+cars.sample
+// 458 Italia
+cars.sample
+// F50
+
 ```
 
 #### NSArray only
