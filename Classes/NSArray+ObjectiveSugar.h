@@ -63,6 +63,25 @@
 - (void)eachWithIndex:(void (^)(id object, NSUInteger index))block;
 
 /**
+ A simpler alias for `enumerateObjectsWithOptions:usingBlock:`
+
+ @param A block with the object in its arguments.
+ @param Enumerating options.
+ */
+
+- (void)each:(void (^)(id object))block withOptions:(NSEnumerationOptions)options;
+
+/**
+ A simpler alias for `enumerateObjectsWithOptions:usingBlock:` which also passes in an index
+
+ @param A block with the object in its arguments.
+ @param Enumerating options.
+ */
+
+- (void)eachWithIndex:(void (^)(id object, NSUInteger index))block withOptions:(NSEnumerationOptions)options;
+
+
+/**
  An alias for `containsObject`
 
  @param An object that the array may or may not contain.

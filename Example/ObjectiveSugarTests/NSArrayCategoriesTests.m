@@ -61,7 +61,27 @@ describe(@"NSArray categories", ^{
             }];
             [[duplicate should] beEmpty];
         });
-        
+
+        it(@"iterates using -each:^withOptions:", ^{
+            NSMutableArray *duplicate = [sampleArray mutableCopy];
+
+            [sampleArray each:^(id object) {
+                [[duplicate should] contain:object];
+                [duplicate removeObject:object];
+            } withOptions:NSEnumerationReverse];
+            [[duplicate should] beEmpty];
+        });
+
+        it(@"iterates using -eachWithIndex:^withOptions:", ^{
+            NSMutableArray *duplicate = [sampleArray mutableCopy];
+
+            [sampleArray eachWithIndex:^(id object, NSUInteger index) {
+                [[object should] equal:[sampleArray objectAtIndex:index]];
+                [duplicate removeObject:object];
+            } withOptions:NSEnumerationReverse];
+            [[duplicate should] beEmpty];
+        });
+
     });
     
     it(@"aliases -containsObject to -includes", ^{
