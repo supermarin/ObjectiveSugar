@@ -10,6 +10,8 @@
 #import "NSMutableArray+ObjectiveSugar.h"
 #import "NSString+ObjectiveSugar.h"
 
+static NSString * const OSMinusString = @"-";
+
 @implementation NSArray (ObjectiveSugar)
 
 - (id)first {
@@ -30,25 +32,31 @@
     return self[index];
 }
 
-- (id)objectForKeyedSubscript:(id <NSCopying>)key {
-    NSRange range;
-    if ([(id)key isKindOfClass:[NSString class]]) {
-        NSString *keyString = (NSString *)key;
-        range = NSRangeFromString(keyString);
-        if ([keyString containsString:@"..."]) {
-            range = NSMakeRange(range.location, range.length - range.location);
-        } else if ([keyString containsString:@".."]) {
-            range = NSMakeRange(range.location, range.length - range.location + 1);
-        }
-    } else if ([(id)key isKindOfClass:[NSValue class]]) {
-        range = [((NSValue *)key) rangeValue];
-    } else {
-        [NSException raise:NSInvalidArgumentException format:@"expected NSString or NSValue argument, got %@ instead", [(id)key class]];
-    }
-
-    return [self subarrayWithRange:range];
+- (id)objectForKeyedSubscript:(id)key {
+    if ([key isKindOfClass:[NSString class]])
+        return [self subarrayWithRange:[self rangeFromString:key]];
+    
+    else if ([key isKindOfClass:[NSValue class]])
+        return [self subarrayWithRange:[key rangeValue]];
+    
+    else
+        [NSException raise:NSInvalidArgumentException format:@"expected NSString or NSValue argument, got %@ instead", [key class]];
+    
+    return nil;
 }
 
+- (NSRange)rangeFromString:(NSString *)string {
+    NSRange range = NSRangeFromString(string);
+    
+    if ([string containsString:@"..."]) {
+        range.length = isBackwardsRange(string) ? (self.count - 2) - range.length : range.length - range.location;
+        
+    } else if ([string containsString:@".."]) {
+        range.length = isBackwardsRange(string) ? (self.count - 1) - range.length : range.length - range.location + 1;
+    }
+    
+    return range;
+}
 
 - (void)each:(void (^)(id object))block {
     [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
@@ -197,6 +205,12 @@
     NSArray *aSubtractB = [self relativeComplement:array];
     NSArray *bSubtractA = [array relativeComplement:self];
     return [aSubtractB unionWithArray:bSubtractA];
+}
+
+#pragma mark - Private
+
+static inline BOOL isBackwardsRange(NSString *rangeString) {
+    return [rangeString containsString:OSMinusString];
 }
 
 @end

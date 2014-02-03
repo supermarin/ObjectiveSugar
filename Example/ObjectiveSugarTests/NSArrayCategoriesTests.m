@@ -132,21 +132,29 @@ describe(@"NSArray categories", ^{
     
     context(@"array range subscripting", ^{
         
-        it(@"returns an array containing the elements at the specified range when passing an NSValue containing an NSRange", ^{
+        it(@"returns an array containing elements at the specified range when passing an NSValue containing an NSRange", ^{
             NSValue *range = [NSValue valueWithRange: NSMakeRange(2, 5)];
             [[oneToTen[range] should] equal:@[@3, @4, @5, @6, @7]];
         });
         
-        it(@"returns an array containing the elements at the specified range when passing a string that contains a parsable range", ^{
+        it(@"returns subarray with NSRange in string format", ^{
             [[oneToTen[@"2,5"] should] equal:@[@3, @4, @5, @6, @7]];
         });
         
-        it(@"returns an array containing the elements at the specified range when passing a string that indicates an inclusive range", ^{
+        it(@"returns subarray with inclusive range", ^{
             [[oneToTen[@"2..5"] should] equal:@[@3, @4, @5, @6]];
         });
         
-        it(@"returns an array containing the elements at the specified range when passing a string that indicates an inclusive range but excludes the end value", ^{
+        it(@"returns subarray with inclusive range but excludes the end value", ^{
             [[oneToTen[@"2...5"] should] equal:@[@3, @4, @5]];
+        });
+        
+        it(@"returns subarray with inclusive range up to the end element", ^{
+            [[oneToTen[@"2..-1"] should] equal:@[@3, @4, @5, @6, @7, @8, @9, @10]];
+        });
+        
+        it(@"returns subarray with inclusive range up to the element before end element", ^{
+            [[oneToTen[@"2...-1"] should] equal:@[@3, @4, @5, @6, @7, @8, @9]];
         });
         
         it(@"returns an empty array when passing an invalid or empty range", ^{

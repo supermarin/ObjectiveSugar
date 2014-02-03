@@ -39,9 +39,15 @@
 /**
  Allow subscripting to fetch elements within the specified range
  
- @param An NSValue wrapping an NSRange struct or an NSString with valid range components. If it is an NSString, it will be parsed to an NSRange. eg. @"1..3" specifying the range from 1 to 3. @"1...3" specifying the range from 1 to 2 (exclude the end value 3). Other strinig which contains two int values (@"1,3") will be parsed as range's location and length.
+ @param An NSString or NSValue wrapping an NSRange. It's intended to behave like Ruby's array range accessors.
  
- @return An array with all the elements within the specified range
+        Given array of 10 elements, e.g. [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], you can perform these operations:
+        array[@"1..3"] will give you [2, 3, 4]
+        array[@"1...3"] will give you [2, 3] (last value excluded)
+        array[@"1,3"] implies NSRange(location: 1, length: 3), and gives you [2, 3, 4]
+
+ 
+ @return An array with elements within the specified range
  */
 - (id)objectForKeyedSubscript:(id <NSCopying>)key;
 
