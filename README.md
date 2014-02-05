@@ -5,8 +5,9 @@ You can get the idea in [this post](http://mneorr.com/adding-some-ruby-sugar-to-
 
 It brings some missing Foundation functions to arrays like `-map`, range accessors (`array[@"1..4"]`), smart iterators to `NSNumber` and some low-level C keywords like `unless` and `until`.
 
-<br/>
+
 [![Build Status](https://travis-ci.org/mneorr/ObjectiveSugar.png?branch=master)](https://travis-ci.org/mneorr/ObjectiveSugar)
+
 ## Usage
 
 1. Install via [CocoaPods](http://cocoapods.org/)
@@ -21,8 +22,10 @@ It brings some missing Foundation functions to arrays like `-map`, range accesso
 	```
 
 
-#### NSNumber additions
+## Documentation
 
+
+__NSNumber__ additions
 ``` objc
 [@3 times:^{
   NSLog(@"Hello!");
@@ -69,9 +72,8 @@ NSDate *future = @24.days.fromNow;
 NSDate *past = @1.month.ago;
 // 2012-11-01 20:50:28 +00:00
 ```
-
-#### NSArray / NSSet additions
-
+--
+__NSArray__ / __NSSet__ additions
 ``` objc
 // All of these methods return a modified copy of the array.
 // They're not modifying the source array.
@@ -129,9 +131,8 @@ cars.sample
 // F50
 
 ```
-
-#### NSArray only
-
+--
+__NSArray__ only
 ``` objc
 
 NSArray *numbers = @[@1, @2, @3, @4, @5, @6];
@@ -209,9 +210,8 @@ NSArray *europeanCountries = @[ @"France", @"Germany", @"Austria", @"Spain", @"H
 [landlockedCountries symmetricDifference:europeanCountries];
 // uniqueCountries = Bolivia, Paraguay, France, Germany, Spain, Poland
 ```
-
-#### NSMutableArray additions
-
+--
+__NSMutableArray__ additions
 ``` objc
 NSMutableArray *people = @[ @"Alice", @"Benjamin", @"Christopher" ];
 
@@ -227,9 +227,8 @@ NSMutableArray *people = @[ @"Alice", @"Benjamin", @"Christopher" ];
 // people = Alice, Evan, Frank, Gavin
 
 ```
-
-#### NSDictionary additions
-
+--
+__NSDictionary__ additions
 ``` objc
 NSDictionary *dict = @{ @"one" : @1, @"two" : @2, @"three" : @3 };
 
@@ -272,9 +271,8 @@ NSDictionary *errors = @{
 [errors hasKey:@"Alcatraz"]
 // false
 ```
-
-#### NSString additions
-
+--
+__NSString__ additions
 ``` objc
 NSString *sentence = NSStringWithFormat(@"This is a text-with-argument %@", @1234);
 // This is a text-with-argument 1234
@@ -288,9 +286,8 @@ NSString *sentence = NSStringWithFormat(@"This is a text-with-argument %@", @123
 [sentence containsString:@"this is a"];
 // YES
 ```
-
-#### C additions
-
+--
+__C__ additions
 ``` objc
 unless(_messages) {
     // The body is only executed if the condition is false
@@ -314,7 +311,7 @@ do {
 } until(true);
 ```
 
-#### Contributing
+## Contributing
 
 ObjectiveSugar is tested with [Kiwi](https://github.com/allending/Kiwi), and tests are located in SampleProject.<br/>
 If you plan on contributing to the project, please:
@@ -322,9 +319,8 @@ If you plan on contributing to the project, please:
   * Write tests
   * Write documentation
 
-<br/>
 
-#### Team
+## Team
 
 - Marin Usalj [@mneorr](https://github.com/mneorr)
 - Neil Cowburn [@neilco](https://github.com/neilco)
