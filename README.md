@@ -1,4 +1,4 @@
-![logo](http://i.imgur.com/KVGLuTI.png)
+![logo](http://i.imgur.com/BvHpSz0.png)
 
 Write Objective C _like a boss_.<br/>
 You can get the idea in [this post](http://mneorr.com/adding-some-ruby-sugar-to-objectivec/).
