@@ -7,12 +7,18 @@ It brings some missing Foundation functions to arrays like `-map`, range accesso
 
 <br/>
 [![Build Status](https://travis-ci.org/mneorr/ObjectiveSugar.png?branch=master)](https://travis-ci.org/mneorr/ObjectiveSugar)
-## Installation
+## Usage
 
-__Cocoapods__: `pod 'ObjectiveSugar'`<br>
-__Manual__: Copy the __Classes__ folder in your project<br>
+1. Install via [CocoaPods](http://cocoapods.org/)
+	
+	```
+	pod 'ObjectiveSugar'
+	```
+2. Import the public header
 
-`#import <ObjectiveSugar/ObjectiveSugar.h>`
+	```
+	#import <ObjectiveSugar/ObjectiveSugar.h>
+	```
 
 
 #### NSNumber additions
