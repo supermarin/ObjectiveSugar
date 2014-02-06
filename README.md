@@ -1,9 +1,8 @@
 ![logo](http://i.imgur.com/BvHpSz0.png)
 
-Write Objective C _like a boss_.<br/>
-You can get the idea in [this post](http://mneorr.com/adding-some-ruby-sugar-to-objectivec/).
+> Write Objective C _like a boss_.<br/>
 
-It brings some missing Foundation functions to arrays like `-map`, range accessors (`array[@"1..4"]`), smart iterators to `NSNumber` and some low-level C keywords like `unless` and `until`.
+A set of functional additions for Foundation you wish you've had at the first place.
 
 
 [![Build Status](https://travis-ci.org/mneorr/ObjectiveSugar.png?branch=master)](https://travis-ci.org/mneorr/ObjectiveSugar)
