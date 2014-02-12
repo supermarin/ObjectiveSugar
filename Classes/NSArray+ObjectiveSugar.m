@@ -35,38 +35,38 @@ static NSString * const OSMinusString = @"-";
 - (id)objectForKeyedSubscript:(id)key {
     if ([key isKindOfClass:[NSString class]])
         return [self subarrayWithRange:[self rangeFromString:key]];
-    
+
     else if ([key isKindOfClass:[NSValue class]])
         return [self subarrayWithRange:[key rangeValue]];
-    
+
     else
         [NSException raise:NSInvalidArgumentException format:@"expected NSString or NSValue argument, got %@ instead", [key class]];
-    
+
     return nil;
 }
 
 - (NSRange)rangeFromString:(NSString *)string {
     NSRange range = NSRangeFromString(string);
-    
+
     if ([string containsString:@"..."]) {
         range.length = isBackwardsRange(string) ? (self.count - 2) - range.length : range.length - range.location;
-        
+
     } else if ([string containsString:@".."]) {
         range.length = isBackwardsRange(string) ? (self.count - 1) - range.length : range.length - range.location + 1;
     }
-    
+
     return range;
 }
 
 - (void)each:(void (^)(id object))block {
     [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        block(obj); 
+        block(obj);
     }];
 }
 
 - (void)eachWithIndex:(void (^)(id object, NSUInteger index))block {
     [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        block(obj, idx); 
+        block(obj, idx);
     }];
 }
 

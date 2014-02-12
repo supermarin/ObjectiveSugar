@@ -15,26 +15,21 @@
 
  @return  The first item in the array, or nil.
  */
-
-- (id) first;
+- (id)first;
 
 /**
  The last item in the array, or nil.
 
  @return  The last item in the array, or nil.
  */
-
-- (id) last;
-
+- (id)last;
 
 /**
  A random element in the array, or nil.
 
  @return  A random element in the array, or nil.
  */
-
-- (id) sample;
-
+- (id)sample;
 
 /**
  Allow subscripting to fetch elements within the specified range
@@ -57,7 +52,6 @@
 
  @param A block with the object in its arguments.
  */
-
 - (void)each:(void (^)(id object))block;
 
 /**
@@ -65,7 +59,6 @@
 
  @param A block with the object in its arguments.
  */
-
 - (void)eachWithIndex:(void (^)(id object, NSUInteger index))block;
 
 /**
@@ -92,7 +85,6 @@
 
  @param An object that the array may or may not contain.
  */
-
 - (BOOL)includes:(id)object;
 
 /**
@@ -102,7 +94,6 @@
  @param Number of elements to take from array
  @return An array of elements
  */
-
 - (NSArray *)take:(NSUInteger)numberOfElements;
 
 /**
@@ -121,7 +112,6 @@
  @param A block that passes in each object and returns a modified object
  @return An array of modified elements
  */
-
 - (NSArray *)map:(id (^)(id object))block;
 
 /**
@@ -130,7 +120,6 @@
  @param A block that returns YES/NO for whether the object should stay
  @return An array of elements selected
  */
-
 - (NSArray *)select:(BOOL (^)(id object))block;
 
 /**
@@ -139,7 +128,6 @@
  @param A block that returns YES/NO
  @return The first matching element
  */
-
 - (id)detect:(BOOL (^)(id object))block;
 
 
@@ -150,7 +138,6 @@
  @param A block that returns YES/NO
  @return The first matching element
  */
-
 - (id)find:(BOOL (^)(id object))block;
 
 /**
@@ -159,7 +146,6 @@
  @param A block that returns YES/NO for whether the object should be removed
  @return An array of elements not rejected
  */
-
 - (NSArray *)reject:(BOOL (^)(id object))block;
 
 /**
@@ -167,7 +153,6 @@
 
  @return An array of all held arrays merged
  */
-
 - (NSArray *)flatten;
 
 /**
@@ -175,7 +160,6 @@
 
  @return A string of all objects joined with an empty string 
  */
-
 - (NSString *)join;
 
 /**
@@ -183,7 +167,6 @@
 
  @return A string of all objects joined with the `seperator` string
  */
-
 - (NSString *)join:(NSString *)separator;
 
 /**
@@ -213,7 +196,6 @@
 
  @return An array of objects common to both arrays
  */
-
 - (NSArray *)intersectionWithArray:(NSArray *)array;
 
 /**
@@ -240,7 +222,6 @@
 
  @return An array of elements which are in either of the arrays and not in their intersection.
  */
-
 - (NSArray *)symmetricDifference:(NSArray *)array;
 
 @end
