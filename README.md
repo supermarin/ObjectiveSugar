@@ -27,14 +27,14 @@ A set of functional additions for Foundation you wish you've had at the first pl
 __NSNumber__ additions
 ``` objc
 [@3 times:^{
-  NSLog(@"Hello!");
+    NSLog(@"Hello!");
 }];
 // Hello!
 // Hello!
 // Hello!
 
 [@3 timesWithIndex:^(NSUInteger index) {
-  NSLog(@"Another version with number: %d", index);
+    NSLog(@"Another version with number: %d", index);
 }];
 // Another version with number: 0
 // Another version with number: 1
@@ -42,7 +42,7 @@ __NSNumber__ additions
 
 
 [@1 upto:4 do:^(NSInteger numbah) {
-  NSLog(@"Current number.. %d", numbah);
+    NSLog(@"Current number.. %d", numbah);
 }];
 // Current number.. 1
 // Current number.. 2
@@ -50,7 +50,7 @@ __NSNumber__ additions
 // Current number.. 4
 
 [@7 downto:4 do:^(NSInteger numbah) {
-  NSLog(@"Current number.. %d", numbah);
+    NSLog(@"Current number.. %d", numbah);
 }];
 // Current number.. 7
 // Current number.. 6
@@ -112,7 +112,7 @@ NSArray *mixedData = @[ @1, @"Objective Sugar!", @"Github", @4, @"5"];
 // Objective Sugar, Github, 5
 
 [mixedData reject:^BOOL(id object) {
-  return ([object class] == [NSString class]);
+    return ([object class] == [NSString class]);
 }];
 // 1, 4
 
@@ -161,7 +161,7 @@ NSLog(@"Is apple a fruit? %@", [fruits includes:@"apple"] ? @"Yes" : @"No"];
 // banana, mango, apple
 
 [someFruits takeWhile:^BOOL(id fruit) {
-  return ![fruit isEqualToString:@"apple"];
+    return ![fruit isEqualToString:@"apple"];
 }];
 // banana, mango
 
@@ -183,7 +183,7 @@ NSArray *obverseArray = @[@1, @2, @3, @4, @5];
 NSArray *mixedData = @[ @1, @"Objective Sugar!", @"Github", @4, @"5"];
 
 [mixedData detect:^BOOL(id object) {
-  return ([object class] == [NSString class]);
+    return ([object class] == [NSString class]);
 }];
 // Objective Sugar
 
