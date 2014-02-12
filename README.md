@@ -93,6 +93,20 @@ NSArray *cars = @[@"Testarossa", @"F50", @"F458 Italia"]; // or NSSet
 // Car: F50 index: 1
 // Car: F458 Italia index: 2
 
+[cars each:^(id object) {
+    NSLog(@"Car: %@", object);
+} withOptions:NSEnumerationReverse];
+// Car: F458 Italia
+// Car: F50
+// Car: Testarossa
+
+[cars eachWithIndex:^(id object, NSUInteger index) {
+    NSLog(@"Car: %@ index: %i", object, index);
+} withOptions:NSEnumerationReverse];
+// Car: F458 Italia index: 0
+// Car: F50 index: 1
+// Car: Testarossa index: 2
+
 [cars map:^(NSString* car) {
     return car.lowercaseString;
 }];
