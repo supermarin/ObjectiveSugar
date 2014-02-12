@@ -70,13 +70,13 @@ static NSString * const OSMinusString = @"-";
     }];
 }
 
-- (void)each:(void (^)(id object))block withOptions:(NSEnumerationOptions)options {
+- (void)each:(void (^)(id object))block options:(NSEnumerationOptions)options {
     [self enumerateObjectsWithOptions:options usingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         block(obj);
     }];
 }
 
-- (void)eachWithIndex:(void (^)(id object, NSUInteger index))block withOptions:(NSEnumerationOptions)options {
+- (void)eachWithIndex:(void (^)(id object, NSUInteger index))block options:(NSEnumerationOptions)options {
     [self enumerateObjectsWithOptions:options usingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         block(obj, idx);
     }];

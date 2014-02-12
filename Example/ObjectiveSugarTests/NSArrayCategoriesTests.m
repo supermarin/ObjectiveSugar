@@ -68,7 +68,7 @@ describe(@"NSArray categories", ^{
             [sampleArray each:^(id object) {
                 [[duplicate should] contain:object];
                 [duplicate removeObject:object];
-            } withOptions:NSEnumerationReverse];
+            } options:NSEnumerationReverse];
             [[duplicate should] beEmpty];
         });
 
@@ -78,7 +78,7 @@ describe(@"NSArray categories", ^{
             [sampleArray eachWithIndex:^(id object, NSUInteger index) {
                 [[object should] equal:[sampleArray objectAtIndex:index]];
                 [duplicate removeObject:object];
-            } withOptions:NSEnumerationReverse];
+            } options:NSEnumerationReverse];
             [[duplicate should] beEmpty];
         });
 

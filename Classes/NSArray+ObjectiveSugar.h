@@ -68,7 +68,7 @@
  @param Enumerating options.
  */
 
-- (void)each:(void (^)(id object))block withOptions:(NSEnumerationOptions)options;
+- (void)each:(void (^)(id object))block options:(NSEnumerationOptions)options;
 
 /**
  A simpler alias for `enumerateObjectsWithOptions:usingBlock:` which also passes in an index
@@ -77,7 +77,7 @@
  @param Enumerating options.
  */
 
-- (void)eachWithIndex:(void (^)(id object, NSUInteger index))block withOptions:(NSEnumerationOptions)options;
+- (void)eachWithIndex:(void (^)(id object, NSUInteger index))block options:(NSEnumerationOptions)options;
 
 
 /**
