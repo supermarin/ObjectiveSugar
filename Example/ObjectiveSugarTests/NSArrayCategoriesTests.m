@@ -43,43 +43,41 @@ describe(@"NSArray categories", ^{
     context(@"Iterating using block", ^{
        
         it(@"iterates using -each:^", ^{
-            NSMutableArray *duplicate = [sampleArray mutableCopy];
-            
+            NSMutableArray *duplicate = @[].mutableCopy;
             [sampleArray each:^(id object) {
-                [[duplicate should] contain:object];
-                [duplicate removeObject:object];
+                [duplicate addObject:object];
             }];
-            [[duplicate should] beEmpty];
+            [[duplicate should] equal:sampleArray];
         });
         
         it(@"iterates using -eachWithIndex:^", ^{
-            NSMutableArray *duplicate = [sampleArray mutableCopy];
-            
+            NSMutableArray *duplicate = @[].mutableCopy;
             [sampleArray eachWithIndex:^(id object, NSUInteger index) {
                 [[object should] equal:[sampleArray objectAtIndex:index]];
-                [duplicate removeObject:object];
+                [duplicate addObject:object];
             }];
-            [[duplicate should] beEmpty];
+            [[duplicate should] equal:sampleArray];
         });
 
         it(@"iterates using -each:^withOptions:", ^{
-            NSMutableArray *duplicate = [sampleArray mutableCopy];
-
+            NSMutableArray *duplicate = @[].mutableCopy;
+            
             [sampleArray each:^(id object) {
-                [[duplicate should] contain:object];
-                [duplicate removeObject:object];
+                [duplicate addObject:object];
             } options:NSEnumerationReverse];
-            [[duplicate should] beEmpty];
+
+            [[duplicate should] equal:[sampleArray reverse]];
         });
 
         it(@"iterates using -eachWithIndex:^withOptions:", ^{
-            NSMutableArray *duplicate = [sampleArray mutableCopy];
+            NSMutableArray *duplicate = @[].mutableCopy;
 
             [sampleArray eachWithIndex:^(id object, NSUInteger index) {
                 [[object should] equal:[sampleArray objectAtIndex:index]];
-                [duplicate removeObject:object];
+                [duplicate addObject:object];
             } options:NSEnumerationReverse];
-            [[duplicate should] beEmpty];
+
+            [[duplicate should] equal:[sampleArray reverse]];
         });
 
     });
