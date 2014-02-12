@@ -134,10 +134,6 @@ NSArray *numbers = @[ @5, @2, @7, @1 ];
 [numbers sort];
 // 1, 2, 5, 7
 
-cars.first;
-// Testarossa
-cars.last
-// 458 Italia
 cars.sample
 // 458 Italia
 cars.sample
@@ -166,15 +162,19 @@ NSValue *range = [NSValue valueWithRange:NSMakeRange(2, 4)];
 numbers[range];
 // [@3, @4, @5, @6]
 
+[numbers reverse];
+// [@6, @5, @4, @3, @2, @1]
+
+
 NSArray *fruits = @[ @"banana", @"mango", @"apple", @"pear" ];
 
-NSLog(@"Is apple a fruit? %@", [fruits includes:@"apple"] ? @"Yes" : @"No"];
-// Is apple a fruit? Yes
+[fruits includes:@"apple"];
+// YES
 
 [fruits take:3];
 // banana, mango, apple
 
-[someFruits takeWhile:^BOOL(id fruit) {
+[fruits takeWhile:^BOOL(id fruit) {
     return ![fruit isEqualToString:@"apple"];
 }];
 // banana, mango
@@ -189,10 +189,6 @@ NSArray *abc = @[ @"a", @"b", @"c" ];
 
 [abc join:@"-"];
 // a-b-c
-
-NSArray *obverseArray = @[@1, @2, @3, @4, @5];
-[obverseArray reverse];
-// [@5, @4, @3, @2, @1]
 
 NSArray *mixedData = @[ @1, @"Objective Sugar!", @"Github", @4, @"5"];
 

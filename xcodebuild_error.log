@@ -1,0 +1,6 @@
+2014-02-11 18:14:39.335 xcodebuild[53912:1007] [MT] IDELogStore: Log record's backing file ("/Users/musalj/Library/Developer/Xcode/DerivedData/ObjectiveSugar-ayzdhqmmwtqgysdpznmovjlupqjy/Logs/Test/081021FE-4EA5-41E6-8257-6B73379E8145.xcactivitylog") is missing. Skipping.
+2014-02-11 18:14:39.647 xcodebuild[53912:1007] [MT] DVTAssertions: Warning in /SourceCache/DTDeviceKit/DTDeviceKit-3697/DTDeviceKitBase/DTDeviceKitBase_Utilities.m:503
+Details:  Failed to register "/System/Library/CoreServices/CoreTypes.bundle/Contents/Library/MobileDevices.bundle" with Launch Services, error code: -10811.
+Function: __RegisterUTIsIfNeeded_block_invoke
+Thread:   <NSThread: 0x7fee61c0e410>{name = (null), num = 1}
+Please file a bug at http://bugreport.apple.com with this warning message and any useful information you can provide.
