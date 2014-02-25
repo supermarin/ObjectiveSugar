@@ -5,7 +5,7 @@
 A set of functional additions for Foundation you wish you've had at the first place.
 
 
-[![Build Status](https://travis-ci.org/mneorr/ObjectiveSugar.png?branch=master)](https://travis-ci.org/mneorr/ObjectiveSugar)
+[![Build Status](https://travis-ci.org/supermarin/ObjectiveSugar.png?branch=master)](https://travis-ci.org/supermarin/ObjectiveSugar)
 
 ## Usage
 
@@ -331,6 +331,6 @@ If you plan on contributing to the project, please:
 
 ## Team
 
-- Marin Usalj [@mneorr](https://github.com/mneorr)
+- Marin Usalj [@supermarin](https://github.com/supermarin)
 - Neil Cowburn [@neilco](https://github.com/neilco)
 
