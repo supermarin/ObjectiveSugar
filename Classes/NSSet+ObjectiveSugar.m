@@ -11,7 +11,7 @@
 
 @implementation NSSet (ObjectiveSugar)
 
-- (id)first {
+- (id)firstObject {
     NSArray *allObjects = self.allObjects;
 
     if (allObjects.count > 0)
@@ -19,7 +19,7 @@
     return nil;
 }
 
-- (id)last {
+- (id)lastObject {
     return self.allObjects.lastObject;
 }
 
@@ -79,6 +79,17 @@
 - (NSArray *)sort {
     NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:nil ascending:YES];
     return [self sortedArrayUsingDescriptors:@[sortDescriptor]];
+}
+
+
+#pragma mark - Deprecations
+
+- (id)first DEPRECATED_ATTRIBUTE {
+    return [self firstObject];
+}
+
+- (id)last DEPRECATED_ATTRIBUTE {
+    return [self lastObject];
 }
 
 @end
