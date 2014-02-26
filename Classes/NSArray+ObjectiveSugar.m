@@ -14,17 +14,6 @@ static NSString * const OSMinusString = @"-";
 
 @implementation NSArray (ObjectiveSugar)
 
-- (id)first {
-    if (self.count > 0)
-        return self[0];
-
-    return nil;
-}
-
-- (id)last {
-    return [self lastObject];
-}
-
 - (id)sample {
     if (self.count == 0) return nil;
 
@@ -223,6 +212,20 @@ static NSString * const OSMinusString = @"-";
 
 static inline BOOL isBackwardsRange(NSString *rangeString) {
     return [rangeString containsString:OSMinusString];
+}
+
+#pragma mark - Aliases
+
+- (id)anyObject {
+    return [self sample];
+}
+
+- (id)first DEPRECATED_ATTRIBUTE {
+    return [self firstObject];
+}
+
+- (id)last DEPRECATED_ATTRIBUTE {
+    return [self lastObject];
 }
 
 @end

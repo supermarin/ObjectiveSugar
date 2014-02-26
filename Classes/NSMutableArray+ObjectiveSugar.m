@@ -37,7 +37,7 @@
 
 - (id)shift {
     NSArray *result = [self shift:1];
-    return [result first];
+    return [result firstObject];
 }
 
 - (NSArray *)shift:(NSUInteger)numberOfElements {

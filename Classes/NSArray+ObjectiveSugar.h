@@ -15,14 +15,14 @@
 
  @return  The first item in the array, or nil.
  */
-- (id)first;
+- (id)first DEPRECATED_MSG_ATTRIBUTE("Please use -firstObject instead");
 
 /**
  The last item in the array, or nil.
 
  @return  The last item in the array, or nil.
  */
-- (id)last;
+- (id)last DEPRECATED_MSG_ATTRIBUTE("Please use -lastObject instead");
 
 /**
  A random element in the array, or nil.
@@ -30,6 +30,10 @@
  @return  A random element in the array, or nil.
  */
 - (id)sample;
+
+/// Alias for -sample
+- (id)anyObject;
+
 
 /**
  Allow subscripting to fetch elements within the specified range

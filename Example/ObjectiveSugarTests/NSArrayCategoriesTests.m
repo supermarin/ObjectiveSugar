@@ -16,19 +16,9 @@ describe(@"NSArray categories", ^{
     NSArray *sampleArray = [NSArray arrayWithObjects:@"first", @"second", @"third", nil];
     NSArray *oneToTen = @[ @1, @2, @3, @4, @5, @6, @7, @8, @9, @10 ];
     
-    it(@"aliases -first to -objectAtIndex:0", ^{
-        [[sampleArray.first should] equal:[sampleArray objectAtIndex:0]];
-    });
-    
-    it(@"-first does not crash if there's no objects in array", ^{
-        KWBlock *block = [[KWBlock alloc] initWithBlock:^{
-            [@[].first description];
-        }];
-        [[block shouldNot] raise];
-    });
-    
-    it(@"aliases -last to -lastObject", ^{
-        [[sampleArray.last should] equal:[sampleArray lastObject]];        
+    it(@"aliases -anyObject to -sample", ^{
+        [[sampleArray should] receive:@selector(sample)];
+        [sampleArray anyObject];
     });
 
     it(@"-sample returns a random object", ^{
