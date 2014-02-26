@@ -16,5 +16,5 @@ profile
 .idea
 Pods
 
-xcodebuild.log
-xcodebuild_error.log
+*.log
+

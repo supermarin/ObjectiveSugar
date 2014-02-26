@@ -10,7 +10,7 @@ clean:
 	$(DEFAULT_TASK) clean
 
 test:
-	$(DEFAULT_TASK) test | xcpretty -tc
+	$(DEFAULT_TASK) test
 
 install:
 	gem install cocoapods --no-ri --no-rdoc
