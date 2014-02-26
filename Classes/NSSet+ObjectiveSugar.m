@@ -24,7 +24,7 @@
 }
 
 - (id)sample {
-    return [self.allObjects sample];
+    return [self anyObject];
 }
 
 - (void)each:(void (^)(id))block {
