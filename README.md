@@ -322,7 +322,7 @@ do {
 
 ## Contributing
 
-ObjectiveSugar is tested with [Kiwi](https://github.com/allending/Kiwi), and tests are located in SampleProject.<br/>
+ObjectiveSugar is tested with [Kiwi](https://github.com/allending/Kiwi), and tests are located in Example.<br/>
 If you plan on contributing to the project, please:
 
   * Write tests
