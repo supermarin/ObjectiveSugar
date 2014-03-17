@@ -22,7 +22,7 @@
 		8969014D173C0E4C00B403D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8969012E173C0E4C00B403D2 /* Foundation.framework */; };
 		89690155173C0E4C00B403D2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 89690153173C0E4C00B403D2 /* InfoPlist.strings */; };
 		89690168173C16A100B403D2 /* CAdditionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 89690161173C16A100B403D2 /* CAdditionsTests.m */; };
-		89690169173C16A100B403D2 /* NSArrayCategoriesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 89690162173C16A100B403D2 /* NSArrayCategoriesTests.m */; };
+		89690169173C16A100B403D2 /* NSArrayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 89690162173C16A100B403D2 /* NSArrayTests.m */; };
 		8969016A173C16A100B403D2 /* NSDictionaryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 89690163173C16A100B403D2 /* NSDictionaryTests.m */; };
 		8969016B173C16A100B403D2 /* NSMutableArrayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 89690164173C16A100B403D2 /* NSMutableArrayTests.m */; };
 		8969016C173C16A100B403D2 /* NSNumberTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 89690165173C16A100B403D2 /* NSNumberTests.m */; };
@@ -63,7 +63,7 @@
 		89690152173C0E4C00B403D2 /* ObjectiveSugarTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ObjectiveSugarTests-Info.plist"; sourceTree = "<group>"; };
 		89690154173C0E4C00B403D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		89690161173C16A100B403D2 /* CAdditionsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAdditionsTests.m; sourceTree = "<group>"; };
-		89690162173C16A100B403D2 /* NSArrayCategoriesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayCategoriesTests.m; sourceTree = "<group>"; };
+		89690162173C16A100B403D2 /* NSArrayTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayTests.m; sourceTree = "<group>"; };
 		89690163173C16A100B403D2 /* NSDictionaryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDictionaryTests.m; sourceTree = "<group>"; };
 		89690164173C16A100B403D2 /* NSMutableArrayTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSMutableArrayTests.m; sourceTree = "<group>"; };
 		89690165173C16A100B403D2 /* NSNumberTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSNumberTests.m; sourceTree = "<group>"; };
@@ -160,7 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				89690161173C16A100B403D2 /* CAdditionsTests.m */,
-				89690162173C16A100B403D2 /* NSArrayCategoriesTests.m */,
+				89690162173C16A100B403D2 /* NSArrayTests.m */,
 				89690163173C16A100B403D2 /* NSDictionaryTests.m */,
 				89690164173C16A100B403D2 /* NSMutableArrayTests.m */,
 				89690165173C16A100B403D2 /* NSNumberTests.m */,
@@ -359,7 +359,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89690168173C16A100B403D2 /* CAdditionsTests.m in Sources */,
-				89690169173C16A100B403D2 /* NSArrayCategoriesTests.m in Sources */,
+				89690169173C16A100B403D2 /* NSArrayTests.m in Sources */,
 				8969016A173C16A100B403D2 /* NSDictionaryTests.m in Sources */,
 				8969016B173C16A100B403D2 /* NSMutableArrayTests.m in Sources */,
 				8969016C173C16A100B403D2 /* NSNumberTests.m in Sources */,
