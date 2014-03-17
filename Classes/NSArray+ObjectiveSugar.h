@@ -160,6 +160,13 @@
 - (NSArray *)flatten;
 
 /**
+ Remove all the nulls from array
+
+ @return A copy of the given array without NSNulls
+ */
+- (NSArray *)compact;
+
+/**
  Alias for `componentsJoinedByString` with a default of no seperator
 
  @return A string of all objects joined with an empty string 

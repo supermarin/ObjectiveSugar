@@ -116,6 +116,11 @@ describe(@"NSArray categories", ^{
         NSArray *multiDimensionalArray = @[ @[ @1, @2, @3 ], @[ @4, @5, @6, @[ @7, @8 ] ], @9, @10 ];
         [[[multiDimensionalArray flatten] should] equal:oneToTen];
     });
+
+    it(@"-compact removes NSNull objects", ^{
+        NSArray *arrayWithNulls = @[@1, @2, [NSNull null], @3, [NSNull null], @4];
+        [[[arrayWithNulls compact] should] equal:@[@1, @2, @3, @4]];
+    });
     
     context(@"array subsets", ^{
     

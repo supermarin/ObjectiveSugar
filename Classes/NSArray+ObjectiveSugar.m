@@ -76,14 +76,7 @@ static NSString * const OSMinusString = @"-";
 }
 
 - (NSArray *)take:(NSUInteger)numberOfElements {
-    numberOfElements = MIN(numberOfElements, [self count]);
-    NSMutableArray *array = [NSMutableArray arrayWithCapacity:numberOfElements];
-
-    for (NSUInteger i = 0; i < numberOfElements; i++) {
-        [array addObject:self[i]];
-    }
-
-    return array;
+    return [self subarrayWithRange:NSMakeRange(0, MIN(numberOfElements, [self count]))];
 }
 
 - (NSArray *)takeWhile:(BOOL (^)(id object))block {
@@ -113,41 +106,27 @@ static NSString * const OSMinusString = @"-";
 }
 
 - (NSArray *)select:(BOOL (^)(id object))block {
-    NSMutableArray *array = [NSMutableArray arrayWithCapacity:self.count];
+    return [self filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
+        return block(evaluatedObject);
+    }]];
+}
 
-    for (id object in self) {
-        if (block(object)) {
-            [array addObject:object];
-        }
-    }
-
-    return array;
+- (NSArray *)reject:(BOOL (^)(id object))block {
+    return [self filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
+        return !block(evaluatedObject);
+    }]];
 }
 
 - (id)detect:(BOOL (^)(id object))block {
-
     for (id object in self) {
         if (block(object))
             return object;
     }
-
     return nil;
 }
 
 - (id)find:(BOOL (^)(id object))block {
     return [self detect:block];
-}
-
-- (NSArray *)reject:(BOOL (^)(id object))block {
-    NSMutableArray *array = [NSMutableArray arrayWithCapacity:self.count];
-
-    for (id object in self) {
-        if (block(object) == NO) {
-            [array addObject:object];
-        }
-    }
-
-    return array;
 }
 
 - (NSArray *)flatten {
@@ -162,6 +141,12 @@ static NSString * const OSMinusString = @"-";
     }
 
     return array;
+}
+
+- (NSArray *)compact {
+    return [self select:^BOOL(id object) {
+        return object != [NSNull null];
+    }];
 }
 
 - (NSString *)join {
