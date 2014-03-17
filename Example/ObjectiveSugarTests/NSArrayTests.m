@@ -82,6 +82,13 @@ describe(@"NSArray categories", ^{
         }] should] equal:@[ @(NO), @(YES), @(NO) ]];
     });
 
+    it(@"-map treats nils the same way as -valueForKeyPath:", ^{
+        NSArray *users = @[@{@"name": @"Marin"},@{},@{@"name": @"Neil"}];
+        [[[users map:^id(NSDictionary *user) {
+            return user[@"name"];
+        }] should] equal:[users valueForKeyPath:@"name"]];
+    });
+
     it(@"-select returns an array containing all the elements of NSArray for which block is not false", ^{
         [[[oneToTen select:^BOOL(id object) {
             return [object integerValue] % 3 == 0;

@@ -96,10 +96,7 @@ static NSString * const OSMinusString = @"-";
     NSMutableArray *array = [NSMutableArray arrayWithCapacity:self.count];
 
     for (id object in self) {
-        id newObject = block(object);
-        if (newObject) {
-          [array addObject:newObject];
-        }
+        [array addObject:block(object) ?: [NSNull null]];
     }
 
     return array;
