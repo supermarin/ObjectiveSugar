@@ -52,6 +52,28 @@ describe(@"Additions", ^{
         });
         
     });
+
+    context(@"lowerCamelCase", ^{
+        it(@"converts snake_case to snakeCase", ^{
+            [[[@"snake_case" lowerCamelCase] should] equal:@"snakeCase"]
+        });
+
+        it(@"handles extraneous underscores", ^{
+            [[[@"_snake_case" lowerCamelCase] should] equal:@"snakeCase"]
+            [[[@"snake_case_" lowerCamelCase] should] equal:@"snakeCase"]
+        });
+    }
+
+    context(@"upperCamelCase", ^{
+        it(@"converts snake_case to SnakeCase", ^{
+            [[[@"snake_case" upperCamelCase] should] equal:@"SnakeCase"]
+        });
+
+        it(@"handles extraneous underscores", ^{
+            [[[@"_snake_case" lowerCamelCase] should] equal:@"SnakeCase"]
+            [[[@"snake_case_" lowerCamelCase] should] equal:@"SnakeCase"]
+        });
+    }
     
     it(@"-strip strips whitespaces and newlines from both ends", ^{
         [[[@"\n  Look mo, no empties!\n \n\n  " strip] should] equal:@"Look mo, no empties!"];
