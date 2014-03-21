@@ -235,4 +235,11 @@
  */
 - (NSArray *)symmetricDifference:(NSArray *)array;
 
+/**
+ Return a single value from an array by iterating through the elements and transforming a running total.
+ 
+ @return A single value that is the end result of apply the block function to each element successively.
+ **/
+- (id)reduce:(id)initial block:(id(^)(id accumulator, id object))block;
+
 @end

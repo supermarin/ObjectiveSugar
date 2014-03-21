@@ -170,6 +170,15 @@ static NSString * const OSMinusString = @"-";
     return self.reverseObjectEnumerator.allObjects;
 }
 
+- (id)reduce:(id)initial block:(id(^)(id accumulator, id object))block {
+	id accumulator = initial;
+	
+	for(id object in self)
+		accumulator = block(accumulator, object);
+	
+	return accumulator;
+}
+
 #pragma mark - Set operations
 
 - (NSArray *)intersectionWithArray:(NSArray *)array {

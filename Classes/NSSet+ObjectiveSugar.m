@@ -81,6 +81,15 @@
     return [self sortedArrayUsingDescriptors:@[sortDescriptor]];
 }
 
+- (id)reduce:(id)initial block:(id(^)(id accumulator, id object))block {
+	id accumulator = initial;
+	
+	for(id object in self)
+		accumulator = block(accumulator, object);
+	
+	return accumulator;
+}
+
 
 #pragma mark - Deprecations
 

@@ -92,6 +92,12 @@ describe(@"Iterators", ^{
                 return [car isEqualToString:@"F50"];
             }] should] equal:@[ @"F458 Italia", @"Testarossa" ]];
         });
+		
+		it(@"-reduce returns an array that contains the first character of each item in the input set", ^{
+			[[[cars reduce:[NSSet set] block:^id(NSSet *accumulator, NSString *object) {
+				return [accumulator setByAddingObject:[object substringToIndex:1]];
+			}] should] equal:[NSSet setWithArray:@[@"T", @"F"]]]; // Order of NSSet is not guaranteed
+		});
         
     });
 
