@@ -5,7 +5,8 @@
 A set of functional additions for Foundation you wish you've had at the first place.
 
 
-[![Build Status](https://travis-ci.org/supermarin/ObjectiveSugar.png?branch=master)](https://travis-ci.org/supermarin/ObjectiveSugar)
+[![Build Status](https://travis-ci.org/supermarin/ObjectiveSugar.svg?branch=master)](https://travis-ci.org/supermarin/ObjectiveSugar)
+
 
 ## Usage
 
