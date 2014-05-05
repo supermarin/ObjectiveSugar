@@ -12,10 +12,11 @@
 SPEC_BEGIN(ArrayAdditions)
 
 describe(@"NSArray categories", ^{
-    
-    NSArray *sampleArray = [NSArray arrayWithObjects:@"first", @"second", @"third", nil];
+
+    NSArray *sampleArray = @[@"first", @"second", @"third"];
     NSArray *oneToTen = @[ @1, @2, @3, @4, @5, @6, @7, @8, @9, @10 ];
-    
+    let(duplicate, ^{ return [NSMutableArray new]; });
+
     it(@"aliases -anyObject to -sample", ^{
         [[sampleArray should] receive:@selector(sample)];
         [sampleArray anyObject];
@@ -31,17 +32,15 @@ describe(@"NSArray categories", ^{
     });
 
     context(@"Iterating using block", ^{
-       
+
         it(@"iterates using -each:^", ^{
-            NSMutableArray *duplicate = @[].mutableCopy;
             [sampleArray each:^(id object) {
                 [duplicate addObject:object];
             }];
             [[duplicate should] equal:sampleArray];
         });
-        
+
         it(@"iterates using -eachWithIndex:^", ^{
-            NSMutableArray *duplicate = @[].mutableCopy;
             [sampleArray eachWithIndex:^(id object, NSUInteger index) {
                 [[object should] equal:[sampleArray objectAtIndex:index]];
                 [duplicate addObject:object];
@@ -50,8 +49,6 @@ describe(@"NSArray categories", ^{
         });
 
         it(@"iterates using -each:^withOptions:", ^{
-            NSMutableArray *duplicate = @[].mutableCopy;
-            
             [sampleArray each:^(id object) {
                 [duplicate addObject:object];
             } options:NSEnumerationReverse];
@@ -60,8 +57,6 @@ describe(@"NSArray categories", ^{
         });
 
         it(@"iterates using -eachWithIndex:^withOptions:", ^{
-            NSMutableArray *duplicate = @[].mutableCopy;
-
             [sampleArray eachWithIndex:^(id object, NSUInteger index) {
                 [[object should] equal:[sampleArray objectAtIndex:index]];
                 [duplicate addObject:object];
@@ -71,15 +66,17 @@ describe(@"NSArray categories", ^{
         });
 
     });
-    
+
     it(@"aliases -containsObject to -includes", ^{
         [[@([sampleArray includes:@"second"]) should] equal:@(YES)];
     });
-    
+
     it(@"-map returns an array of objects returned by the block", ^{
-        [[[sampleArray map:^id(id object) {
+        NSArray *mapped = [sampleArray map:^id(id object) {
             return [NSNumber numberWithBool:[object isEqualToString:@"second"]];
-        }] should] equal:@[ @(NO), @(YES), @(NO) ]];
+        }];
+
+        [[mapped should] containObjects:@(NO), @(YES), @(NO), nil];
     });
 
     it(@"-map treats nils the same way as -valueForKeyPath:", ^{
@@ -100,7 +97,7 @@ describe(@"NSArray categories", ^{
             return [object intValue] % 3 == 0;
         }] should] equal:@3];
     });
-    
+
     it(@"-detect is safe", ^{
        [[[oneToTen detect:^BOOL(id object) {
            return [object intValue] == 1232132143;
@@ -118,7 +115,7 @@ describe(@"NSArray categories", ^{
             return [object integerValue] % 3 == 0;
         }] should] equal:@[ @1, @2, @4, @5, @7, @8, @10 ]];
     });
-    
+
     it(@"-flatten returns a one-dimensional array that is a recursive flattening of the array", ^{
         NSArray *multiDimensionalArray = @[ @[ @1, @2, @3 ], @[ @4, @5, @6, @[ @7, @8 ] ], @9, @10 ];
         [[[multiDimensionalArray flatten] should] equal:oneToTen];
@@ -128,97 +125,110 @@ describe(@"NSArray categories", ^{
         NSArray *arrayWithNulls = @[@1, @2, [NSNull null], @3, [NSNull null], @4];
         [[[arrayWithNulls compact] should] equal:@[@1, @2, @3, @4]];
     });
-	
-	it(@"-reduce returns a single item that is the sum of all numbers in the array", ^{
-		NSArray *sampleArray = @[@1, @2, @3, @4, @5];
-		[[[sampleArray reduce:@0 block:^id(NSNumber *accumulator, NSNumber *object) {
-			return @(accumulator.intValue + object.intValue);
-		}] should] equal:@15];
+
+    it(@"-reduce returns a result of all the elements", ^{
+        [[[sampleArray reduce:^id(NSString *accumulator, NSString *word) {
+            return [accumulator stringByAppendingString:word.uppercaseString];
+        }] should] equal:@"firstSECONDTHIRD"];
+
+        [[[oneToTen reduce:^id(NSNumber *accumulator, NSNumber *numbah) {
+            return @(accumulator.intValue + numbah.intValue);
+        }] should] equal:@55];
+    });
+
+    it(@"-reduce:withBlock with accumulator behaves like -reduce and starts with user provided element", ^{
+        [[[sampleArray reduce:@"" withBlock:^id(NSString *accumulator, NSString *word) {
+            return [accumulator stringByAppendingString:word.uppercaseString];
+        }] should] equal:@"FIRSTSECONDTHIRD"];
+
+		[[[oneToTen reduce:@5 withBlock:^id(NSNumber *accumulator, NSNumber *numbah) {
+			return @(accumulator.intValue + numbah.intValue);
+		}] should] equal:@60];
 	});
-    
+
     context(@"array subsets", ^{
-    
+
         it(@"creates subset of array", ^{
             [[[sampleArray take:2] should] equal:@[ @"first", @"second" ]];
         });
-        
-        
+
+
         it(@"creates subset of array and shouldn't raise exeption", ^{
             [[[sampleArray take:[sampleArray count]+1] should] equal:sampleArray];
         });
-        
+
         it(@"creates subset of array using block", ^{
             [[[sampleArray takeWhile:^BOOL(id object) {
-                
+
                 return ![object isEqualToString:@"third"];
-                
+
             }] should] equal:@[ @"first", @"second" ]];
         });
-        
+
     });
-    
+
     context(@"array range subscripting", ^{
-        
+
         it(@"returns an array containing elements at the specified range when passing an NSValue containing an NSRange", ^{
             NSValue *range = [NSValue valueWithRange: NSMakeRange(2, 5)];
             [[oneToTen[range] should] equal:@[@3, @4, @5, @6, @7]];
         });
-        
+
         it(@"returns subarray with NSRange in string format", ^{
             [[oneToTen[@"2,5"] should] equal:@[@3, @4, @5, @6, @7]];
         });
-        
+
         it(@"returns subarray with inclusive range", ^{
             [[oneToTen[@"2..5"] should] equal:@[@3, @4, @5, @6]];
         });
-        
+
         it(@"returns subarray with inclusive range but excludes the end value", ^{
             [[oneToTen[@"2...5"] should] equal:@[@3, @4, @5]];
         });
-        
+
         it(@"returns subarray with inclusive range up to the end element", ^{
             [[oneToTen[@"2..-1"] should] equal:@[@3, @4, @5, @6, @7, @8, @9, @10]];
         });
-        
+
         it(@"returns subarray with inclusive range up to the element before end element", ^{
             [[oneToTen[@"2...-1"] should] equal:@[@3, @4, @5, @6, @7, @8, @9]];
         });
-        
+
         it(@"returns an empty array when passing an invalid or empty range", ^{
             [[oneToTen[@"notarange"] should] equal:@[]];
         });
-        
+
         it(@"throws an invalid argument exception when passing anything other than an NSString or NSValue", ^{
             [[theBlock(^{
                 [oneToTen[[[NSSet alloc] initWithArray:@[@1, @2]]] description];
             }) should] raiseWithName:NSInvalidArgumentException reason:@"expected NSString or NSValue argument, got __NSSetI instead"];
         });
-        
+
         it(@"shouldn't break existing indexed subscripting", ^{
             [[oneToTen[1] should] equal:@2];
         });
     });
-    
+
     context(@"join elements", ^{
-        
+
         it(@"join the array with elements ", ^{
             [[[oneToTen join] should] equal:@"12345678910"];
         });
-        
+
         it(@"join the array with elements separated by a dash", ^{
             [[[sampleArray join:@"-"] should] equal:@"first-second-third"];
         });
-        
+
     });
-    
+
     context(@"reverse elements", ^{
         it(@"reverses the elements in the array", ^{
             [[[oneToTen reverse] should] equal:@[@10, @9, @8, @7, @6, @5, @4, @3, @2, @1]];
         });
     });
-    
+
     context(@"sorting", ^{
-       
+
         it(@"-sort aliases -sortUsingComparator:", ^{
             [[[@[ @4, @1, @3, @2 ] sort] should] equal:@[ @1, @2, @3, @4 ]];
         });
@@ -232,31 +242,31 @@ describe(@"NSArray categories", ^{
         });
 
     });
-    
+
 });
 
 
 describe(@"Set operations", ^{
-    
+
     NSArray *a = @[ @1, @2 ];
     NSArray *b = @[ @2, @3 ];
-    
+
     it(@"return the elements common to both arrays ", ^{
         [[[a intersectionWithArray:b] should] equal:@[ @2 ]];
     });
-    
+
     it(@"combine the two arrays, removing duplicate elements", ^{
         [[[a unionWithArray:b] should] equal:@[ @1, @2, @3 ]];
     });
-    
+
     it(@"return the elements in a that are not in b", ^{
         [[[a relativeComplement:b] should] equal:@[ @1 ]];
     });
-    
+
     it(@"return the elements in b that are not in a", ^{
         [[[b relativeComplement:a] should] equal:@[ @3 ]];
     });
-    
+
     it(@"return the elements unique to both arrays", ^{
         [[[a symmetricDifference:b] should] equal:@[ @1, @3 ]];
     });

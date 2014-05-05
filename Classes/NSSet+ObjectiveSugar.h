@@ -32,16 +32,21 @@
 - (NSArray *)sort;
 
 /**
- Return a single value from a set by iterating through the elements and transforming a running total.
- 
+ Return a single value from an array by iterating through the elements and transforming a running total.
+
  @return A single value that is the end result of apply the block function to each element successively.
  **/
-- (id)reduce:(id)initial block:(id(^)(id accumulator, id object))block;
+- (id)reduce:(id (^)(id accumulator, id object))block;
+
+/**
+ Same as -reduce, with initial value provided by yourself
+ **/
+- (id)reduce:(id)initial withBlock:(id (^)(id accumulator, id object))block;
 
 
 #pragma mark - Deprecations
 
 @property(readonly) id first DEPRECATED_MSG_ATTRIBUTE("Please use -firstObject");
-@property(readonly) id last DEPRECATED_MSG_ATTRIBUTE("Please use -lastObject");
+@property(readonly) id last  DEPRECATED_MSG_ATTRIBUTE("Please use -lastObject");
 
 @end

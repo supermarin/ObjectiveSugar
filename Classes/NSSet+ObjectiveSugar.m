@@ -81,11 +81,15 @@
     return [self sortedArrayUsingDescriptors:@[sortDescriptor]];
 }
 
-- (id)reduce:(id)initial block:(id(^)(id accumulator, id object))block {
+- (id)reduce:(id(^)(id accumulator, id object))block {
+    return [self reduce:nil withBlock:block];
+}
+
+- (id)reduce:(id)initial withBlock:(id(^)(id accumulator, id object))block {
 	id accumulator = initial;
 	
 	for(id object in self)
-		accumulator = block(accumulator, object);
+		accumulator = accumulator ? block(accumulator, object) : object;
 	
 	return accumulator;
 }
