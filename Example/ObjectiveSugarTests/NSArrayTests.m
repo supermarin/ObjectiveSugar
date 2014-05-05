@@ -128,6 +128,13 @@ describe(@"NSArray categories", ^{
         NSArray *arrayWithNulls = @[@1, @2, [NSNull null], @3, [NSNull null], @4];
         [[[arrayWithNulls compact] should] equal:@[@1, @2, @3, @4]];
     });
+	
+	it(@"-reduce returns a single item that is the sum of all numbers in the array", ^{
+		NSArray *sampleArray = @[@1, @2, @3, @4, @5];
+		[[[sampleArray reduce:@0 block:^id(NSNumber *accumulator, NSNumber *object) {
+			return @(accumulator.intValue + object.intValue);
+		}] should] equal:@15];
+	});
     
     context(@"array subsets", ^{
     
