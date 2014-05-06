@@ -43,36 +43,39 @@
 
 - (NSArray *)map:(id (^)(id object))block {
     NSMutableArray *array = [NSMutableArray arrayWithCapacity:self.count];
-    
+
+
     for (id object in self) {
-        id newObject = block(object);
-        [array addObject:newObject];
+        id mappedObject = block(object);
+        if(mappedObject) {
+            [array addObject:mappedObject];
+        }
     }
-    
+
     return array;
 }
 
 - (NSArray *)select:(BOOL (^)(id object))block {
     NSMutableArray *array = [NSMutableArray arrayWithCapacity:self.count];
-    
+
     for (id object in self) {
         if (block(object)) {
             [array addObject:object];
         }
     }
-    
+
     return array;
 }
 
 - (NSArray *)reject:(BOOL (^)(id object))block {
     NSMutableArray *array = [NSMutableArray arrayWithCapacity:self.count];
-    
+
     for (id object in self) {
         if (block(object) == NO) {
             [array addObject:object];
         }
     }
-    
+
     return array;
 }
 
@@ -106,3 +109,4 @@
 }
 
 @end
+

@@ -13,6 +13,7 @@ SPEC_BEGIN(SetAdditions)
 
 describe(@"Iterators", ^{
 
+
     NSSet *sampleSet = [NSSet setWithArray:@[@"first", @"second", @"third"]];
 
     context(@"Iterating using block", ^{
@@ -81,6 +82,15 @@ describe(@"Iterators", ^{
             [[mapped should] containObjects:@NO, @YES, @NO, nil];
         });
 
+        it(@"-map treats nils the same way as -valueForKeyPath:", ^{
+            NSSet *users = [NSSet setWithArray:@[@{@"name": @"Marin"}, @{@"fake": @"value"}, @{@"name": @"Neil"}]];
+            NSArray *mappedUsers = [users map:^id(NSDictionary *user) { return user[@"name"]; }];
+
+            [[mappedUsers.sort should] equal:[[users valueForKeyPath:@"name"] allObjects].sort];
+            [[mappedUsers should] haveCountOf:2];
+            [[mappedUsers should] containObjects:@"Marin", @"Neil", nil];
+        });
+
         it(@"-select returns an array containing all the elements of NSArray for which block is not false", ^{
             [[[cars select:^BOOL(NSString *car) {
                 return [car isEqualToString:@"F50"];
@@ -120,3 +130,4 @@ describe(@"Iterators", ^{
 });
 
 SPEC_END
+
