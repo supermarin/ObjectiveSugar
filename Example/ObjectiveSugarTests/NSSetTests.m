@@ -70,6 +70,9 @@ describe(@"Iterators", ^{
     context(@"modifications", ^{
 
         NSSet *cars = [NSSet setWithArray:@[@"Testarossa", @"F50", @"F458 Italia"]];
+        let(items, ^id{
+            return @[@{ @"value": @4 }, @{ @"value": @5 }, @{ @"value": @9 }];
+        });
 
         it(@"-map returns an array of objects returned by the block", ^{
             NSArray *mapped = [sampleSet map:^id(id object) {
@@ -91,15 +94,16 @@ describe(@"Iterators", ^{
         });
 
         it(@"-reduce returns a result of all the elements", ^{
-            [[[sampleSet reduce:^id(NSString *accumulator, NSString *word) {
-                return [accumulator stringByAppendingString:word.uppercaseString];
-            }] should] equal:@"firstSECONDTHIRD"];
+            [[[items reduce:^id(NSDictionary *accumulator, NSDictionary *item) {
+                return [accumulator[@"value"] intValue] > [item[@"value"] intValue]
+                ? accumulator : item;
+            }] should] equal:@{ @"value": @9 }];
         });
 
         it(@"-reduce:withBlock with accumulator behaves like -reduce and starts with user provided element", ^{
-            [[[sampleSet reduce:@"" withBlock:^id(NSString *accumulator, NSString *word) {
-                return [accumulator stringByAppendingString:word.uppercaseString];
-            }] should] equal:@"FIRSTSECONDTHIRD"];
+            [[[items reduce:@0 withBlock:^id(NSNumber *accumulator, NSDictionary *item) {
+                return @(accumulator.intValue + [item[@"value"] intValue]);
+            }] should] equal:@18];
         });
 
     });
