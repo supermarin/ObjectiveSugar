@@ -236,6 +236,11 @@ NSMutableArray *people = @[ @"Alice", @"Benjamin", @"Christopher" ];
 [people concat:@[ @"Evan", @"Frank", @"Gavin" ]];
 // people = Alice, Evan, Frank, Gavin
 
+[people keepIf:^BOOL(id object) {
+    return [object characterAtIndex:0] == 'E';
+}];
+// people = Evan
+
 ```
 --
 __NSDictionary__ additions
