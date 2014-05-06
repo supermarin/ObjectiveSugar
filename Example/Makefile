@@ -10,7 +10,7 @@ clean:
 	$(DEFAULT_TASK) clean
 
 test:
-	$(DEFAULT_TASK) test
+	$(DEFAULT_TASK) test | tee xcodebuild.log
 
 install:
 	gem install cocoapods --no-ri --no-rdoc

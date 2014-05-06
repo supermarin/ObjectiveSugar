@@ -37,15 +37,15 @@
 
 /**
  Allow subscripting to fetch elements within the specified range
- 
+
  @param An NSString or NSValue wrapping an NSRange. It's intended to behave like Ruby's array range accessors.
- 
+
         Given array of 10 elements, e.g. [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], you can perform these operations:
         array[@"1..3"] will give you [2, 3, 4]
         array[@"1...3"] will give you [2, 3] (last value excluded)
         array[@"1,3"] implies NSRange(location: 1, length: 3), and gives you [2, 3, 4]
 
- 
+
  @return An array with elements within the specified range
  */
 - (id)objectForKeyedSubscript:(id <NSCopying>)key;
@@ -101,7 +101,7 @@
 - (NSArray *)take:(NSUInteger)numberOfElements;
 
 /**
- Passes elements to the `block` until the block returns NO, 
+ Passes elements to the `block` until the block returns NO,
  then stops iterating and returns an array of all prior elements.
 
  @param A block that returns YES/NO
@@ -169,7 +169,7 @@
 /**
  Alias for `componentsJoinedByString` with a default of no seperator
 
- @return A string of all objects joined with an empty string 
+ @return A string of all objects joined with an empty string
  */
 - (NSString *)join;
 
@@ -182,7 +182,7 @@
 
 /**
  Run the default comparator on each object in the array
- 
+
  @return A sorted copy of the array
  */
 - (NSArray *)sort;
@@ -192,11 +192,11 @@
 
  @return A sorted copy of the array
  */
-- (NSArray *)sortBy:(NSString*)key;
+- (NSArray *)sortBy:(NSString *)key;
 
 /**
  Alias for reverseObjectEnumerator.allObjects
- 
+
  Returns a reversed array
  */
 - (NSArray *)reverse;
@@ -235,4 +235,17 @@
  */
 - (NSArray *)symmetricDifference:(NSArray *)array;
 
+/**
+ Return a single value from an array by iterating through the elements and transforming a running total.
+
+ @return A single value that is the end result of apply the block function to each element successively.
+ **/
+- (id)reduce:(id (^)(id accumulator, id object))block;
+
+/**
+ Same as -reduce, with initial value provided by yourself
+ **/
+- (id)reduce:(id)initial withBlock:(id (^)(id accumulator, id object))block;
+
 @end
+

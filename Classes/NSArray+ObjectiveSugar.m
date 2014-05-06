@@ -96,10 +96,7 @@ static NSString * const OSMinusString = @"-";
     NSMutableArray *array = [NSMutableArray arrayWithCapacity:self.count];
 
     for (id object in self) {
-        id newObject = block(object);
-        if (newObject) {
-          [array addObject:newObject];
-        }
+        [array addObject:block(object) ?: [NSNull null]];
     }
 
     return array;
@@ -168,6 +165,19 @@ static NSString * const OSMinusString = @"-";
 
 - (NSArray *)reverse {
     return self.reverseObjectEnumerator.allObjects;
+}
+
+- (id)reduce:(id (^)(id accumulator, id object))block {
+    return [self reduce:nil withBlock:block];
+}
+
+- (id)reduce:(id)initial withBlock:(id (^)(id accumulator, id object))block {
+	id accumulator = initial;
+
+	for(id object in self)
+        accumulator = accumulator ? block(accumulator, object) : object;
+
+	return accumulator;
 }
 
 #pragma mark - Set operations
