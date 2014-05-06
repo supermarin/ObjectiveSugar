@@ -51,13 +51,9 @@
 }
 
 - (NSArray *)keepIf:(BOOL (^)(id object))block {
-    for (NSUInteger i = 0; i < self.count; i++) {
-        id object = self[i];
-        if (block(object) == NO) {
-            [self removeObject:object];
-        }
-    }
-    
+    [self filterUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
+        return block(evaluatedObject);
+    }]];
     return self;
 }
 
