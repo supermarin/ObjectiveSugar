@@ -2,7 +2,7 @@
 
 > Write Objective C _like a boss_.<br/>
 
-A set of functional additions for Foundation you wish you've had at the first place.
+A set of functional additions for Foundation you wish you'd had in the first place.
 
 
 [![Build Status](https://travis-ci.org/supermarin/ObjectiveSugar.svg?branch=master)](https://travis-ci.org/supermarin/ObjectiveSugar)
