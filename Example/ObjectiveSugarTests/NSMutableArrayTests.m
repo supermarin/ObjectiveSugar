@@ -12,56 +12,54 @@
 SPEC_BEGIN(MutableArrayAdditions)
 
 describe(@"NSMutableArray categories", ^{
+
+    let(mutableArray, ^{ return [NSMutableArray arrayWithObjects:@1, @2, @3, @4, @5, nil]; });
     
-    NSMutableArray *mutableArray = [NSMutableArray arrayWithObjects:@1, @2, @3, @4, @5, nil];
-    
-    it(@"aliases addObject", ^{
+    it(@"-push aliases addObject", ^{
         [mutableArray push:@6];
         [[mutableArray should] equal:@[ @1, @2, @3, @4, @5, @6 ]];
     });
     
-    it(@"removes and returns the last element of the array", ^{
-        [[[mutableArray pop] should] equal:@6];
-        [[mutableArray should] equal:@[ @1, @2, @3, @4, @5 ]];
+    it(@"-pop removes and returns the last element of the array", ^{
+        [[[mutableArray pop] should] equal:@5];
+        [[mutableArray should] equal:@[ @1, @2, @3, @4 ]];
     });
     
-    it(@"removes and returns the last two elements of the array", ^{
+    it(@"-pop with parameter removes and returns the last n elements of the array", ^{
         [[[mutableArray pop:2] should] equal:@[ @4, @5 ]];
         [[mutableArray should] equal:@[ @1, @2, @3 ]];
     });
     
-    it(@"aliases addObjectsFromArray:", ^{
+    it(@"-concat aliases addObjectsFromArray:", ^{
         [mutableArray concat:@[ @7, @8, @9 ]];
-        [[mutableArray should] equal:@[ @1, @2, @3, @7, @8, @9 ]];
+        [[mutableArray should] equal:@[ @1, @2, @3, @4, @5, @7, @8, @9 ]];
     });
 
-    it(@"removes and returns the first element of the array", ^{
+    it(@"-shift removes and returns the first element of the array", ^{
         [[[mutableArray shift] should] equal:@1];
-        [[mutableArray should] equal:@[ @2, @3, @7, @8, @9 ]];
+        [[mutableArray should] equal:@[ @2, @3, @4, @5 ]];
     });
 
-    it(@"removes and returns first two elements of the array", ^{
-        [[[mutableArray shift:2] should] equal:@[ @2, @3 ]];
-        [[mutableArray should] equal:@[ @7, @8, @9 ]];
+    it(@"-shift with parameter removes and returns n elements of the array", ^{
+        [[[mutableArray shift:2] should] equal:@[ @1, @2 ]];
+        [[mutableArray should] equal:@[ @3, @4, @5 ]];
     });
 
-    it(@"returns empty array and don't change original mutable array", ^{
+    it(@"-shift with 0 returns an empty array and doesn't change original mutable array", ^{
         [[[mutableArray shift:0] should] equal:@[]];
-        [[mutableArray should] equal:@[ @7, @8, @9 ]];
+        [[mutableArray should] equal:@[ @1, @2, @3, @4, @5 ]];
     });
-    
-    it(@"creates subset of array by removing the last object", ^{
-        [[[mutableArray keepIf:^BOOL(id object) {
-            return (![object isEqual: @9]);
-        }] should] equal:@[ @7, @8 ]];
+
+    it(@"-keepIf keeps the objects passing the block", ^{
+        NSMutableArray *array = @[@8, @5, @9, @1, @7, @14, @17, @87, @64].mutableCopy;
+
+        [array keepIf:^BOOL(id object) {
+            return [object intValue] % 2 == 0;
+        }];
+
+        [[array should] equal:@[ @8, @14, @64 ]];
     });
-    
-    it(@"creates subset of array removing the first object", ^{
-        [[[mutableArray keepIf:^BOOL(id object) {
-            return (![object isEqual: @7]);
-        }] should] equal:@[ @8 ]];
-    });
-    
+
 });
 
 SPEC_END
