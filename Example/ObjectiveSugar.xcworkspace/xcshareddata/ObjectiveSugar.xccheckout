@@ -5,34 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>D33A2B74-EF5E-434B-9D41-0462E9F67889</string>
+	<string>3A1DDDC1-52E0-434B-B5DC-E75C7A13F1E6</string>
 	<key>IDESourceControlProjectName</key>
 	<string>ObjectiveSugar</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>10E9E741-B65A-4CD7-B1BA-E8D0970019EE</key>
-		<string>ssh://github.com/mneorr/ObjectiveSugar.git</string>
+		<key>A7D7A5DB-2969-40A2-BC48-AB2CB5CBD779</key>
+		<string>ssh://github.com/inf0rmer/ObjectiveSugar.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Example/ObjectiveSugar.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>10E9E741-B65A-4CD7-B1BA-E8D0970019EE</key>
+		<key>A7D7A5DB-2969-40A2-BC48-AB2CB5CBD779</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://github.com/mneorr/ObjectiveSugar.git</string>
+	<string>ssh://github.com/inf0rmer/ObjectiveSugar.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>10E9E741-B65A-4CD7-B1BA-E8D0970019EE</string>
+	<string>A7D7A5DB-2969-40A2-BC48-AB2CB5CBD779</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>10E9E741-B65A-4CD7-B1BA-E8D0970019EE</string>
+			<string>A7D7A5DB-2969-40A2-BC48-AB2CB5CBD779</string>
 			<key>IDESourceControlWCCName</key>
 			<string>ObjectiveSugar</string>
 		</dict>
