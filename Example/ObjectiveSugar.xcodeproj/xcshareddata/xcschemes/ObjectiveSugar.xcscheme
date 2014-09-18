@@ -57,7 +57,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "89690148173C0E4C00B403D2"
-               BuildableName = "ObjectiveSugarTests.octest"
+               BuildableName = "ObjectiveSugarTests.xctest"
                BlueprintName = "ObjectiveSugarTests"
                ReferencedContainer = "container:ObjectiveSugar.xcodeproj">
             </BuildableReference>
@@ -75,7 +75,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "89690148173C0E4C00B403D2"
-               BuildableName = "ObjectiveSugarTests.octest"
+               BuildableName = "ObjectiveSugarTests.xctest"
                BlueprintName = "ObjectiveSugarTests"
                ReferencedContainer = "container:ObjectiveSugar.xcodeproj">
             </BuildableReference>

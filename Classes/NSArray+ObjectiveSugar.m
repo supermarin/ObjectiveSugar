@@ -180,6 +180,11 @@ static NSString * const OSMinusString = @"-";
 	return accumulator;
 }
 
+- (NSArray *)unique
+{
+  return [[NSOrderedSet orderedSetWithArray:self] array];
+}
+
 #pragma mark - Set operations
 
 - (NSArray *)intersectionWithArray:(NSArray *)array {

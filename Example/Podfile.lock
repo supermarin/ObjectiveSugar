@@ -1,11 +1,5 @@
 PODS:
-  - Kiwi (2.2.4):
-    - Kiwi/SenTestingKit
-  - Kiwi/ARC (2.2.4)
-  - Kiwi/NonARC (2.2.4)
-  - Kiwi/SenTestingKit (2.2.4):
-    - Kiwi/ARC
-    - Kiwi/NonARC
+  - Kiwi (2.3.0)
   - ObjectiveSugar (1.1.1)
 
 DEPENDENCIES:
@@ -17,7 +11,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  Kiwi: d60d7498b640a16f58b01925fc3c8d7c4d809f66
+  Kiwi: 54bece5b35564d9b8e03c608d926f1a22fcfc589
   ObjectiveSugar: 27c680bb74f0b0415e9e743d5d61d77bc3292d3f
 
-COCOAPODS: 0.32.1
+COCOAPODS: 0.33.1

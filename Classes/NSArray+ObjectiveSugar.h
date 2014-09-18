@@ -247,5 +247,12 @@
  **/
 - (id)reduce:(id)initial withBlock:(id (^)(id accumulator, id object))block;
 
+/**
+ Produces a duplicate-free version of the array
+ 
+ @return a new array with all unique elements
+ **/
+- (NSArray *)unique;
+
 @end
 
