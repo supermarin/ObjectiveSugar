@@ -17,7 +17,6 @@
 		8969013F173C0E4C00B403D2 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 8969013E173C0E4C00B403D2 /* Default.png */; };
 		89690141173C0E4C00B403D2 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89690140173C0E4C00B403D2 /* Default@2x.png */; };
 		89690143173C0E4C00B403D2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89690142173C0E4C00B403D2 /* Default-568h@2x.png */; };
-		8969014B173C0E4C00B403D2 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8969014A173C0E4C00B403D2 /* SenTestingKit.framework */; };
 		8969014C173C0E4C00B403D2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8969012C173C0E4C00B403D2 /* UIKit.framework */; };
 		8969014D173C0E4C00B403D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8969012E173C0E4C00B403D2 /* Foundation.framework */; };
 		89690155173C0E4C00B403D2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 89690153173C0E4C00B403D2 /* InfoPlist.strings */; };
@@ -59,7 +58,6 @@
 		89690140173C0E4C00B403D2 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		89690142173C0E4C00B403D2 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		89690149173C0E4C00B403D2 /* ObjectiveSugarTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ObjectiveSugarTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8969014A173C0E4C00B403D2 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		89690152173C0E4C00B403D2 /* ObjectiveSugarTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ObjectiveSugarTests-Info.plist"; sourceTree = "<group>"; };
 		89690154173C0E4C00B403D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		89690161173C16A100B403D2 /* CAdditionsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAdditionsTests.m; sourceTree = "<group>"; };
@@ -88,7 +86,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8969014B173C0E4C00B403D2 /* SenTestingKit.framework in Frameworks */,
 				8969014C173C0E4C00B403D2 /* UIKit.framework in Frameworks */,
 				8969014D173C0E4C00B403D2 /* Foundation.framework in Frameworks */,
 				A06180063BF14EB68414F45F /* libPods-ObjectiveSugarTests.a in Frameworks */,
@@ -125,7 +122,6 @@
 				8969012C173C0E4C00B403D2 /* UIKit.framework */,
 				8969012E173C0E4C00B403D2 /* Foundation.framework */,
 				89690130173C0E4C00B403D2 /* CoreGraphics.framework */,
-				8969014A173C0E4C00B403D2 /* SenTestingKit.framework */,
 				32DEFD3FCB544122AD940C8F /* libPods.a */,
 				D3D0B2406C7A45249244F020 /* libPods-ObjectiveSugarTests.a */,
 			);
@@ -221,7 +217,7 @@
 			name = ObjectiveSugarTests;
 			productName = ObjectiveSugarTests;
 			productReference = 89690149173C0E4C00B403D2 /* ObjectiveSugarTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -497,7 +493,6 @@
 				INFOPLIST_FILE = "ObjectiveSugarTests/ObjectiveSugarTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
@@ -516,7 +511,6 @@
 				INFOPLIST_FILE = "ObjectiveSugarTests/ObjectiveSugarTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};

@@ -141,10 +141,15 @@ describe(@"NSArray categories", ^{
             return [accumulator stringByAppendingString:word.uppercaseString];
         }] should] equal:@"FIRSTSECONDTHIRD"];
 
-		[[[oneToTen reduce:@5 withBlock:^id(NSNumber *accumulator, NSNumber *numbah) {
-			return @(accumulator.intValue + numbah.intValue);
-		}] should] equal:@60];
-	});
+        [[[oneToTen reduce:@5 withBlock:^id(NSNumber *accumulator, NSNumber *numbah) {
+          return @(accumulator.intValue + numbah.intValue);
+        }] should] equal:@60];
+    });
+  
+    it(@"-unique produces a duplicate-free array", ^{
+      NSArray *arrayWithDuplicates = @[@1, @1, @"something", @"something"];
+      [[[arrayWithDuplicates unique] should] equal:@[@1, @"something"]];
+    });
 
     context(@"array subsets", ^{
 
