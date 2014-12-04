@@ -3,7 +3,7 @@
 //  ObjectiveSugar
 //
 //  Created by Marin Usalj on 5/9/13.
-//  Copyright (c) 2013 mneorr.com. All rights reserved.
+//  Copyright (c) 2013 @supermarin | supermar.in. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

@@ -3,7 +3,7 @@
 //  SampleProject
 //
 //  Created by Neil on 05/12/2012.
-//  Copyright (c) 2012 @mneorr | mneorr.com. All rights reserved.
+//  Copyright (c) 2012 @supermarin | supermar.in. All rights reserved.
 //
 
 #import "NSString+ObjectiveSugar.h"
@@ -16,14 +16,14 @@ static NSString *const EMPTY_STRING = @"";
 NSString *NSStringWithFormat(NSString *formatString, ...) {
     va_list args;
     va_start(args, formatString);
-    
+
     NSString *string = [[NSString alloc] initWithFormat:formatString arguments:args];
-    
+
     va_end(args);
-    
+
 #if defined(__has_feature) && __has_feature(objc_arc)
     return string;
-#else 
+#else
     return [string autorelease];
 #endif
 }
@@ -45,7 +45,7 @@ NSString *NSStringWithFormat(NSString *formatString, ...) {
 - (NSString *)camelCase {
     NSString *spaced = [self stringByReplacingOccurrencesOfString:UNDERSCORE withString:SPACE];
     NSString *capitalized = [spaced capitalizedString];
-    
+
     return [capitalized stringByReplacingOccurrencesOfString:SPACE withString:EMPTY_STRING];
 }
 

@@ -7,7 +7,7 @@
 - NSMutableArray -keepIf was mutating the collection while iterating
 - !!BREAKING `-map` on NSArray now puts NSNulls if the block returns nil
 - !!BREAKING `-map` on NSSet doesn't blow up if the block returns nil.
- 
+
 
 # 1.1.1
 
@@ -20,9 +20,9 @@
 ##### Enhancements
 
 - `until` keyword, and improved `unless` (it allows you to pass args) |
-  [C0deH4cker #61](https://github.com/mneorr/ObjectiveSugar/pull/61)
+  [C0deH4cker #61](https://github.com/supermarin/ObjectiveSugar/pull/61)
 - Force the library to load under ARC |
-  [mickeyreiss #62](https://github.com/mneorr/ObjectiveSugar/pull/62)
+  [mickeyreiss #62](https://github.com/supermarin/ObjectiveSugar/pull/62)
 
 # 1.0.0
 

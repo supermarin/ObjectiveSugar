@@ -154,7 +154,7 @@ fi
 				<key>LastUpgradeCheck</key>
 				<string>0460</string>
 				<key>ORGANIZATIONNAME</key>
-				<string>mneorr.com</string>
+				<string>supermar.in</string>
 			</dict>
 			<key>buildConfigurationList</key>
 			<string>89690124173C0E4B00B403D2</string>

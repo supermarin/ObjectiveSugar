@@ -3,7 +3,7 @@
 //  Domainchy
 //
 //  Created by Marin Usalj on 11/15/12.
-//  Copyright (c) 2012 mneorr.com | @mneorr | mneorr@gmail.com. All rights reserved.
+//  Copyright (c) 2012 supermar.in | @supermarin. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

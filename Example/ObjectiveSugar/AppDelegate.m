@@ -3,7 +3,7 @@
 //  ObjectiveSugar
 //
 //  Created by Marin Usalj on 5/9/13.
-//  Copyright (c) 2013 mneorr.com. All rights reserved.
+//  Copyright (c) 2013 @supermarin | supermar.in. All rights reserved.
 //
 
 #import "AppDelegate.h"
@@ -27,7 +27,7 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
+    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
 

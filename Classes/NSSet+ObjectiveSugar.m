@@ -3,7 +3,7 @@
 //  SampleProject
 //
 //  Created by Marin Usalj on 11/23/12.
-//  Copyright (c) 2012 @mneorr | mneorr.com. All rights reserved.
+//  Copyright (c) 2012 @supermarin | supermar.in. All rights reserved.
 //
 
 #import "NSSet+ObjectiveSugar.h"
@@ -90,10 +90,10 @@
 
 - (id)reduce:(id)initial withBlock:(id(^)(id accumulator, id object))block {
 	id accumulator = initial;
-	
+
 	for(id object in self)
 		accumulator = accumulator ? block(accumulator, object) : object;
-	
+
 	return accumulator;
 }
 

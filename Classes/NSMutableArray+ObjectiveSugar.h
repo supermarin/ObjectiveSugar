@@ -3,7 +3,7 @@
 //  SampleProject
 //
 //  Created by Marin Usalj on 11/23/12.
-//  Copyright (c) 2012 @mneorr | mneorr.com. All rights reserved.
+//  Copyright (c) 2012 @supermarin | supermar.in. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -16,7 +16,7 @@
 /**
  Removes the last item of the array, and returns that item
  Note: This method changes the length of the array!
- 
+
  @return First array item or nil.
  */
 - (id)pop;
@@ -25,7 +25,7 @@
 /**
  Removes the last n items of the array, and returns that item
  Note: This method changes the length of the array!
- 
+
  @return First array item or nil.
  */
 - (NSArray *)pop:(NSUInteger)numberOfElements;
@@ -35,7 +35,7 @@
 /**
  Removes the first item of the array, and returns that item
  Note: This method changes the length of the array!
- 
+
  @return First array item or nil.
  */
 - (id)shift;
@@ -44,7 +44,7 @@
 /**
  Removes N first items of the array, and returns that items
  Note: This method changes the length of the array!
- 
+
  @return Array of first N items or empty array.
  */
 - (NSArray *)shift:(NSUInteger)numberOfElements;
@@ -52,7 +52,7 @@
 
 /**
  Deletes every element of the array for which the given block evaluates to NO.
- 
+
  @param A block that returns YES/NO
  @return An array of elements
  */

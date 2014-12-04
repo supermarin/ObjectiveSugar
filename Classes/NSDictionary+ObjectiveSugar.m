@@ -3,7 +3,7 @@
 //  SampleProject
 //
 //  Created by Marin Usalj on 11/23/12.
-//  Copyright (c) 2012 @mneorr | mneorr.com. All rights reserved.
+//  Copyright (c) 2012 @supermarin | supermar.in. All rights reserved.
 //
 
 #import "NSDictionary+ObjectiveSugar.h"
@@ -30,14 +30,14 @@
 
 - (NSArray *)map:(id (^)(id key, id value))block {
     NSMutableArray *array = [NSMutableArray array];
-    
+
     [self enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
         id object = block(key, obj);
         if (object) {
           [array addObject:object];
         }
     }];
-    
+
     return array;
 }
 

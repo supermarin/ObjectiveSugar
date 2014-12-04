@@ -3,7 +3,7 @@
 //  SampleProject
 //
 //  Created by Marin Usalj on 1/15/13.
-//  Copyright 2013 @mneorr | mneorr.com. All rights reserved.
+//  Copyright 2013 @supermarin | supermar.in. All rights reserved.
 //
 
 #import <Kiwi/Kiwi.h>
@@ -16,7 +16,7 @@ describe(@"unless", ^{
     beforeEach(^{
         wasExecuted = NO;
     });
-    
+
     context(@"condition is false", ^{
         it(@"executes the body", ^{
             unless(NO) {
@@ -45,7 +45,7 @@ describe(@"unless", ^{
 			[[@(wasExecuted) should] beYes];
 		});
     });
-    
+
     context(@"condition is true", ^{
         it(@"doesn't execute the body", ^{
             unless(YES) {
@@ -58,12 +58,12 @@ describe(@"unless", ^{
 describe(@"until", ^{
 	__block int condCount;
 	__block int bodyCount;
-	
+
 	beforeEach(^{
 		condCount = 0;
 		bodyCount = 0;
 	});
-	
+
 	context(@"In an until loop", ^{
 		context(@"condition is true", ^{
 			it(@"evaluates the condition once", ^{
@@ -86,7 +86,7 @@ describe(@"until", ^{
 				[[@(didEval) should] beYes];
 			});
 		});
-		
+
 		context(@"condition starts false and later changes to true", ^{
 			it(@"evaluates the condition one fewer time than the body", ^{
 				int iterations = 10;
@@ -109,7 +109,7 @@ describe(@"until", ^{
 			});
 		});
 	});
-	
+
 	context(@"In a do-until loop", ^{
 		context(@"condition is true", ^{
 			it(@"both evaluates the condition and executes the body exactly once", ^{
@@ -128,7 +128,7 @@ describe(@"until", ^{
 				[[@(condCount) should] equal:@0];
 			});
 		});
-		
+
 		context(@"condition starts false and later changes to true", ^{
 			it(@"evaluates the condition and the body the same number of times", ^{
 				int iterations = 10;
@@ -164,7 +164,7 @@ describe(@"until", ^{
 				[[@(condCount) should] equal:@(bodyCount)];
 			});
 		});
-		
+
 		context(@"condition is always false", ^{
 			it(@"allows breaking out of the loop to avoid an infinite loop", ^{
 				do {
