@@ -15,5 +15,7 @@
 - (void)eachValue:(void (^)(id value))block;
 - (NSArray *)map:(id (^)(id key, id value))block;
 - (BOOL)hasKey:(id)key;
+- (NSDictionary *)pick:(NSArray *)keys;
+- (NSDictionary *)omit:(NSArray *)keys;
 
 @end
