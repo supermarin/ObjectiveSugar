@@ -49,6 +49,16 @@ NSString *NSStringWithFormat(NSString *formatString, ...) {
     return [capitalized stringByReplacingOccurrencesOfString:SPACE withString:EMPTY_STRING];
 }
 
+- (NSString *)lowerCamelCase {
+    NSString *upperCamelCase = [self upperCamelCase];
+    NSString *firstLetter = [upperCamelCase substringToIndex:1];
+    return [upperCamelCase stringByReplacingCharactersInRange:NSMakeRange(0, 1) withString:firstLetter.lowercaseString];
+}
+
+- (NSString *)upperCamelCase {
+    return [self camelCase];
+}
+
 - (BOOL)containsString:(NSString *) string {
     NSRange range = [self rangeOfString:string options:NSCaseInsensitiveSearch];
     return range.location != NSNotFound;
