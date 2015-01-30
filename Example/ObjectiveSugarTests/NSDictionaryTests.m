@@ -89,4 +89,29 @@ describe(@"Keys", ^{
 
 });
 
+describe(@"Pick", ^{
+    NSDictionary *sampleDict = @{
+        @"one": @1,
+        @"two": @2,
+        @"null": [NSNull null]
+    };
+  
+    it(@"returns a new dictionary with only the whitelisted keys", ^{
+      [[[sampleDict pick:@[@"one", @"two"]] should] equal:@{@"one": @1,
+                                                            @"two": @2,}];
+    });
+});
+
+describe(@"Omit", ^{
+  NSDictionary *sampleDict = @{
+                               @"one": @1,
+                               @"two": @2,
+                               @"null": [NSNull null]
+                               };
+  
+  it(@"returns a new dictionary without the blacklisted keys", ^{
+    [[[sampleDict omit:@[@"one", @"two"]] should] equal:@{@"null": [NSNull null]}];
+  });
+});
+
 SPEC_END

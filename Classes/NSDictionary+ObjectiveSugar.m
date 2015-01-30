@@ -45,4 +45,30 @@
     return !!self[key];
 }
 
+- (NSDictionary *)pick:(NSArray *)keys
+{
+  NSMutableDictionary *picked = [[NSMutableDictionary alloc] initWithCapacity:keys.count];
+  
+  [self enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+      if ([keys containsObject:key]) {
+          picked[key] = obj;
+      }
+  }];
+  
+  return picked;
+}
+
+- (NSDictionary *)omit:(NSArray *)keys
+{
+  NSMutableDictionary *omitted = [[NSMutableDictionary alloc] initWithCapacity:([self allKeys].count - keys.count)];
+  
+  [self enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+    if (![keys containsObject:key]) {
+      omitted[key] = obj;
+    }
+  }];
+  
+  return omitted;
+}
+
 @end
