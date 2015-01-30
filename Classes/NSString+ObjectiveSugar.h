@@ -46,15 +46,6 @@ NSString *NSStringWithFormat(NSString *format, ...) NS_FORMAT_FUNCTION(1,2);
 
 
 /**
- Returns a new string made by converting a snake_case_string to UpperCamelCaseString
- Same as calling camelCase
- 
- @return A string made by converting a snake_case_string to CamelCaseString
- */
-- (NSString *)upperCamelCase;
-
-
-/**
  Returns a Boolean value that indicates whether a given string is a substring of the receiver
 
  @return YES if 'string' is a substring of the receiver, otherwise NO

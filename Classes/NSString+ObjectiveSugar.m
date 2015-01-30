@@ -50,13 +50,9 @@ NSString *NSStringWithFormat(NSString *formatString, ...) {
 }
 
 - (NSString *)lowerCamelCase {
-    NSString *upperCamelCase = [self upperCamelCase];
+    NSString *upperCamelCase = [self camelCase];
     NSString *firstLetter = [upperCamelCase substringToIndex:1];
     return [upperCamelCase stringByReplacingCharactersInRange:NSMakeRange(0, 1) withString:firstLetter.lowercaseString];
-}
-
-- (NSString *)upperCamelCase {
-    return [self camelCase];
 }
 
 - (BOOL)containsString:(NSString *) string {
