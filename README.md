@@ -300,6 +300,9 @@ NSString *sentence = NSStringWithFormat(@"This is a text-with-argument %@", @123
 
 [sentence containsString:@"this is a"];
 // YES
+
+[sentence match:@"-[a-z]+-"]
+// -with-
 ```
 --
 __C__ additions

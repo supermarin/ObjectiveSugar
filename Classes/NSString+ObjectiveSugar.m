@@ -64,4 +64,11 @@ NSString *NSStringWithFormat(NSString *formatString, ...) {
     return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 }
 
+- (NSString *)match:(NSString *)pattern {
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:nil];
+    NSTextCheckingResult *match = [regex firstMatchInString:self options:0 range:NSMakeRange(0, self.length)];
+    
+    return (match != nil) ? [self substringWithRange:[match range]] : nil;
+}
+
 @end
