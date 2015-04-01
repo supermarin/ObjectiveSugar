@@ -69,4 +69,10 @@
     return omitted;
 }
 
+- (NSDictionary *)merge:(NSDictionary *)dictionary {
+    NSMutableDictionary *merged = [NSMutableDictionary dictionaryWithDictionary:self];
+    [merged addEntriesFromDictionary:dictionary];
+    return merged;
+}
+
 @end

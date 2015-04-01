@@ -116,5 +116,14 @@ describe(@"Omit", ^{
     });
 });
 
+describe(@"Merge", ^{
+    let(h1, ^{ return @{ @"a" : @100, @"b" : @200 }; });
+    let(h2, ^{ return @{ @"b" : @254, @"c" : @300 }; });
+    
+    it(@"returns a new dictionary containing the contents of h1 and h2", ^{
+        [[[h1 merge:h2] should] equal:@{ @"a" : @100, @"b" : @254, @"c" : @300 }];
+    });
+});
+
 SPEC_END
 

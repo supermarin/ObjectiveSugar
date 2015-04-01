@@ -17,5 +17,6 @@
 - (BOOL)hasKey:(id)key;
 - (NSDictionary *)pick:(NSArray *)keys;
 - (NSDictionary *)omit:(NSArray *)keys;
+- (NSDictionary *)merge:(NSDictionary *)dictionary;
 
 @end
