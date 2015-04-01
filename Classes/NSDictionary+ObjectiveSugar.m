@@ -8,6 +8,8 @@
 
 #import "NSDictionary+ObjectiveSugar.h"
 
+#import "NSArray+ObjectiveSugar.h"
+
 @implementation NSDictionary (Rubyfy)
 
 - (void)each:(void (^)(id k, id v))block {
@@ -72,6 +74,22 @@
 - (NSDictionary *)merge:(NSDictionary *)dictionary {
     NSMutableDictionary *merged = [NSMutableDictionary dictionaryWithDictionary:self];
     [merged addEntriesFromDictionary:dictionary];
+    return merged;
+}
+
+- (NSDictionary *)merge:(NSDictionary *)dictionary block:(id(^)(id key, id oldVal, id newVal))block {
+    NSMutableDictionary *merged = [NSMutableDictionary dictionary];
+    [[[self allKeys] relativeComplement:[dictionary allKeys]] each:^(id key) {
+        merged[key] = self[key];
+    }];
+    
+    [[[dictionary allKeys] relativeComplement:[self allKeys]] each:^(id key) {
+        merged[key] = dictionary[key];
+    }];
+    
+    [[[self allKeys] intersectionWithArray:[dictionary allKeys]] each:^(id key) {
+        merged[key] = block(key, self[key], dictionary[key]);
+    }];
     return merged;
 }
 
