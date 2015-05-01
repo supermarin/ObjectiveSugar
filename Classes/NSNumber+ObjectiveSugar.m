@@ -16,7 +16,7 @@
 }
 
 - (void)timesWithIndex:(void (^)(NSUInteger))block {
-    for (uint i = 0; i < self.unsignedIntegerValue; i++)
+    for (NSUInteger i = 0; i < self.unsignedIntegerValue; i++)
         block(i);
 }
 
