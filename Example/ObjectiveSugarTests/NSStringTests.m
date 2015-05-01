@@ -55,14 +55,15 @@ describe(@"Additions", ^{
 
     context(@"lowerCamelCase", ^{
         it(@"converts snake_case to snakeCase", ^{
-            [[[@"snake_case" lowerCamelCase] should] equal:@"snakeCase"]
+            [[[@"snake_case" lowerCamelCase] should] equal:@"snakeCase"];
         });
 
         it(@"handles extraneous underscores", ^{
-            [[[@"_snake_case" lowerCamelCase] should] equal:@"snakeCase"]
-            [[[@"snake_case_" lowerCamelCase] should] equal:@"snakeCase"]
+            [[[@"_snake_case" lowerCamelCase] should] equal:@"snakeCase"];
+            [[[@"snake_case_" lowerCamelCase] should] equal:@"snakeCase"];
         });
-    }
+
+    });
 
     it(@"-strip strips whitespaces and newlines from both ends", ^{
         [[[@"\n  Look mo, no empties!\n \n\n  " strip] should] equal:@"Look mo, no empties!"];
