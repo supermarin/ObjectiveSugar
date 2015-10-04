@@ -1,16 +1,12 @@
-PROJECT_NAME=ObjectiveSugar
-WORKSPACE=$(PROJECT_NAME).xcworkspace
-DEFAULT_SCHEME=$(PROJECT_NAME)
-DEFAULT_FLAGS=-sdk iphonesimulator
-TESTING_TOOL=xcodebuild
-
-DEFAULT_TASK=$(TESTING_TOOL) -workspace $(WORKSPACE) -scheme $(DEFAULT_SCHEME) $(DEFAULT_FLAGS)
+project_name  = ObjectiveSugar
+workspace     = $(project_name).xcworkspace
+xcodebuild    = xcodebuild -workspace $(workspace) -scheme $(project_name) -sdk iphonesimulator
 
 clean:
-	$(DEFAULT_TASK) clean
+	$(xcodebuild) clean
 
 test:
-	$(DEFAULT_TASK) test | tee xcodebuild.log
+	$(xcodebuild) test | tee xcodebuild.log
 
 install:
 	gem install cocoapods --no-ri --no-rdoc
@@ -18,5 +14,5 @@ install:
 	pod install
 
 ci:
-	$(DEFAULT_TASK) test | xcpretty -c
+	$(xcodebuild) test | xcpretty -c
 
