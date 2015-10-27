@@ -60,5 +60,12 @@ NSString *NSStringWithFormat(NSString *format, ...) NS_FORMAT_FUNCTION(1,2);
  */
 - (NSString *)strip;
 
+/** 
+ Returns a new string that matches the passed in pattern
+ 
+ @return A String matching the regex or nil if no match is found
+ */
+- (NSString *)match:(NSString *)pattern;
+
 @end
 

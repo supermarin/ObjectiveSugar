@@ -62,13 +62,24 @@ describe(@"Additions", ^{
             [[[@"_snake_case" lowerCamelCase] should] equal:@"snakeCase"];
             [[[@"snake_case_" lowerCamelCase] should] equal:@"snakeCase"];
         });
-
     });
 
     it(@"-strip strips whitespaces and newlines from both ends", ^{
         [[[@"\n  Look mo, no empties!\n \n\n  " strip] should] equal:@"Look mo, no empties!"];
     });
 
+});
+
+describe(@"match", ^{
+    NSString *sentence = @"Find the thing in 'single quotes'!";
+
+    it(@"Should find the thing in single quotes", ^{
+        [[[sentence match:@"'[a-zA-Z ]+'"] should] equal:@"'single quotes'"];
+    });
+
+    it(@"Should return nil is no match is found", ^{
+        [[[sentence match:@"<[a-z]>"] should] beNil];
+    });
 });
 
 
