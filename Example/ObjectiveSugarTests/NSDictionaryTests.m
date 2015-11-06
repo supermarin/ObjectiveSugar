@@ -119,7 +119,7 @@ describe(@"Omit", ^{
 describe(@"Merge", ^{
     let(h1, ^{ return @{ @"a" : @100, @"b" : @200 }; });
     let(h2, ^{ return @{ @"b" : @254, @"c" : @300 }; });
-    
+
     it(@"returns a new dictionary containing the contents of h1 and h2", ^{
         [[[h1 merge:h2] should] equal:@{ @"a" : @100, @"b" : @254, @"c" : @300 }];
     });
@@ -128,11 +128,22 @@ describe(@"Merge", ^{
 describe(@"Merge with block", ^{
     let(h1, ^{ return @{ @"a" : @100, @"b" : @200 }; });
     let(h2, ^{ return @{ @"b" : @254, @"c" : @300 }; });
-    
+
     it(@"returns a new dictionary containing the contents of h1 and h2", ^{
         [[[h1 merge:h2 block:^id(id key, id oldVal, id newVal) {
             return @([newVal intValue] - [oldVal intValue]);
         }] should] equal:@{ @"a" : @100, @"b" : @54, @"c" : @300 }];
+    });
+});
+
+describe(@"Invert", ^{
+    let(sampleDict, ^{ return @{ @"one" : @1,
+                                 @"two" : @2,
+                                 @"three" : @3 }; });
+
+    it(@"returns a new dictionary where keys are values and values are keys", ^{
+        [[[sampleDict invert] should] equal:@{ @1 : @"one", @2 : @"two", @3 : @"three" }];
+        NSLog(@"%@", [sampleDict invert]);
     });
 });
 

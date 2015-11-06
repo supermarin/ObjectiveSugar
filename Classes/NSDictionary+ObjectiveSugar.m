@@ -82,15 +82,23 @@
     [[[self allKeys] relativeComplement:[dictionary allKeys]] each:^(id key) {
         merged[key] = self[key];
     }];
-    
+
     [[[dictionary allKeys] relativeComplement:[self allKeys]] each:^(id key) {
         merged[key] = dictionary[key];
     }];
-    
+
     [[[self allKeys] intersectionWithArray:[dictionary allKeys]] each:^(id key) {
         merged[key] = block(key, self[key], dictionary[key]);
     }];
     return merged;
+}
+
+- (NSDictionary *)invert {
+    NSMutableDictionary *inverted = [NSMutableDictionary dictionary];
+    for (id key in [self allKeys]) {
+        inverted[self[key]] = key;
+    }
+    return inverted;
 }
 
 @end

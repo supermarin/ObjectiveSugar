@@ -268,6 +268,9 @@ NSDictionary *dict = @{ @"one" : @1, @"two" : @2, @"three" : @3 };
 // Value: 2
 // Value: 3
 
+[dict invert];
+// { 1 = one, 2 = two, 3 = three}
+
 NSDictionary *errors = @{
     @"username" : @[ @"already taken" ],
     @"password" : @[ @"is too short (minimum is 8 characters)", @"not complex enough" ],
